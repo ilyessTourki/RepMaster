@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainSheet.View.MuscleType"
+             x:Name="MuscleTypePage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="Black"
+             xmlns:local="clr-namespace:TrainSheet.Control">
+    <StackLayout>
+        <VerticalStackLayout>
+            <local:TimerBox />
+        <!-- Rest of your page content -->
+        </VerticalStackLayout>
+        <CollectionView  ItemsSource="{Binding muscles}"
+                    x:Name="MyCollectionView"
+                    Margin="5">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+               <Frame   CornerRadius="10"
+                        Padding="0"
+                        BorderColor="Black">
+                    <Image
+                    Source="{Binding image}"
+                    HeightRequest="150"
+                    Aspect="AspectFill" />
+                   <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.muscleExercices, Source={x:Reference MuscleTypePage}}"
+                                                  CommandParameter="{Binding muscleEnum}"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+   
+</ContentPage>

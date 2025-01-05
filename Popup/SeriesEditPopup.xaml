@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             x:Class="TrainSheet.Popup.SeriesEditPopup"
+             x:Name="EditExercice"
+             BackgroundColor="#90000000">
+    <StackLayout>
+        <Frame WidthRequest="350"
+            HeightRequest="500"
+            CornerRadius="15"
+            BackgroundColor="Black"
+               BorderColor="White"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            Padding="0,10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.08*"/>
+                    <RowDefinition Height="0.77*"/>
+                    <RowDefinition Height="0.15*"/>
+                </Grid.RowDefinitions>
+                <Label  TextColor="White"
+                        HorizontalOptions="EndAndExpand"
+                        Margin="10"
+                        TextDecorations="Underline"
+                        VerticalTextAlignment="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Add Item +" FontSize="15" FontAttributes="Bold" TextColor="White" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding addItem}" />
+                    </Label.GestureRecognizers>
+                </Label> 
+                <ListView   ItemsSource="{Binding selectedRepetition}" 
+                            RowHeight="70"
+                            Grid.Row="1">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.3*"/>
+                                        <ColumnDefinition Width="0.1*"/>
+                                        <ColumnDefinition Width="0.3*"/>
+                                        <ColumnDefinition Width="0.2*"/>
+                                    </Grid.ColumnDefinitions>
+                                     <Frame
+                                            BorderColor="White"
+                                         Background="Black"
+                                            CornerRadius="5"
+                                            Padding="0"
+                                            WidthRequest="60"
+                                            HeightRequest="40"
+                                            HorizontalOptions="End"
+                                            VerticalOptions="Center">
+                                            <Entry
+                                                FontAttributes="Bold"
+                                                Background="Black"
+                                                HeightRequest="40"
+                                            FontSize="17"
+                                            Text="{Binding repetion}"
+                                                Keyboard="Numeric"
+                                                TextColor="White"
+                                                HorizontalTextAlignment="Center"
+                                                VerticalTextAlignment="End"
+                                                VerticalOptions="FillAndExpand"
+                                                HorizontalOptions="FillAndExpand" />
+                                        </Frame>
+                                    <Label Text="x"
+                                            FontSize="15"
+                                            FontAttributes="Bold"
+                                            VerticalTextAlignment="Center"
+                                            HorizontalOptions="Center"
+                                            Grid.Column="1"
+                                            TextColor="White"/>  
+                                <StackLayout    Orientation="Horizontal"
+                                                    HorizontalOptions="Start"
+                                                    Grid.Column="2">
+                                                    <Frame
+                                            BorderColor="White"
+                                                        Background="Black"
+                                            CornerRadius="5"
+                                            Padding="0"
+                                            WidthRequest="80"
+                                            HeightRequest="40"
+                                            HorizontalOptions="Start"
+                                            VerticalOptions="Center">
+                                            <Entry
+                                                FontAttributes="Bold"
+                                            FontSize="17"
+                                            Text="{Binding weight}"
+                                            VerticalTextAlignment="End"
+                                                Keyboard="Numeric"
+                                                Background="Black"
+                                                TextColor="White"
+                                                HorizontalTextAlignment="Center"
+                                                VerticalOptions="FillAndExpand"
+                                                HorizontalOptions="FillAndExpand" />
+                                        </Frame>
+                                    <Label Text="Kg"
+                                            FontSize="13"
+                                            FontAttributes="Bold"
+                                           TextColor="White"
+                                            Margin="5,0"
+                                            VerticalOptions="Center"/>
+                                    </StackLayout>   
+                                    <Button 
+                                        x:Name="Delete"
+                                        Grid.Column="3"
+                                        CornerRadius="5"
+                                    HeightRequest="50"
+                                    WidthRequest="50"
+                                    FontSize="20"
+                                    Margin="2"
+                                    Text="&#xe872;"
+                                    BackgroundColor="Black"
+                                        BorderColor="DarkRed"
+                                        BorderWidth="1"
+                                    TextColor="DarkRed"
+                                    FontFamily="Material"
+                                    HorizontalOptions="EndAndExpand"
+                                    Command="{Binding Source={x:Reference EditExercice}, Path=BindingContext.deletItem}"
+                                    CommandParameter="{Binding }"/>   
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <StackLayout Orientation="Horizontal"
+                            HorizontalOptions="CenterAndExpand"
+                            Grid.Row="2">
+                    <Button Text="Cancel"
+                            x:Name="Cancel"
+                            TextColor="White"
+                            BorderColor="White"
+                            BackgroundColor="Black"
+                            CornerRadius="10"
+                            BorderWidth="1"
+                            WidthRequest="150"
+                            HeightRequest="60"
+                            Margin="2,0"
+                            FontSize="15"
+                            Clicked="Cancel_Clicked"/>
+                    <Button Text="Confirm"
+                            x:Name="Confirm"
+                            TextColor="White"
+                            BackgroundColor="DarkRed"
+                            CornerRadius="10"
+                            WidthRequest="150"
+                            HeightRequest="60"
+                            Margin="2,0"
+                            FontSize="15"
+                            Clicked="Confirm_Clicked"/>
+                </StackLayout>
+            </Grid> 
+        </Frame>
+    </StackLayout>
+</mopups:PopupPage>
