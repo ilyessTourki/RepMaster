@@ -22,16 +22,20 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 				fonts.AddFont("MaterialIcons-Regular.ttf", "Material");
                 fonts.AddFont("horizon.otf", "Horizon");
+            }).ConfigureMauiHandlers(handlers =>
+            {
+                //The handler will only be called if the target platform is iOS
+#if IOS
+                handlers.AddHandler<Entry, TrainSheet.Platforms.iOS.EntryHandler>();
+#endif
             });
-		builder.Services.AddSingleton<MuscleDetailsVM>();
+        builder.Services.AddSingleton<MuscleDetailsVM>();
         builder.Services.AddSingleton<TimerService>();
-
-
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
 
-		Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler,view) => 
+        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(Entry), (handler,view) => 
 		{
 #if ANDROID
 			handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);

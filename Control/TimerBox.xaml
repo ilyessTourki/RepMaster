@@ -16,16 +16,17 @@
                VerticalOptions="Center"
                 BorderColor="White"
                 BackgroundColor="Transparent"
-                CornerRadius="50"
-                Padding="5">
-           <ImageButton Source="{Binding StartStopButtonText}"
-               Command="{Binding ToggleTimerCommand}"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               HeightRequest="25"
-                WidthRequest="25"
-               BorderColor="Transparent"
-               BackgroundColor="Transparent"/>
+                CornerRadius="20"
+                Padding="0">
+           <Label   Text="{Binding StartStopButtonText}"
+                    FontFamily="Material"
+                    FontSize="25"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"/>
+            <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ToggleTimerCommand}" />
+            </Frame.GestureRecognizers>
        </Frame>
        
         <Label Grid.Column="1" HorizontalOptions="Center"
@@ -41,17 +42,18 @@
                VerticalOptions="Center"
                 BorderColor="White"
                 BackgroundColor="Transparent"
-                CornerRadius="50"
-                Padding="5"
+                CornerRadius="20"
+                Padding="0"
                 Grid.Column="2">
-           <ImageButton Source="restart.png"
-               Command="{Binding ResetTimerCommand}"
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               HeightRequest="20"
-                WidthRequest="20"
-               BorderColor="Transparent"
-               BackgroundColor="Transparent"/>
+            <Label   Text="&#xe042;"
+                    FontFamily="Material"
+                    FontSize="25"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"/>
+            <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ResetTimerCommand}" />
+            </Frame.GestureRecognizers>
        </Frame>
     </Grid>
 </ContentView>

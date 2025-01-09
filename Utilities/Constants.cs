@@ -13,7 +13,7 @@ public static class Constants
     {
         muscleType = MuscleEnum.Pec ,
         name = "Assisted Bar Chest",
-        image = "chest/assistedbarchest.png",
+        image = "assistedbarchest.png",
         bestRepetition = new Repetition{weight=1,repetion=1},
         bestWeight = 2,
         lastRepetition = new ObservableCollection<ObservableCollection<Repetition>>
@@ -37,7 +37,7 @@ public static class Constants
     {
         muscleType = MuscleEnum.Pec ,
         name = "Assisted Bar Up Chest",
-        image = "chest/assistedbarupchest.png",
+        image = "assistedbarupchest.png",
         bestRepetition = new Repetition{weight=1,repetion=1},
         bestWeight  = 20,
         lastRepetition = new ObservableCollection<ObservableCollection<Repetition>>
@@ -59,13 +59,13 @@ public static class Constants
     {
         muscleType = MuscleEnum.Pec ,
         name = "Machine Down Chest",
-        image = "chest/machinedownchest.png",
+        image = "machinedownchest.png",
     };
     public static MuscleCategory MachineFly = new MuscleCategory
     {
         muscleType = MuscleEnum.Pec ,
         name = "MachineFly",
-        image = "chest/machinefly.png",
+        image = "machinefly.png",
     };
     public static MuscleCategory MachineIncline = new MuscleCategory
     {

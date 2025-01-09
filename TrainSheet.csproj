@@ -41,9 +41,13 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
 	  <CodesignKey>Apple Development: tourkiilyess@gmail.com (LJ3Z33C9G6)</CodesignKey>
+	  <CodesignProvision>iOS Team Provisioning Profile: IlyesTourki.RepMaster</CodesignProvision>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
+	<PropertyGroup>
+		<RuntimeIdentifiers>ios-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
@@ -79,10 +83,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Include="Resources/Images/chest/machinefly.png" />
 	  <MauiImage Include="Resources/Images/chest/assistedbarchest.png" />
 	  <MauiImage Include="Resources/Images/chest/assistedbarupchest.png" />
 	  <MauiImage Include="Resources/Images/chest/machinedownchest.png" />
-	  <MauiImage Include="Resources/Images/chest/machinefly.png" />
 	  <MauiImage Include="Resources/Images/chest/machineupchest.png" />
 	  <MauiImage Include="Resources/Images/chest/dumbbellpress.png" />
 	  <MauiImage Include="Resources/Images/chest/inclinedumbbellpress.png" />
@@ -116,14 +120,6 @@
 	  <MauiImage Include="Resources/Images/legs/squatsmachine.png" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <None Remove="Resources\Images\legs\" />
-	  <None Remove="Service\" />
-	  <None Remove="Control\" />
-	  <None Remove="Resources\Images\start.png" />
-	  <None Remove="Resources\Images\Pause.png" />
-	  <None Remove="Resources\Images\restart.png" />
-	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\start.png" />
 	  <BundleResource Include="Resources\Images\pause.png" />

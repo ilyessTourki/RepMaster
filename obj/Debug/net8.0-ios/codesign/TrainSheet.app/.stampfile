@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign 332F03709DA47EE7CBFD6BF138764485412980E9 --entitlements /Users/ilyestourki/Documents/GitHub/RepMaster/obj/Debug/net8.0-ios/Entitlements.xcent /Users/ilyestourki/Documents/GitHub/RepMaster/bin/Debug/net8.0-ios/TrainSheet.app

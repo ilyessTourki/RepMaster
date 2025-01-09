@@ -19,8 +19,8 @@ public partial class DetailsPage : ContentPage
 	{
 		InitializeComponent();
         BindingContext = muscleDetailsVM;
-		muscleDetailsVM.SetMuscle(muscleCateg);
+		muscleDetailsVM.SetMuscle(muscleCateg,Navigation);
     }
 
-   
+
 }

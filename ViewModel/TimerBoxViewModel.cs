@@ -16,30 +16,30 @@ namespace TrainSheet.ViewModel
             _timerService.PropertyChanged += (s, e) => OnPropertyChanged(e.PropertyName);
             if (_timerService.IsRunning)
             {
-                StartStopButtonText = "pause.png";
+                StartStopButtonText = "pause";
             }
             else
             {
-                StartStopButtonText = "start.png";
+                StartStopButtonText = "play_arrow";
             }
             ToggleTimerCommand = new Command(() =>
             {
                 if (_timerService.IsRunning)
                 {
                     _timerService.Stop();
-                    StartStopButtonText = "start.png";
+                    StartStopButtonText = "play_arrow";
                 }
                 else
                 {
                     _timerService.Start();
-                    StartStopButtonText = "pause.png";
+                    StartStopButtonText = "pause";
                 }
                 OnPropertyChanged(nameof(StartStopButtonText));
             });
             ResetTimerCommand = new Command(() =>
             {
                 _timerService.Reset();
-                StartStopButtonText = "start.png";
+                StartStopButtonText = "play_arrow";
                 OnPropertyChanged(nameof(StartStopButtonText));
             });
         }

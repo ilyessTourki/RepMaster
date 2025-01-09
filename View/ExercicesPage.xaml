@@ -7,30 +7,32 @@
              NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False"
              xmlns:local="clr-namespace:TrainSheet.Control">
-    <StackLayout>
+    <ScrollView VerticalScrollBarVisibility="Always">
+    <StackLayout InputTransparent="False">
         <VerticalStackLayout>
             <local:TimerBox />
-        <!-- Rest of your page content -->
+            <!-- Rest of your page content -->
         </VerticalStackLayout>
-    <CollectionView  
-                        ItemsSource="{Binding musclceExercices}"
+        
+           
+<CollectionView  ItemsSource="{Binding musclceExercices}"
                     x:Name="MyCollectionView"
                     Margin="5">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Frame   CornerRadius="10"
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame   CornerRadius="10"
                     Padding="2"
                     BackgroundColor="Black"
                     BorderColor="White"
                    >
-                    <Grid VerticalOptions="CenterAndExpand"
+                        <Grid VerticalOptions="CenterAndExpand"
                         HeightRequest="120"
                         BackgroundColor="Black">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="0.6*"/>
-                            <ColumnDefinition Width="0.4*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Text="{Binding name}"
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.4*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding name}"
                            TextColor="White"
                            FontFamily="Horizon"
                            FontAttributes="Bold"
@@ -40,24 +42,25 @@
                            HorizontalTextAlignment="Center"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="CenterAndExpand"/>
-                        <Image
-                        Grid.Column="1"
-                Source="{Binding image}"
-                HeightRequest="120"
-                VerticalOptions="Center"
-                        WidthRequest="160"
-                    HorizontalOptions="EndAndExpand"
-                Aspect="AspectFill" />
-                    </Grid>
+                            <Image
+                                    Grid.Column="1"
+                                    Source="{Binding image}"
+                                    HeightRequest="120"
+                                    VerticalOptions="Center"
+                                    WidthRequest="160"
+                                    HorizontalOptions="EndAndExpand"
+                                    Aspect="AspectFill" />
+                        </Grid>
 
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding BindingContext.exerciceDetail, Source={x:Reference ExercicesDPage}}"
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BindingContext.exerciceDetail, Source={x:Reference ExercicesDPage}}"
                                               CommandParameter="{Binding}"/>
-                    </Frame.GestureRecognizers>
-                </Frame>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
-
-</StackLayout>
+                        </Frame.GestureRecognizers>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+       
+    </StackLayout>
+     </ScrollView>
 </ContentPage>

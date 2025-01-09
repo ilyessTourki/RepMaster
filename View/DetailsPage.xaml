@@ -5,9 +5,35 @@
              x:Name="DetailPage"
              NavigationPage.HasNavigationBar="False"
              NavigationPage.HasBackButton="false"
-             BackgroundColor="Black">
-    <ScrollView>
-        <StackLayout>
+             BackgroundColor="Black"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls">
+
+    <ScrollView ios:ScrollView.ShouldDelayContentTouches="false">
+
+        <StackLayout >
+            <!--Back Button-->
+             <Frame   HeightRequest="30"
+                WidthRequest="35"
+                HorizontalOptions="Start"
+               VerticalOptions="Center"
+                BorderColor="White"
+                BackgroundColor="Transparent"
+                CornerRadius="5"
+                Margin="10"
+                Padding="0">
+             <Label   Text="&#xe5cb;"
+                    FontFamily="Material"
+                    FontSize="25"
+                    TextColor="White"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="CenterAndExpand"/>
+                <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding backButton}" />
+            </Frame.GestureRecognizers>
+       </Frame>
+          
             <!-- Image -->
             <Frame Padding="0"
                    BorderColor="Transparent"
@@ -15,7 +41,7 @@
                     HorizontalOptions="Center"
                         Margin="0,10">
                 <Image Source="{Binding machineTrain.image}"
-                        HeightRequest="160"
+                        HeightRequest="200"
                         WidthRequest="300"
                         Aspect="AspectFill"/>
             </Frame>
@@ -35,11 +61,11 @@
                     <StackLayout>
                         <StackLayout Orientation="Horizontal"
                 Margin="5">
-                            <Label Text="&#xea23;"
-            FontFamily="Material"
-                FontSize="23"
-                TextColor="White"
-                Margin="5,0"/>
+                            <Label  Text="&#xea23;"
+                                    FontFamily="Material"
+                                    FontSize="23"
+                                    TextColor="White"
+                                    Margin="5,0"/>
                             <Label Text="Best Lift"
                            FontFamily="Horizon"
                 FontSize="10"
@@ -138,7 +164,7 @@
                 </Label>
             </StackLayout>
 
-            <Grid InputTransparent="True">
+            <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.2*" />
                     <ColumnDefinition Width="0.8*" />
@@ -153,7 +179,7 @@
                         <DataTemplate>
                             <ViewCell>
                                 <Label FontAttributes="Bold"
-                           FontSize="18"
+                           FontSize="16"
                            VerticalTextAlignment="Center"
                            HorizontalTextAlignment="Center" >
                                     <Label.FormattedText>
@@ -169,7 +195,7 @@
                 </ListView>
 
                 <!-- Sets Values -->
-                <ListView   ItemsSource="{Binding machineTrain.lastRepetition}" 
+                <ListView   ItemsSource="{Binding machineTrain.lastRepetition}"
                 RowHeight="100"
                 x:Name="repets"
                 Grid.Column="1">
@@ -178,35 +204,41 @@
                             <ViewCell>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="0.8*" />
+                                        <ColumnDefinition Width="0.3*" />
+                                        <ColumnDefinition Width="0.5*" />
                                         <ColumnDefinition Width="0.2*" />
                                     </Grid.ColumnDefinitions>
 
                                     <!-- Nested CollectionView -->
                                     <CollectionView ItemsSource="{Binding}"
-                                    VerticalOptions="Center"
+                                    VerticalOptions="CenterAndExpand"
                                     SelectionMode="None"
-                                    InputTransparent="True">
+                                    InputTransparent="True"
+                                    Grid.Column="1">
                                         <CollectionView.ItemTemplate>
                                             <DataTemplate >
                                                 <StackLayout Orientation="Horizontal"
-                                    VerticalOptions="CenterAndExpand"
-                                       HorizontalOptions="CenterAndExpand">
-                                                    <Label Text="{Binding repetion}"
-                                       FontAttributes="Bold"
-                                                           TextColor="White"
-                                       FontSize="13"/>
-                                                    <Label Text="     x     "
-                                                           TextColor="White"
-                                       FontAttributes="Bold"
-                                       FontSize="13"/>
+                                                            VerticalOptions="CenterAndExpand"
+                                                            HorizontalOptions="CenterAndExpand">
                                                     <Label 
-                                       FontAttributes="Bold"
-                                       FontSize="13">
+                                                           FontAttributes="Bold"
+                                                           FontSize="15">
+                                                        <Label.FormattedText>
+                                                            <FormattedString>
+                                                                <Span Text="{Binding repetion}" TextColor="White"/>
+                                                                <Span Text="  reps" TextColor="#bfbfbf" FontSize="11"/>
+                                                            </FormattedString>
+                                                        </Label.FormattedText>
+                                                    </Label>
+                                                    <StackLayout WidthRequest="15"
+                                                                 HeightRequest="15"/>
+                                                    <Label 
+                                                           FontAttributes="Bold"
+                                                           FontSize="15">
                                                         <Label.FormattedText>
                                                             <FormattedString>
                                                                 <Span Text="{Binding weight}" TextColor="White"/>
-                                                                <Span Text=" Kg" TextColor="White" />
+                                                                <Span Text="  Kg" TextColor="#bfbfbf" FontSize="11"/>
                                                             </FormattedString>
                                                         </Label.FormattedText>
                                                     </Label>
@@ -214,22 +246,20 @@
                                                 </StackLayout>
                                             </DataTemplate>
                                         </CollectionView.ItemTemplate>
-
                                     </CollectionView>
 
                                     <!-- Another Static Label -->
                                     <StackLayout Orientation="Horizontal"
                                 HorizontalOptions="CenterAndExpand"
                                 VerticalOptions="CenterAndExpand"
-                                Grid.Column="1">
+                                Grid.Column="2">
                                         <Button CornerRadius="5"
                                 HeightRequest="50"
                                 WidthRequest="50"
                                 FontSize="20"
                                 Margin="2"
                                 Text="&#xe872;"
-                                TextColor="DarkRed"
-                                                BorderColor="DarkRed"
+                                TextColor="White"
                                                 BorderWidth="1"
                                 FontFamily="Material"
                                 BackgroundColor="Black"
@@ -251,5 +281,7 @@
 
         </StackLayout>
     </ScrollView>
+        
+  
 
 </ContentPage>

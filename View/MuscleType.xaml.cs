@@ -19,7 +19,7 @@ public partial class MuscleType : ContentPage
             new Muscle{ muscleEnum= MuscleEnum.Pec,     image ="pec.png" },
             new Muscle{ muscleEnum= MuscleEnum.Back,    image ="back.png" },
             new Muscle{ muscleEnum= MuscleEnum.Shoulder,image ="shoulder.png" },
-            new Muscle{ muscleEnum= MuscleEnum.Bieceps, image ="bieceps.png" },
+            new Muscle{ muscleEnum= MuscleEnum.Bieceps, image ="biceps.png" },
             new Muscle{ muscleEnum= MuscleEnum.Triceps, image ="triceps.png" },
             new Muscle{ muscleEnum= MuscleEnum.Frontarms,image ="frontarms.png" },
             new Muscle{ muscleEnum= MuscleEnum.Legs,    image ="legs.png" },

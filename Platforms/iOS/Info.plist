@@ -28,9 +28,9 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/appicon.appiconset</string>
-	<key>CFBundleIdentifier</key>
-	<string>companyname.trainsheet</string>
 	<key>CFBundleName</key>
 	<string>TrainSheet</string>
+	<key>CFBundleIdentifier</key>
+	<string>IlyesTourki.RepMaster</string>
 </dict>
 </plist>

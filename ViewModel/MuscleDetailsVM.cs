@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
+using CommunityToolkit.Mvvm.Input;
 using Mopups.Services;
 using TrainSheet.Model;
 using TrainSheet.Popup;
@@ -15,8 +16,10 @@ namespace TrainSheet.ViewModel
         public ICommand exerciceEditor { get; }
         public ICommand addItem { get; }
         public ICommand deleteSet { get; }
+        public ICommand backButton { get; }
         public ObservableCollection<int> setsNumber { get; set; } = new ObservableCollection<int>();
         private int repetitionIndex = 0;
+        private INavigation Navigation;
 
 
         public MuscleDetailsVM()
@@ -24,10 +27,12 @@ namespace TrainSheet.ViewModel
             exerciceEditor  = new Command<ObservableCollection<Repetition>>(Edit_Clicke);
             deleteSet       = new Command<ObservableCollection<Repetition>>(DeleteSetClicked);
             addItem         = new Command(addItemToList);
+            backButton      = new AsyncRelayCommand(navigateBackward);
 
         }
-        public void SetMuscle(MuscleCategory muscleCateg)
+        public void SetMuscle(MuscleCategory muscleCateg,INavigation navigation)
         {
+            Navigation = navigation;
             machineTrain = muscleCateg;
             OnPropertyChanged(nameof(machineTrain));
             SetSetNumber();
@@ -135,6 +140,10 @@ namespace TrainSheet.ViewModel
             machineTrain.bestWeight = bestWeight;
             machineTrain.bestRepetition = bestRepetition;
             OnPropertyChanged(nameof(machineTrain));
+        }
+        private async Task navigateBackward()
+        {
+            await Navigation.PopAsync();
         }
     }
 }

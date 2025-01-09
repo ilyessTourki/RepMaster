@@ -1,0 +1,53 @@
+﻿<Properties StartupConfiguration="{00777D08-5931-4ABB-B53F-55C215E77C32}|Default">
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2211EFCE-36FB-4202-8E12-5189096D6F95" />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2211EFCE-36FB-4202-8E12-5189096D6F95" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Popup/SeriesEditPopup.xaml">
+    <Files>
+      <File FileName="Control/TimerBox.xaml" Line="54" Column="13" />
+      <File FileName="ViewModel/TimerBoxViewModel.cs" Line="1" Column="1" />
+      <File FileName="View/MuscleType.xaml.cs" Line="27" Column="48" />
+      <File FileName="Utilities/ServiceHelper.cs" />
+      <File FileName="Utilities/Constants.cs" Line="16" Column="18" />
+      <File FileName="View/ExercicesPage.xaml" Line="11" Column="42" />
+      <File FileName="TrainSheet.csproj" Line="50" Column="32" />
+      <File FileName="MainPage.xaml" Line="1" Column="1" />
+      <File FileName="ViewModel/MuscleDetailsVM.cs" Line="146" Column="41" />
+      <File FileName="View/ExercicesPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="View/MuscleType.xaml" Line="21" Column="45" />
+      <File FileName="View/DetailsPage.xaml" Line="269" Column="73" />
+      <File FileName="View/DetailsPage.xaml.cs" Line="24" Column="1" />
+      <File FileName="Popup/SeriesEditPopup.xaml" Line="7" Column="25" />
+      <File FileName="Platforms/iOS/Info.plist" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TrainSheet" expanded="True" selected="True">
+            <Node name="TrainSheet">
+              <Node name="Control" expanded="True" />
+              <Node name="Platforms" expanded="True">
+                <Node name="iOS" expanded="True" />
+              </Node>
+              <Node name="Popup" expanded="True">
+                <Node name="SeriesEditPopup.xaml" expanded="True" />
+              </Node>
+              <Node name="Utilities" expanded="True" />
+              <Node name="View" expanded="True">
+                <Node name="DetailsPage.xaml" expanded="True" />
+                <Node name="MuscleType.xaml" expanded="True" />
+              </Node>
+              <Node name="ViewModel" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
