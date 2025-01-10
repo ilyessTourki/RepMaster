@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!--Image-->
+    <Style x:Key="DetailImage" TargetType="Image">
+        <Setter Property="HeightRequest" Value="200" />
+        <Setter Property="WidthRequest" Value="300" />
+        <Setter Property="Aspect" Value="AspectFill" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Margin" Value="0,10" />
+    </Style>
+
+    <!--StackLayout-->
+    <Style x:Key="StatsStack" TargetType="StackLayout">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+        <Setter Property="Margin" Value="5,15" />
+    </Style>
+
+    <!--Frame-->
+    <Style x:Key="StatBox" TargetType="Frame">
+       <Setter Property="HasShadow" Value="False" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="WidthRequest" Value="180" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="BorderColor" Value="White" />
+    </Style>
+
+    <!--Label-->
+    <Style x:Key="StatIcon" TargetType="Label">
+        <Setter Property="FontFamily" Value="Material" />
+        <Setter Property="FontSize" Value="23" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="Margin" Value="5,0" />
+    </Style>
+    <Style x:Key="StatTitle" TargetType="Label">
+        <Setter Property="FontFamily" Value="Horizon" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+    <Style x:Key="StatValue" TargetType="Label">
+        <Setter Property="FontSize" Value="50" />
+        <Setter Property="Margin" Value="5,0" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+    <Style x:Key="StatUnit" TargetType="Label">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="Margin" Value="0,0,0,10" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="VerticalOptions" Value="End" />
+    </Style>
+    <Style x:Key="AddItem" TargetType="Label">
+        <Setter Property="Text" Value="&#xe145;" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="Margin" Value="10,0" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontFamily" Value="Material" />
+        <Setter Property="HorizontalOptions" Value="EndAndExpand" />
+    </Style>
+</ResourceDictionary>

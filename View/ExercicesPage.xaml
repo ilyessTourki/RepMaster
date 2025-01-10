@@ -6,15 +6,14 @@
              BackgroundColor="Black"
              NavigationPage.HasBackButton="False"
              NavigationPage.HasNavigationBar="False"
-             xmlns:local="clr-namespace:TrainSheet.Control">
+             xmlns:control="clr-namespace:TrainSheet.Control">
     <ScrollView VerticalScrollBarVisibility="Always">
     <StackLayout InputTransparent="False">
-        <VerticalStackLayout>
-            <local:TimerBox />
-            <!-- Rest of your page content -->
-        </VerticalStackLayout>
+
+         <control:TimerBox/>
         
-           
+        <!--Back Button-->
+        <control:BackButton/>    
 <CollectionView  ItemsSource="{Binding musclceExercices}"
                     x:Name="MyCollectionView"
                     Margin="5">

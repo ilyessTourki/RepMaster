@@ -122,37 +122,37 @@ public static class Constants
     {
         muscleType = MuscleEnum.Back,
         name = "Cable Row",
-        image = "back/cablerow.png",
+        image = "cablerow.png",
     };
     public static MuscleCategory FrontPullDown = new MuscleCategory
     {
         muscleType = MuscleEnum.Back,
         name = "Front Pull Down",
-        image = "back/frotpulldown.png",
+        image = "frotpulldown.png",
     };
     public static MuscleCategory GripPullUp = new MuscleCategory
     {
         muscleType = MuscleEnum.Back,
         name = "Grip Pul lUp",
-        image = "back/grippullup.png",
+        image = "grippullup.png",
     };
     public static MuscleCategory LatPullDown = new MuscleCategory
     {
         muscleType = MuscleEnum.Back,
         name = "Lat Pull Down",
-        image = "back/latpulldown.png",
+        image = "latpulldown.png",
     };
     public static MuscleCategory TBarRow = new MuscleCategory
     {
         muscleType = MuscleEnum.Back,
         name = "T Bar Row",
-        image = "back/tbbarrow.png",
+        image = "tbbarrow.png",
     };
     public static MuscleCategory TRow = new MuscleCategory
     {
         muscleType = MuscleEnum.Back,
         name = "T Row",
-        image = "back/trow.png",
+        image = "trow.png",
     };
     public static List<MuscleCategory> BackExercices = new List<MuscleCategory>();
     #endregion
