@@ -7,7 +7,7 @@
     <Style x:Key="DetailImage" TargetType="Image">
         <Setter Property="HeightRequest" Value="200" />
         <Setter Property="WidthRequest" Value="300" />
-        <Setter Property="Aspect" Value="AspectFill" />
+        <Setter Property="Aspect" Value="AspectFit" />
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="Margin" Value="0,10" />
     </Style>

@@ -29,6 +29,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
 build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
 
+[/Users/ilyestourki/Documents/GitHub/RepMaster/Control/BackButton.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Control.BackButton.xaml
+build_metadata.AdditionalFiles.TargetPath = Control/BackButton.xaml
+build_metadata.AdditionalFiles.RelativePath = Control/BackButton.xaml
+
 [/Users/ilyestourki/Documents/GitHub/RepMaster/Control/TimerBox.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Control.TimerBox.xaml
@@ -46,6 +52,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Popup.SeriesEditPopup.xaml
 build_metadata.AdditionalFiles.TargetPath = Popup/SeriesEditPopup.xaml
 build_metadata.AdditionalFiles.RelativePath = Popup/SeriesEditPopup.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/Resources/Styles/AppStyles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Resources.Styles.AppStyles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/AppStyles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/AppStyles.xaml
 
 [/Users/ilyestourki/Documents/GitHub/RepMaster/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
