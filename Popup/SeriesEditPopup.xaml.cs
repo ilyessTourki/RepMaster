@@ -10,7 +10,7 @@ using Mopups.Services;
 public partial class SeriesEditPopup 
 {
     private MuscleDetailsVM muscleDetailsVM = ServiceHelper.GetService<MuscleDetailsVM>();
-    public ObservableCollection<Repetition> selectedRepetition {get;set;}= new ObservableCollection<Repetition>();
+    public List<Repetition> selectedRepetition {get;set;}= new List<Repetition>();
 	public ICommand addItem {get;set;}
 	public ICommand deletItem {get;set;}
 	public SeriesEditPopup(ObservableCollection<Repetition> repetitions)

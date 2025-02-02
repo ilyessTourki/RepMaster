@@ -4,6 +4,7 @@ using TrainSheet.Model.Enum;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using TrainSheet.Utilities;
+using TrainSheet.Model.ServiceModel;
 
 public partial class ExercicesPage : ContentPage
 {

@@ -25,7 +25,7 @@
                     BorderColor="White"
                    >
                         <Grid VerticalOptions="CenterAndExpand"
-                        HeightRequest="120"
+                        HorizontalOptions="FillAndExpand"
                         BackgroundColor="Black">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="0.6*"/>
@@ -41,14 +41,22 @@
                            HorizontalTextAlignment="Center"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="CenterAndExpand"/>
-                            <Image
-                                    Grid.Column="1"
-                                    Source="{Binding image}"
-                                    HeightRequest="120"
+                                <Frame HeightRequest="120"
                                     VerticalOptions="Center"
                                     WidthRequest="160"
                                     HorizontalOptions="EndAndExpand"
-                                    Aspect="AspectFill" />
+                                    CornerRadius="10"
+                                    Grid.Column="1"
+                                    BorderColor="Transparent">
+                                    <Image
+                                    Source="{Binding image}"
+                                     WidthRequest="160"
+                                    HeightRequest="120"
+                                    Aspect="AspectFill"
+                                    />
+
+                                </Frame>
+                            
                         </Grid>
 
                         <Frame.GestureRecognizers>

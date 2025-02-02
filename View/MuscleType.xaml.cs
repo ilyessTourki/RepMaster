@@ -1,8 +1,12 @@
 
+using System.Diagnostics;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using TrainSheet.Model;
 using TrainSheet.Model.Enum;
+using TrainSheet.Model.ServiceModel;
+using static TrainSheet.Utilities.Utilities;
+using static TrainSheet.Utilities.Constants;
 
 namespace TrainSheet.View;
 
@@ -37,5 +41,17 @@ public partial class MuscleType : ContentPage
     private async Task GoToMuscleExercices(MuscleEnum muscle)
     {
         await Navigation.PushAsync(new ExercicesPage(muscle));
+    }
+    protected async override void OnAppearing()
+    {
+        muscleCategDB.InitializeAsync(SQLiteDataAccessPath);
+        List<MuscleCategory> listMuscleCategory = new List<MuscleCategory>();
+
+        listMuscleCategory = await muscleCategDB.GetAllAsync();
+        Debug.WriteLine(listMuscleCategory);
+        //MuscleCategory assistedBarChestExo = assistedBarChest;
+        //await muscleCategDB.SaveAsync(assistedBarChestExo);
+
+
     }
 }

@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Globalization;
 using TrainSheet.Model;
+using TrainSheet.Model.ServiceModel;
+
 namespace TrainSheet.Utilities.Converters;
 
 public class IndexToDisplayConverter : IValueConverter

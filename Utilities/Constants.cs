@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using TrainSheet.Model;
 using TrainSheet.Model.Enum;
+using TrainSheet.Model.ServiceModel;
 
 namespace TrainSheet.Utilities;
 
@@ -16,19 +17,19 @@ public static class Constants
         image = "assistedbarchest.png",
         bestRepetition = new Repetition{weight=1,repetion=1},
         bestWeight = 2,
-        lastRepetition = new ObservableCollection<ObservableCollection<Repetition>>
+        lastRepetition = new List<List<Repetition>>
         {
-            new ObservableCollection<Repetition>{
+            new List<Repetition>{
                 new Repetition{weight=2,repetion=2},
                 new Repetition{weight=3,repetion=3},
                 new Repetition{weight=2,repetion=2},
                 new Repetition{weight=3,repetion=3},
             },
-            new ObservableCollection<Repetition>{
+            new List<Repetition>{
                 new Repetition{weight=2,repetion=2},
                 new Repetition{weight=3,repetion=3},
             },
-            new ObservableCollection<Repetition>{
+            new List<Repetition>{
                 new Repetition{weight=2,repetion=2},
             },
         }
@@ -40,17 +41,17 @@ public static class Constants
         image = "assistedbarupchest.png",
         bestRepetition = new Repetition{weight=1,repetion=1},
         bestWeight  = 20,
-        lastRepetition = new ObservableCollection<ObservableCollection<Repetition>>
+        lastRepetition = new List<List<Repetition>>
         {
-            new ObservableCollection<Repetition>{
+            new List<Repetition>{
                 new Repetition{weight=2,repetion=2},
                 new Repetition{weight=3,repetion=3},
             },
-            new ObservableCollection<Repetition>{
+            new List<Repetition>{
                 new Repetition{weight=2,repetion=2},
                 new Repetition{weight=3,repetion=3},
             },
-            new ObservableCollection<Repetition>{
+            new List<Repetition>{
                 new Repetition{weight=2,repetion=2},
             },
         }

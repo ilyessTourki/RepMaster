@@ -1,58 +1,112 @@
-﻿using SQLite;
-using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using System.Security.Permissions;
+using SQLite;
+using TrainSheet.Interface;
 
-public class DatabaseService
+namespace TrainSheet.Service
 {
-    private readonly SQLiteAsyncConnection _database;
-
-    // Constructor: Initialize database connection
-    public DatabaseService(string dbName, string password)
+    public class SQLiteDataAccess<T> where T : class, IPrimaryKey, new()
     {
-        // Define the database path
-        string dbPath = Path.Combine(FileSystem.AppDataDirectory, dbName);
+        private SQLiteAsyncConnection _database;
 
-        // Create the SQLite connection with encryption
-        var options = new SQLiteConnectionString(dbPath, true, key: password);
 
-        _database = new SQLiteAsyncConnection(options);
-    }
+        public SQLiteDataAccess()
+        {
+        }
+        public void InitializeAsync(string dbPath)
+        {
+            _database = InitializeDatabaseAsync(dbPath);
+        }
+        private SQLiteAsyncConnection InitializeDatabaseAsync(string dbPath)
+        {
+            var password = "MySecurePassword123!";
+            if (string.IsNullOrEmpty(password))
+            {
+                throw new Exception("Secure password for SQLCipher is not set.");
+            }
 
-    // Create the table (only once for the given type)
-    public async Task CreateTableAsync<T>() where T : new()
-    {
-        await _database.CreateTableAsync<T>();
-    }
+            var options = new SQLiteConnectionString(dbPath, true, key: password);
+            var connection = new SQLiteAsyncConnection(options);
+            try
+            {
+                connection.CreateTableAsync<T>().Wait();
+            }
+            catch (SQLiteException ex)
+            {
+                Console.WriteLine("SQLiteException: " + ex.Message);
+            }
+            catch (FileNotFoundException ex)
+            {
+                Console.WriteLine("FileNotFoundException: " + ex.Message);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                Console.WriteLine("DirectoryNotFoundException: " + ex.Message);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                Console.WriteLine("UnauthorizedAccessException: " + ex.Message);
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine("IOException: " + ex.Message);
+            }
+            return connection;
+        }
 
-    // Insert a record
-    public async Task<int> InsertAsync<T>(T item) where T : new()
-    {
-        return await _database.InsertAsync(item);
-    }
+        public async Task<List<T>> GetAllAsync()
+        {
+            return await _database.Table<T>().ToListAsync();
+        }
+        public async Task<ObservableCollection<T>> GetAllObservableAsync()
+        {
+            List<T> items = await _database.Table<T>().ToListAsync();
+            return new ObservableCollection<T>(items);
+        }
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await _database.Table<T>().Where(x => x.ID == id).FirstOrDefaultAsync();
+        }
+        public async Task<int> SaveAsync(T item)
+        {
+            if (item.ID != 0)
+            {
+                return await _database.UpdateAsync(item);
+            }
+            else
+            {
+                return await _database.InsertAsync(item);
+            }
+        }
+        public Task<int> SavePermissionStateAsync(PermissionState permission)
+        {
+            List<PermissionState> l = new List<PermissionState>();
+            l = _database.Table<PermissionState>().ToListAsync().Result;
+            if (l.Count == 3)
+            {
+                return _database.UpdateAsync(permission);
+            }
+            else
+            {
+                return _database.InsertAsync(permission);
+            }
+        }
+        public async Task<int> DeleteAllAsync()
+        {
+            return await _database.DeleteAllAsync<T>();
+        }
+        public async Task<int> DeleteAsync(T item)
+        {
+            return await _database.DeleteAsync(item);
+        }
+        public void ResetAutoIncrement()
+        {
+            //When deleting items and reinsert (e.g in programs table)
+            //they shoud have the same id as before for Statistics
+            //to do that you need to Drop and Recreate Table
+            _database.DropTableAsync<T>().Wait();
+            _database.CreateTableAsync<T>().Wait();
+        }
 
-    // Update a record
-    public async Task<int> UpdateAsync<T>(T item) where T : new()
-    {
-        return await _database.UpdateAsync(item);
-    }
-
-    // Delete a record
-    public async Task<int> DeleteAsync<T>(T item) where T : new()
-    {
-        return await _database.DeleteAsync(item);
-    }
-
-    // Get all records
-    public async Task<List<T>> GetAllAsync<T>() where T : new()
-    {
-        return await _database.Table<T>().ToListAsync();
-    }
-
-    // Query with a condition
-    public async Task<List<T>> QueryAsync<T>(string query, params object[] args) where T : new()
-    {
-        return await _database.QueryAsync<T>(query, args);
     }
 }

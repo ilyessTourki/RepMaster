@@ -81,6 +81,8 @@
 	  <Folder Include="Resources\Images\legs\" />
 	  <Folder Include="Service\" />
 	  <Folder Include="Control\" />
+	  <Folder Include="Model\ServiceModel\" />
+	  <Folder Include="Interface\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -125,5 +127,9 @@
 	  <BundleResource Include="Resources\Images\start.png" />
 	  <BundleResource Include="Resources\Images\pause.png" />
 	  <BundleResource Include="Resources\Images\restart.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Model\ServiceModel\" />
+	  <None Remove="Interface\" />
 	</ItemGroup>
 </Project>

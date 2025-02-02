@@ -1,11 +1,5 @@
 namespace TrainSheet.View;
-
-using System.Collections.ObjectModel;
-using System.Data;
-using System.Diagnostics;
-using System.Windows.Input;
-using Mopups.Services;
-using TrainSheet.Model;
+using TrainSheet.Model.ServiceModel;
 using TrainSheet.Popup;
 using TrainSheet.Utilities;
 using TrainSheet.ViewModel;

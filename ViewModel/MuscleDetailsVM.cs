@@ -5,6 +5,7 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using Mopups.Services;
 using TrainSheet.Model;
+using TrainSheet.Model.ServiceModel;
 using TrainSheet.Popup;
 using TrainSheet.Utilities;
 
@@ -76,7 +77,7 @@ namespace TrainSheet.ViewModel
             SetSetNumber();
             UpdateBestRepetition();
         }
-        public void UpdateRepetitions(ObservableCollection<Repetition> selectedRepetition)
+        public void UpdateRepetitions(List<Repetition> selectedRepetition)
         {
             if (repetitionIndex >= 0 && machineTrain.lastRepetition[repetitionIndex] != null)
             {
@@ -84,7 +85,7 @@ namespace TrainSheet.ViewModel
             }
             else if(repetitionIndex == -1)
             {
-                List<ObservableCollection<Repetition>> lastRepetitions = new List<ObservableCollection<Repetition>>();
+                List<List<Repetition>> lastRepetitions = new List<List<Repetition>>();
                 if(machineTrain.lastRepetition != null)
                 {
                     lastRepetitions = machineTrain.lastRepetition.ToList();
@@ -92,7 +93,7 @@ namespace TrainSheet.ViewModel
                 }
                 else
                 {
-                    machineTrain.lastRepetition = new ObservableCollection<ObservableCollection<Repetition>>();
+                    machineTrain.lastRepetition = new List<List<Repetition>>();
                 }
                 lastRepetitions.Add(selectedRepetition);
                 
@@ -106,7 +107,7 @@ namespace TrainSheet.ViewModel
             SetBestRepetition(selectedRepetition);
             OnPropertyChanged(nameof(machineTrain.lastRepetition));
         }
-        private void SetBestRepetition(ObservableCollection<Repetition> selectedRepetition)
+        private void SetBestRepetition(List<Repetition> selectedRepetition)
         {
             int bestWeight = 0;
             Repetition bestRepetition = new Repetition { weight=0,repetion=0};
