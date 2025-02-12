@@ -18,7 +18,7 @@ public partial class MuscleType : ContentPage
 
     public MuscleType()
     {
-        InitializeComponent();
+        InitializeComponent(); 
         muscles = new List<Muscle> {
             new Muscle{ muscleEnum= MuscleEnum.Pec,     image ="pec.png" },
             new Muscle{ muscleEnum= MuscleEnum.Back,    image ="back.png" },
@@ -44,14 +44,28 @@ public partial class MuscleType : ContentPage
     }
     protected async override void OnAppearing()
     {
-        muscleCategDB.InitializeAsync(SQLiteDataAccessPath);
-        List<MuscleCategory> listMuscleCategory = new List<MuscleCategory>();
-
-        listMuscleCategory = await muscleCategDB.GetAllAsync();
-        Debug.WriteLine(listMuscleCategory);
-        //MuscleCategory assistedBarChestExo = assistedBarChest;
-        //await muscleCategDB.SaveAsync(assistedBarChestExo);
-
-
+        await SavePecExercices(pecCategDB);
+    }
+    private async Task SavePecExercices(Service.SQLiteDataAccess<MuscleCategory> muscleCateg)
+    {
+        muscleCateg.InitializeAsync(SQLiteDataAccessPath);
+        var listPecExercices = await muscleCateg.GetAllAsync();
+        if(!listPecExercices.Any())
+        {
+            foreach (var pecExo in PecExercices)
+            {
+                await muscleCateg.SaveAsync(pecExo);
+            }
+        }
+        else if (listPecExercices.Count != PecExercices.Count)
+        {
+            foreach (var pecExo in PecExercices)
+            {
+                if (!listPecExercices.Any(b => b.name == pecExo.name)) 
+                {
+                    await muscleCateg.SaveAsync(pecExo); 
+                }
+            }
+        }
     }
 }

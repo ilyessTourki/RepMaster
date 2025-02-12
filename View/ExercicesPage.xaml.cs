@@ -5,6 +5,7 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using TrainSheet.Utilities;
 using TrainSheet.Model.ServiceModel;
+using static TrainSheet.Utilities.Utilities;
 
 public partial class ExercicesPage : ContentPage
 {
@@ -16,7 +17,6 @@ public partial class ExercicesPage : ContentPage
 		InitializeComponent();
 		muscle = muscleEx;
         exerciceDetail = new AsyncRelayCommand<MuscleCategory>(GoToExerciceDetail);
-        SetMuscleExercices();
 		var horizontalLayout = new GridItemsLayout(1, ItemsLayoutOrientation.Vertical)
             {
                 VerticalItemSpacing = 4,
@@ -25,12 +25,16 @@ public partial class ExercicesPage : ContentPage
 		MyCollectionView.ItemsLayout = horizontalLayout;
 		BindingContext = this;
 	}
-	private void SetMuscleExercices()
+    protected async override void OnAppearing()
+    {
+        await SetMuscleExercices();
+    }
+    private async Task SetMuscleExercices()
 	{
 		switch (muscle)
 		{
 			case MuscleEnum.Pec:
-                musclceExercices = Constants.PecExercices;
+                musclceExercices = await pecCategDB.GetAllAsync();
                 break;
             case MuscleEnum.Frontarms:
                 musclceExercices = Constants.FrontArmsExercices;

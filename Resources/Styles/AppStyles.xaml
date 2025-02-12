@@ -5,11 +5,7 @@
 
     <!--Image-->
     <Style x:Key="DetailImage" TargetType="Image">
-        <Setter Property="HeightRequest" Value="200" />
-        <Setter Property="WidthRequest" Value="300" />
         <Setter Property="Aspect" Value="AspectFit" />
-        <Setter Property="HorizontalOptions" Value="Center" />
-        <Setter Property="Margin" Value="0,10" />
     </Style>
 
     <!--StackLayout-->
@@ -28,6 +24,14 @@
         <Setter Property="Padding" Value="0" />
         <Setter Property="Margin" Value="5" />
         <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="BorderColor" Value="White" />
+    </Style>
+    <Style x:Key="DetailImageFrame" TargetType="Frame">
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="Margin" Value="0,10" />
+        <Setter Property="Padding" Value="3,1" />
+        <Setter Property="HeightRequest" Value="200" />
+        <Setter Property="WidthRequest" Value="300" />
         <Setter Property="BorderColor" Value="White" />
     </Style>
 

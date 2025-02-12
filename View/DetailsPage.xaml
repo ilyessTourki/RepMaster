@@ -16,8 +16,19 @@
             <control:BackButton/>
           
             <!-- Image -->
-            <Image  Source="{Binding machineTrain.image}"
-                    Style="{StaticResource Key=DetailImage}"/>
+            <Frame Style="{StaticResource Key=DetailImageFrame}">
+                <Image  Source="{Binding machineTrain.image}"
+                        Style="{StaticResource Key=DetailImage}"/>
+              <Frame.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="Black" Offset="0.0" />
+                    <GradientStop Color="Black" Offset="0.5" />  <!-- Halfway stop -->
+                    <GradientStop Color="#737373" Offset="0.5" />  <!-- Start new color -->
+                    <GradientStop Color="#737373" Offset="1.0" />
+                </LinearGradientBrush>
+            </Frame.Background>
+        </Frame>
+            
             
             <!-- Stats -->
             <StackLayout    Style="{StaticResource Key=StatsStack}">

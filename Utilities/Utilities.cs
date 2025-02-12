@@ -8,7 +8,7 @@ namespace TrainSheet.Utilities
 	{
 		//SQLite Data Access
 		public static string SQLiteDataAccessPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "permission.db3");
-		public static SQLiteDataAccess<MuscleCategory> muscleCategDB = new SQLiteDataAccess<MuscleCategory>();
+		public static SQLiteDataAccess<MuscleCategory> pecCategDB = new SQLiteDataAccess<MuscleCategory>();
     }
 }
 

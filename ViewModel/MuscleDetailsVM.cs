@@ -104,8 +104,10 @@ namespace TrainSheet.ViewModel
                 setsNumber.Add(setsNumber.Count + 1);
                 OnPropertyChanged(nameof(setsNumber));
             }
+            
             SetBestRepetition(selectedRepetition);
             OnPropertyChanged(nameof(machineTrain.lastRepetition));
+            Debug.WriteLine(machineTrain.lastRepetition);
         }
         private void SetBestRepetition(List<Repetition> selectedRepetition)
         {

@@ -1103,3 +1103,4 @@
 /Users/ilyestourki/Documents/GitHub/RepMaster/obj/Debug/net8.0-android/android/assets/SQLitePCLRaw.core.dll
 /Users/ilyestourki/Documents/GitHub/RepMaster/obj/Debug/net8.0-android/android/assets/SQLitePCLRaw.lib.e_sqlcipher.android.dll
 /Users/ilyestourki/Documents/GitHub/RepMaster/obj/Debug/net8.0-android/android/assets/SQLitePCLRaw.provider.e_sqlcipher.dll
+/Users/ilyestourki/Documents/GitHub/RepMaster/obj/Debug/net8.0-android/android/assets/Newtonsoft.Json.dll

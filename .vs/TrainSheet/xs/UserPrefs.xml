@@ -1,29 +1,31 @@
 ﻿<Properties StartupConfiguration="{00777D08-5931-4ABB-B53F-55C215E77C32}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
-  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="Android.pixel_5_-_api_33" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ilyestourki/Documents/GitHub/RepMaster/ViewModel/MuscleDetailsVM.cs" relfile="ViewModel/MuscleDetailsVM.cs" line="72" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
   <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TrainSheet.csproj">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="Android.pixel_5_-_api_33" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="View/MuscleType.xaml.cs">
     <Files>
+      <File FileName="Utilities/Constants.cs" />
+      <File FileName="View/MuscleType.xaml.cs" Line="22" Column="37" />
+      <File FileName="Utilities/Utilities.cs" />
+      <File FileName="View/ExercicesPage.xaml.cs" />
       <File FileName="View/DetailsPage.xaml" />
       <File FileName="Resources/Styles/AppStyles.xaml" />
-      <File FileName="View/ExercicesPage.xaml" Line="51" Column="55" />
-      <File FileName="Control/BackButton.xaml.cs" />
-      <File FileName="Control/TimerBox.xaml.cs" />
-      <File FileName="TrainSheet.csproj" Line="49" Column="65" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="TrainSheet" expanded="True">
-            <Node name="TrainSheet" selected="True">
-              <Node name="View" expanded="True" />
+          <Node name="TrainSheet">
+            <Node name="TrainSheet">
+              <Node name="Utilities" expanded="True" />
+              <Node name="View" expanded="True">
+                <Node name="MuscleType.xaml" expanded="True">
+                  <Node name="MuscleType.xaml.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="ViewModel" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -31,4 +33,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

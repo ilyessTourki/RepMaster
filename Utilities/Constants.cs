@@ -15,46 +15,46 @@ public static class Constants
         muscleType = MuscleEnum.Pec ,
         name = "Assisted Bar Chest",
         image = "assistedbarchest.png",
-        bestRepetition = new Repetition{weight=1,repetion=1},
-        bestWeight = 2,
-        lastRepetition = new List<List<Repetition>>
-        {
-            new List<Repetition>{
-                new Repetition{weight=2,repetion=2},
-                new Repetition{weight=3,repetion=3},
-                new Repetition{weight=2,repetion=2},
-                new Repetition{weight=3,repetion=3},
-            },
-            new List<Repetition>{
-                new Repetition{weight=2,repetion=2},
-                new Repetition{weight=3,repetion=3},
-            },
-            new List<Repetition>{
-                new Repetition{weight=2,repetion=2},
-            },
-        }
+        //bestRepetition = new Repetition{weight=1,repetion=1},
+        //bestWeight = 2,
+        //lastRepetition = new List<List<Repetition>>
+        //{
+        //    new List<Repetition>{
+        //        new Repetition{weight=2,repetion=2},
+        //        new Repetition{weight=3,repetion=3},
+        //        new Repetition{weight=2,repetion=2},
+        //        new Repetition{weight=3,repetion=3},
+        //    },
+        //    new List<Repetition>{
+        //        new Repetition{weight=2,repetion=2},
+        //        new Repetition{weight=3,repetion=3},
+        //    },
+        //    new List<Repetition>{
+        //        new Repetition{weight=2,repetion=2},
+        //    },
+        //}
     };
     public static MuscleCategory assistedBarUpChest = new MuscleCategory
     {
         muscleType = MuscleEnum.Pec ,
         name = "Assisted Bar Up Chest",
         image = "assistedbarupchest.png",
-        bestRepetition = new Repetition{weight=1,repetion=1},
-        bestWeight  = 20,
-        lastRepetition = new List<List<Repetition>>
-        {
-            new List<Repetition>{
-                new Repetition{weight=2,repetion=2},
-                new Repetition{weight=3,repetion=3},
-            },
-            new List<Repetition>{
-                new Repetition{weight=2,repetion=2},
-                new Repetition{weight=3,repetion=3},
-            },
-            new List<Repetition>{
-                new Repetition{weight=2,repetion=2},
-            },
-        }
+        //bestRepetition = new Repetition{weight=1,repetion=1},
+        //bestWeight  = 20,
+        //lastRepetition = new List<List<Repetition>>
+        //{
+        //    new List<Repetition>{
+        //        new Repetition{weight=2,repetion=2},
+        //        new Repetition{weight=3,repetion=3},
+        //    },
+        //    new List<Repetition>{
+        //        new Repetition{weight=2,repetion=2},
+        //        new Repetition{weight=3,repetion=3},
+        //    },
+        //    new List<Repetition>{
+        //        new Repetition{weight=2,repetion=2},
+        //    },
+        //}
     };
     public static MuscleCategory MachineDownChest = new MuscleCategory
     {
