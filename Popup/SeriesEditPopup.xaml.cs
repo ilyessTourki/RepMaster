@@ -6,13 +6,17 @@ using TrainSheet.Model;
 using TrainSheet.Utilities;
 using TrainSheet.ViewModel;
 using Mopups.Services;
+using System.Diagnostics;
+using CommunityToolkit;
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 
 public partial class SeriesEditPopup 
 {
     private MuscleDetailsVM muscleDetailsVM = ServiceHelper.GetService<MuscleDetailsVM>();
-    public List<Repetition> selectedRepetition {get;set;}= new List<Repetition>();
-	public ICommand addItem {get;set;}
-	public ICommand deletItem {get;set;}
+    public ObservableCollection<Repetition> selectedRepetition {get;set;}= new ObservableCollection<Repetition>();
+    public ICommand addItem { get; set; }
+    public ICommand deletItem {get;set;}
 	public SeriesEditPopup(ObservableCollection<Repetition> repetitions)
 	{
 		
@@ -41,8 +45,25 @@ public partial class SeriesEditPopup
 
     async void Confirm_Clicked(System.Object sender, System.EventArgs e)
     {
-        muscleDetailsVM.UpdateRepetitions(selectedRepetition);
-        await MopupService.Instance.PopAllAsync();
+		Debug.WriteLine(selectedRepetition);
+		bool isNullRepetetion = false;
+		foreach (var rep in selectedRepetition)
+		{
+			if(rep.repetion == 0 || rep.weight == 0)
+			{
+				isNullRepetetion = true;
+            }
+		}
+		if (!isNullRepetetion)
+		{
+            muscleDetailsVM.UpdateRepetitions(selectedRepetition.ToList());
+            await MopupService.Instance.PopAllAsync();
+		}
+		else
+		{
+            var toast = Toast.Make("One or more entries are still 0 !", ToastDuration.Long);
+            await toast.Show();
+        }
     }
 
     async void Cancel_Clicked(System.Object sender, System.EventArgs e)

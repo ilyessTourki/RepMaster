@@ -46,8 +46,9 @@ namespace TrainSheet.ViewModel
         public TimeSpan ElapsedTime => _timerService.ElapsedTime;
 
 
-        public ICommand ToggleTimerCommand  { get; }
-        public ICommand ResetTimerCommand   { get; }
+        public ICommand ToggleTimerCommand { get; }
+        public ICommand ResetTimerCommand { get; }
 
     }
 }
+

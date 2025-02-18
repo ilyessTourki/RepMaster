@@ -2,6 +2,7 @@
 using Mopups.Hosting;
 using TrainSheet.ViewModel;
 using TrainSheet.Service;
+using CommunityToolkit.Maui;
 #if ANDROID
 using Android.Content.Res;
 #endif
@@ -16,6 +17,7 @@ public static class MauiProgram
 		builder
 			.UseMauiApp<App>()
 			.ConfigureMopups()
+            .UseMauiCommunityToolkit()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

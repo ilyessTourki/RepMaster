@@ -1,28 +1,31 @@
 ﻿<Properties StartupConfiguration="{00777D08-5931-4ABB-B53F-55C215E77C32}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="Android.pixel_5_-_api_33" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="View/MuscleType.xaml.cs">
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2211EFCE-36FB-4202-8E12-5189096D6F95" />
+  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2211EFCE-36FB-4202-8E12-5189096D6F95" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../usr/local/share/dotnet/sdk/8.0.404/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets">
     <Files>
-      <File FileName="Utilities/Constants.cs" />
-      <File FileName="View/MuscleType.xaml.cs" Line="22" Column="37" />
-      <File FileName="Utilities/Utilities.cs" />
-      <File FileName="View/ExercicesPage.xaml.cs" />
-      <File FileName="View/DetailsPage.xaml" />
-      <File FileName="Resources/Styles/AppStyles.xaml" />
+      <File FileName="ViewModel/TimerBoxViewModel.cs" Line="7" Column="2" />
+      <File FileName="ViewModel/MuscleDetailsVM.cs" Line="110" Column="1" />
+      <File FileName="Popup/SeriesEditPopup.xaml" Line="39" Column="49" />
+      <File FileName="Popup/SeriesEditPopup.xaml.cs" Line="64" Column="69" />
+      <File FileName="MauiProgram.cs" Line="18" Column="22" />
+      <File FileName="../../../../../usr/local/share/dotnet/sdk/8.0.404/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" Line="266" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TrainSheet">
-            <Node name="TrainSheet">
+            <Node name="TrainSheet" selected="True">
+              <Node name="Model" expanded="True" />
+              <Node name="Popup" expanded="True">
+                <Node name="SeriesEditPopup.xaml" expanded="True" />
+              </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="Styles" expanded="True" />
+              </Node>
               <Node name="Utilities" expanded="True" />
               <Node name="View" expanded="True">
-                <Node name="MuscleType.xaml" expanded="True">
-                  <Node name="MuscleType.xaml.cs" selected="True" />
-                </Node>
+                <Node name="ExercicesPage.xaml" expanded="True" />
+                <Node name="MuscleType.xaml" expanded="True" />
               </Node>
               <Node name="ViewModel" expanded="True" />
               <Node name="App.xaml" expanded="True" />
@@ -32,8 +35,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

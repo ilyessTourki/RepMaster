@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "EYlQzfd6g1r2qvyIsGJsW8iOnrUVdkZQX12hNfoG6SlxruH+VvqoJFmqpKXv55DIUo+TlELleeBfBHP8L5GMqw==",
+  "dgSpecHash": "oUUbbvZ5uiyDQ0+8y4JuIBw3aKWVgY1wAqADAhmZU5x7Y6JcweUZfgYUSSZaqgWFunn6rv0btRKax2gXv/MI8g==",
   "success": true,
   "projectFilePath": "/Users/ilyestourki/Documents/GitHub/RepMaster/TrainSheet.csproj",
   "expectedPackageFiles": [
     "/Users/ilyestourki/.nuget/packages/asyncawaitbestpractices/6.0.4/asyncawaitbestpractices.6.0.4.nupkg.sha512",
+    "/Users/ilyestourki/.nuget/packages/communitytoolkit.maui/9.1.1/communitytoolkit.maui.9.1.1.nupkg.sha512",
+    "/Users/ilyestourki/.nuget/packages/communitytoolkit.maui.core/9.1.1/communitytoolkit.maui.core.9.1.1.nupkg.sha512",
     "/Users/ilyestourki/.nuget/packages/communitytoolkit.mvvm/8.3.2/communitytoolkit.mvvm.8.3.2.nupkg.sha512",
     "/Users/ilyestourki/.nuget/packages/googlegson/2.10.1.4/googlegson.2.10.1.4.nupkg.sha512",
     "/Users/ilyestourki/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",

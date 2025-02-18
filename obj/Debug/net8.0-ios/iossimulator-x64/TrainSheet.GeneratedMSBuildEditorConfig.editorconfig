@@ -1,0 +1,90 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property.TargetFramework = net8.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TrainSheet
+build_property.ProjectDir = /Users/ilyestourki/Documents/GitHub/RepMaster/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/Control/BackButton.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Control.BackButton.xaml
+build_metadata.AdditionalFiles.TargetPath = Control/BackButton.xaml
+build_metadata.AdditionalFiles.RelativePath = Control/BackButton.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/Control/TimerBox.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Control.TimerBox.xaml
+build_metadata.AdditionalFiles.TargetPath = Control/TimerBox.xaml
+build_metadata.AdditionalFiles.RelativePath = Control/TimerBox.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/Popup/SeriesEditPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Popup.SeriesEditPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Popup/SeriesEditPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Popup/SeriesEditPopup.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/Resources/Styles/AppStyles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Resources.Styles.AppStyles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/AppStyles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/AppStyles.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Colors.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/View/DetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.View.DetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View/DetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View/DetailsPage.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/View/ExercicesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.View.ExercicesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View/ExercicesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View/ExercicesPage.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/View/MuscleType.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.View.MuscleType.xaml
+build_metadata.AdditionalFiles.TargetPath = View/MuscleType.xaml
+build_metadata.AdditionalFiles.RelativePath = View/MuscleType.xaml

@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
+using Java.Util;
 using Mopups.Services;
 using TrainSheet.Model;
 using TrainSheet.Model.ServiceModel;
@@ -19,6 +20,7 @@ namespace TrainSheet.ViewModel
         public ICommand deleteSet { get; }
         public ICommand backButton { get; }
         public ObservableCollection<int> setsNumber { get; set; } = new ObservableCollection<int>();
+        public ObservableCollection<List<Repetition>> sets { get; set; } = new ObservableCollection<List<Repetition>>();
         private int repetitionIndex = 0;
         private INavigation Navigation;
 
@@ -34,9 +36,21 @@ namespace TrainSheet.ViewModel
         public void SetMuscle(MuscleCategory muscleCateg,INavigation navigation)
         {
             Navigation = navigation;
-            machineTrain = muscleCateg;
-            OnPropertyChanged(nameof(machineTrain));
+            setExercicesSets(muscleCateg);
             SetSetNumber();
+        }
+        private void setExercicesSets(MuscleCategory muscleCateg)
+        {
+            machineTrain = muscleCateg;
+            if(muscleCateg.lastRepetition != null && muscleCateg.lastRepetition.Count > 0)
+            {
+                foreach (var set in muscleCateg.lastRepetition)
+                {
+                    sets.Add(set);
+                }
+                OnPropertyChanged(nameof(sets));
+            }
+            OnPropertyChanged(nameof(machineTrain));
         }
         private void Edit_Clicke(ObservableCollection<Repetition> repetitions)
         {
@@ -79,35 +93,35 @@ namespace TrainSheet.ViewModel
         }
         public void UpdateRepetitions(List<Repetition> selectedRepetition)
         {
-            if (repetitionIndex >= 0 && machineTrain.lastRepetition[repetitionIndex] != null)
+            if (repetitionIndex >= 0 && sets[repetitionIndex] != null)
             {
-                machineTrain.lastRepetition[repetitionIndex] = selectedRepetition;
+                sets[repetitionIndex] = selectedRepetition;
             }
             else if(repetitionIndex == -1)
             {
                 List<List<Repetition>> lastRepetitions = new List<List<Repetition>>();
-                if(machineTrain.lastRepetition != null)
+                if(sets != null)
                 {
-                    lastRepetitions = machineTrain.lastRepetition.ToList();
-                    machineTrain.lastRepetition.Clear();
+                    lastRepetitions = sets.ToList();
+                    sets.Clear();
                 }
                 else
                 {
-                    machineTrain.lastRepetition = new List<List<Repetition>>();
+                    sets = new ObservableCollection<List<Repetition>>();
                 }
                 lastRepetitions.Add(selectedRepetition);
                 
                 foreach (var set in lastRepetitions)
                 {
-                    machineTrain.lastRepetition.Add(set);
+                    sets.Add(set);
                 }
                 setsNumber.Add(setsNumber.Count + 1);
                 OnPropertyChanged(nameof(setsNumber));
             }
             
             SetBestRepetition(selectedRepetition);
-            OnPropertyChanged(nameof(machineTrain.lastRepetition));
-            Debug.WriteLine(machineTrain.lastRepetition);
+            OnPropertyChanged(nameof(sets));
+            Debug.WriteLine(sets);
         }
         private void SetBestRepetition(List<Repetition> selectedRepetition)
         {

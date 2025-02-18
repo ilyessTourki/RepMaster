@@ -35,7 +35,8 @@
                 </Label> 
                 <ListView   ItemsSource="{Binding selectedRepetition}" 
                             RowHeight="70"
-                            Grid.Row="1">
+                            Grid.Row="1"
+                            SelectionMode="None">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

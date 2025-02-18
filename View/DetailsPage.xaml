@@ -125,7 +125,7 @@
                 </ListView>
 
                 <!-- Sets Values -->
-                <ListView   ItemsSource="{Binding machineTrain.lastRepetition}"
+                <ListView   ItemsSource="{Binding sets}"
                 RowHeight="100"
                 x:Name="repets"
                 Grid.Column="1">
@@ -134,8 +134,8 @@
                             <ViewCell>
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="0.3*" />
-                                        <ColumnDefinition Width="0.5*" />
+                                        <ColumnDefinition Width="0.2*" />
+                                        <ColumnDefinition Width="0.6*" />
                                         <ColumnDefinition Width="0.2*" />
                                     </Grid.ColumnDefinitions>
 
@@ -147,33 +147,39 @@
                                     Grid.Column="1">
                                         <CollectionView.ItemTemplate>
                                             <DataTemplate >
-                                                <StackLayout Orientation="Horizontal"
-                                                            VerticalOptions="CenterAndExpand"
-                                                            HorizontalOptions="CenterAndExpand">
-                                                    <Label 
-                                                           FontAttributes="Bold"
-                                                           FontSize="15">
-                                                        <Label.FormattedText>
-                                                            <FormattedString>
-                                                                <Span Text="{Binding repetion}" TextColor="White"/>
-                                                                <Span Text="  reps" TextColor="#bfbfbf" FontSize="11"/>
-                                                            </FormattedString>
-                                                        </Label.FormattedText>
-                                                    </Label>
-                                                    <StackLayout WidthRequest="15"
-                                                                 HeightRequest="15"/>
-                                                    <Label 
-                                                           FontAttributes="Bold"
-                                                           FontSize="15">
-                                                        <Label.FormattedText>
-                                                            <FormattedString>
-                                                                <Span Text="{Binding weight}" TextColor="White"/>
-                                                                <Span Text="  Kg" TextColor="#bfbfbf" FontSize="11"/>
-                                                            </FormattedString>
-                                                        </Label.FormattedText>
-                                                    </Label>
+                                                <Grid   VerticalOptions="CenterAndExpand"
+                                                        HorizontalOptions="FillAndExpand">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="0.2*"/>
+                                                        <ColumnDefinition Width="0.2*"/>
+                                                        <ColumnDefinition Width="0.05*"/>
+                                                        <ColumnDefinition Width="0.2*"/>
+                                                        <ColumnDefinition Width="0.2*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="20"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Label Text="{Binding repetion}"
+                                                           TextColor="White"
+                                                           HorizontalTextAlignment="End"
+                                                           Style="{StaticResource repets}"/>
+                                                    <Label Text=" reps"
+                                                           HorizontalTextAlignment="Start"
+                                                           TextColor="#bfbfbf"
+                                                           Grid.Column="1"
+                                                           Style="{StaticResource repets}"/>
+                                                    <Label HorizontalTextAlignment="End"
+                                                           Text="{Binding weight}"
+                                                           TextColor="White"
+                                                           Grid.Column="3"
+                                                           Style="{StaticResource repets}"/>
+                                                    <Label HorizontalTextAlignment="Start"
+                                                           Text=" kg"
+                                                           TextColor="#bfbfbf"
+                                                           Grid.Column="4"
+                                                           Style="{StaticResource repets}"/>
 
-                                                </StackLayout>
+                                                </Grid>
                                             </DataTemplate>
                                         </CollectionView.ItemTemplate>
                                     </CollectionView>

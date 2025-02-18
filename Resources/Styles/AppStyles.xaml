@@ -69,4 +69,9 @@
         <Setter Property="FontFamily" Value="Material" />
         <Setter Property="HorizontalOptions" Value="EndAndExpand" />
     </Style>
+    <Style x:Key="repets" TargetType="Label">
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
 </ResourceDictionary>
