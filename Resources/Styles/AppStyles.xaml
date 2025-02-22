@@ -74,4 +74,10 @@
         <Setter Property="FontSize" Value="15" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
     </Style>
+    <!--Span-->
+    <Style x:Key="StatUnitSpan" TargetType="Span">
+        <Setter Property="FontSize" Value="13" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontAttributes" Value="Bold" />
+    </Style>
 </ResourceDictionary>

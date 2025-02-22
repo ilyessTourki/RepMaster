@@ -2,13 +2,14 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
+using AndroidX.Lifecycle;
 using CommunityToolkit.Mvvm.Input;
 using Java.Util;
 using Mopups.Services;
 using TrainSheet.Model;
 using TrainSheet.Model.ServiceModel;
 using TrainSheet.Popup;
-using TrainSheet.Utilities;
+using static TrainSheet.Utilities.Utilities;
 
 namespace TrainSheet.ViewModel
 {
@@ -27,8 +28,8 @@ namespace TrainSheet.ViewModel
 
         public MuscleDetailsVM()
 		{
-            exerciceEditor  = new Command<ObservableCollection<Repetition>>(Edit_Clicke);
-            deleteSet       = new Command<ObservableCollection<Repetition>>(DeleteSetClicked);
+            exerciceEditor  = new Command<List<Repetition>>(Edit_Clicke);
+            deleteSet       = new AsyncRelayCommand<List<Repetition>>(DeleteSetClicked);
             addItem         = new Command(addItemToList);
             backButton      = new AsyncRelayCommand(navigateBackward);
 
@@ -52,16 +53,21 @@ namespace TrainSheet.ViewModel
             }
             OnPropertyChanged(nameof(machineTrain));
         }
-        private void Edit_Clicke(ObservableCollection<Repetition> repetitions)
+        private void Edit_Clicke(List<Repetition> repetitions)
         {
-            repetitionIndex = machineTrain.lastRepetition.ToList().FindIndex(rep => rep.Equals(repetitions));
-            MopupService.Instance.PushAsync(new SeriesEditPopup(repetitions));
+            repetitionIndex = sets.ToList().FindIndex(rep => rep.Equals(repetitions));
+            var exoRepetitions = new ObservableCollection<Repetition>();
+            foreach (var rep in repetitions)
+            {
+                exoRepetitions.Add(rep);
+            }
+            MopupService.Instance.PushAsync(new SeriesEditPopup(exoRepetitions));
         }
         private void SetSetNumber()
         {
-            if (machineTrain != null && machineTrain.lastRepetition != null)
+            if (sets != null)
             {
-                for (int i = 1; i < machineTrain.lastRepetition.Count + 1; i++)
+                for (int i = 1; i < sets.Count + 1; i++)
                 {
                     setsNumber.Add(i);
                 }
@@ -82,16 +88,17 @@ namespace TrainSheet.ViewModel
             };
             MopupService.Instance.PushAsync(new SeriesEditPopup(newrepetition));
         }
-        private void DeleteSetClicked(ObservableCollection<Repetition> repetitions)
+        private async Task DeleteSetClicked(List<Repetition> repetitions)
         {
-            int setIndex = machineTrain.lastRepetition.ToList().FindIndex(rep => rep.Equals(repetitions));
-            machineTrain.lastRepetition.RemoveAt(setIndex);
-            OnPropertyChanged(nameof(machineTrain.lastRepetition));
+            int setIndex = sets.ToList().FindIndex(rep => rep.Equals(repetitions));
+            sets.RemoveAt(setIndex);
+            OnPropertyChanged(nameof(sets));
             setsNumber.Clear();
             SetSetNumber();
             UpdateBestRepetition();
+            await SaveExerciceReps();
         }
-        public void UpdateRepetitions(List<Repetition> selectedRepetition)
+        public async Task UpdateRepetitions(List<Repetition> selectedRepetition)
         {
             if (repetitionIndex >= 0 && sets[repetitionIndex] != null)
             {
@@ -118,33 +125,17 @@ namespace TrainSheet.ViewModel
                 setsNumber.Add(setsNumber.Count + 1);
                 OnPropertyChanged(nameof(setsNumber));
             }
-            
-            SetBestRepetition(selectedRepetition);
+
+            UpdateBestRepetition();
             OnPropertyChanged(nameof(sets));
-            Debug.WriteLine(sets);
-        }
-        private void SetBestRepetition(List<Repetition> selectedRepetition)
-        {
-            int bestWeight = 0;
-            Repetition bestRepetition = new Repetition { weight=0,repetion=0};
-            foreach (var set in selectedRepetition)
-            {
-                if (set.weight > bestWeight)
-                    bestWeight = set.weight;
-                if (set.repetion > bestRepetition.repetion)
-                    bestRepetition = set;
-            }
-            if (bestWeight > machineTrain.bestWeight)
-                machineTrain.bestWeight = bestWeight;
-            if (machineTrain.bestRepetition== null || bestRepetition.repetion > machineTrain.bestRepetition.repetion)
-                machineTrain.bestRepetition = bestRepetition;
-            OnPropertyChanged(nameof(machineTrain));
+
+            await SaveExerciceReps();
         }
         private void UpdateBestRepetition()
         {
             int bestWeight = 0;
             Repetition bestRepetition = new Repetition { weight = 0, repetion = 0 };
-            foreach (var set in machineTrain.lastRepetition)
+            foreach (var set in sets)
             {
                 foreach (var repet in set)
                 {
@@ -161,6 +152,15 @@ namespace TrainSheet.ViewModel
         private async Task navigateBackward()
         {
             await Navigation.PopAsync();
+        }
+        private async Task SaveExerciceReps()
+        {
+            if(sets != null && sets.Count > 0)
+            {
+                machineTrain.lastRepetition = new List<List<Repetition>>(sets);
+            }
+            await pecCategDB.SaveAsync(machineTrain);
+            
         }
     }
 }

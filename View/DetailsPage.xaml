@@ -70,9 +70,9 @@
                             <Label  Style="{StaticResource Key=StatUnit}">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="/" />
-                                        <Span Text="{Binding machineTrain.bestRepetition.weight}"/>
-                                        <Span Text=" kg"/>
+                                        <Span Text="/" Style="{StaticResource Key=StatUnitSpan}"/>
+                                        <Span Text="{Binding machineTrain.bestRepetition.weight}" Style="{StaticResource Key=StatUnitSpan}"/>
+                                        <Span Text=" kg" Style="{StaticResource Key=StatUnitSpan}"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
