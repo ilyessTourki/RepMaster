@@ -7,6 +7,7 @@ namespace TrainSheet.Model
 	{
         public MuscleEnum muscleEnum { get; set; }
         public string image { get; set; }
+        public string name { get; set; }
     }
 }
 

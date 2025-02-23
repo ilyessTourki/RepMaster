@@ -43,7 +43,8 @@ namespace TrainSheet.ViewModel
         private void setExercicesSets(MuscleCategory muscleCateg)
         {
             machineTrain = muscleCateg;
-            if(muscleCateg.lastRepetition != null && muscleCateg.lastRepetition.Count > 0)
+            sets.Clear();
+            if (muscleCateg.lastRepetition != null && muscleCateg.lastRepetition.Count > 0)
             {
                 foreach (var set in muscleCateg.lastRepetition)
                 {
@@ -65,6 +66,7 @@ namespace TrainSheet.ViewModel
         }
         private void SetSetNumber()
         {
+            setsNumber = new ObservableCollection<int>();
             if (sets != null)
             {
                 for (int i = 1; i < sets.Count + 1; i++)

@@ -21,12 +21,10 @@
                 <DataTemplate>
                     <Frame   CornerRadius="10"
                     Padding="2"
-                    BackgroundColor="Black"
-                    BorderColor="White"
+                    BorderColor="Black"
                    >
                         <Grid VerticalOptions="CenterAndExpand"
-                        HorizontalOptions="FillAndExpand"
-                        BackgroundColor="Black">
+                        HorizontalOptions="FillAndExpand">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="0.6*"/>
                                 <ColumnDefinition Width="0.4*"/>
@@ -63,7 +61,15 @@
                             <TapGestureRecognizer Command="{Binding BindingContext.exerciceDetail, Source={x:Reference ExercicesDPage}}"
                                               CommandParameter="{Binding}"/>
                         </Frame.GestureRecognizers>
+                             <Frame.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#ffd500" Offset="0.0"/>
+                                    <GradientStop Color="Black" Offset="0.5"/> 
+            <GradientStop Color="Black" Offset="1.0"/>
+        </LinearGradientBrush>
+    </Frame.Background>
                     </Frame>
+
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
