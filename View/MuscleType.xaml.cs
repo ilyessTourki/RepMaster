@@ -29,7 +29,6 @@ public partial class MuscleType : ContentPage
             new Muscle{ name = "LEGS"       ,muscleEnum= MuscleEnum.Legs,    image ="legs.png" },
             new Muscle{ name = "ABS"        ,muscleEnum= MuscleEnum.Abs,     image ="abs.png" }};
         muscleExercices = new AsyncRelayCommand<MuscleEnum>(GoToMuscleExercices);
-        BindingContext = this;
         var horizontalLayout = new GridItemsLayout(1, ItemsLayoutOrientation.Vertical)
         {
             VerticalItemSpacing = 4,

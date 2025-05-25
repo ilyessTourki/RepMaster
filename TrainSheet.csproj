@@ -76,6 +76,7 @@
 		<PackageReference Include="sqlite-net-sqlcipher" Version="1.9.172" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
+		<PackageReference Include="Sharpnado.Tabs.Maui" Version="3.0.1" />
 	</ItemGroup>
 
 	<ItemGroup>

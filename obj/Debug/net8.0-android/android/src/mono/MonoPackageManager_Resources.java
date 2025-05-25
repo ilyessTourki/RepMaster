@@ -25,6 +25,8 @@ public class MonoPackageManager_Resources {
 		"Microsoft.Maui.Graphics.dll",
 		"Mopups.dll",
 		"Newtonsoft.Json.dll",
+		"Maui.Tabs.dll",
+		"Sharpnado.TaskMonitor.dll",
 		"SQLite-net.dll",
 		"SQLitePCLRaw.batteries_v2.dll",
 		"SQLitePCLRaw.core.dll",

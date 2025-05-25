@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainSheet.View.MainPage"
+             Title="MainPage"
+             xmlns:views="clr-namespace:TrainSheet.View"
+             xmlns:tabs="http://sharpnado.com"
+             x:Name="TabedPage"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
+    <FlexLayout Direction="Column"
+                VerticalOptions="FillAndExpand">
+        <tabs:ViewSwitcher  x:Name="MenuSwitcher"
+                            Margin="0"
+                            Animate="True"
+                            SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}"
+                            FlexLayout.Basis="93%">
+           
+            <tabs:LazyView x:TypeArguments="views:BodyPartsView"    x:Name="BodyPartsV"   Animate="True"  UseActivityIndicator="True"/>
+            <tabs:LazyView x:TypeArguments="views:WatchView"        x:Name="WatchV" />
+            <tabs:LazyView x:TypeArguments="views:ProfileView"      x:Name="ProfileV"/>
+        </tabs:ViewSwitcher>
+
+        <ContentView   FlexLayout.Basis="Auto">
+            <tabs:TabHostView   x:Name="TabSwitcher"
+                                Style="{StaticResource BottomTab}"
+                                SelectedIndex="{Binding Source={x:Reference MenuSwitcher}, Path=SelectedIndex, Mode=TwoWay}"
+                                SelectedTabIndexChanged="TabSwitcher_SelectedTabIndexChanged">
+                <tabs:BottomTabItem Style="{StaticResource BottomTabItems}" Label="Home">
+                    <tabs:BottomTabItem.IconImageSource>
+                            <FontImageSource    FontFamily="Material" Glyph="&#xEb43;" Size="Small"  Color="{StaticResource primaryColor}"/>
+                    </tabs:BottomTabItem.IconImageSource>
+                </tabs:BottomTabItem>
+                <tabs:BottomTabItem Style="{StaticResource BottomTabItems}" Label="Watch">
+                    <tabs:BottomTabItem.IconImageSource>
+                            <FontImageSource    FontFamily="Material" Glyph="&#xE425;" Size="Small"  Color="{StaticResource primaryColor}"/>
+                    </tabs:BottomTabItem.IconImageSource>
+                </tabs:BottomTabItem>
+                <tabs:BottomTabItem Style="{StaticResource BottomTabItems}" Label="Profile">
+                    <tabs:BottomTabItem.IconImageSource>
+                            <FontImageSource    FontFamily="Material" Glyph="&#xE7FD;" Size="Small"  Color="{StaticResource primaryColor}"/>
+                    </tabs:BottomTabItem.IconImageSource>
+                </tabs:BottomTabItem>
+            </tabs:TabHostView>
+        </ContentView>
+    </FlexLayout>
+</ContentPage>

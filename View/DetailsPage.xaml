@@ -19,11 +19,17 @@
             <Frame Style="{StaticResource Key=DetailImageFrame}">
                 <Image  Source="{Binding machineTrain.image}"
                         Style="{StaticResource Key=DetailImage}"/>
-        </Frame>
+            </Frame>
             
             
             <!-- Stats -->
-            <StackLayout    Style="{StaticResource Key=StatsStack}">
+            <Grid  HorizontalOptions="CenterAndExpand"
+                   WidthRequest="330"
+                   Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
 
                 <!--Best Lift-->
                 <Frame Style="{StaticResource Key=StatBox}">
@@ -46,7 +52,8 @@
                 </Frame>
 
                 <!--Best repetition-->
-                <Frame Style="{StaticResource Key=StatBox}">
+                <Frame Style="{StaticResource Key=StatBox}"
+                       Grid.Column="1">
                     <StackLayout>
                         <StackLayout    Orientation="Horizontal"
                                         Margin="5">
@@ -72,7 +79,7 @@
                     </StackLayout>
                 </Frame>
 
-            </StackLayout>
+            </Grid>
 
             <!-- Table  Title-->
             <StackLayout    Orientation="Horizontal"

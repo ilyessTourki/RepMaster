@@ -3,6 +3,7 @@ using Mopups.Hosting;
 using TrainSheet.ViewModel;
 using TrainSheet.Service;
 using CommunityToolkit.Maui;
+using Sharpnado.Tabs;
 #if ANDROID
 using Android.Content.Res;
 #endif
@@ -18,6 +19,7 @@ public static class MauiProgram
 			.UseMauiApp<App>()
 			.ConfigureMopups()
             .UseMauiCommunityToolkit()
+			.UseSharpnadoTabs(loggerEnable:false)
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrainSheet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+d1635b0fff98b4c246a1c605ffc95bb28b67c07a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+3a944dd61ff5f10eb9873af846bb28bb721f79e4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrainSheet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrainSheet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

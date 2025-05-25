@@ -84,6 +84,10 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "Sharpnado.Tabs.Maui": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
             "sqlite-net-sqlcipher": {
               "target": "Package",
               "version": "[1.9.172, )"
@@ -146,6 +150,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "Sharpnado.Tabs.Maui": {
+              "target": "Package",
+              "version": "[3.0.1, )"
             },
             "sqlite-net-sqlcipher": {
               "target": "Package",
@@ -210,6 +218,10 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "Sharpnado.Tabs.Maui": {
+              "target": "Package",
+              "version": "[3.0.1, )"
+            },
             "sqlite-net-sqlcipher": {
               "target": "Package",
               "version": "[1.9.172, )"
@@ -251,7 +263,7 @@
         "android-x86": {
           "#import": []
         },
-        "iossimulator-x64": {
+        "iossimulator-arm64": {
           "#import": []
         },
         "maccatalyst-arm64": {

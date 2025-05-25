@@ -41,12 +41,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Control.TimerBo
 build_metadata.AdditionalFiles.TargetPath = Control/TimerBox.xaml
 build_metadata.AdditionalFiles.RelativePath = Control/TimerBox.xaml
 
-[/Users/ilyestourki/Documents/GitHub/RepMaster/MainPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.MainPage.xaml
-build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
-build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
-
 [/Users/ilyestourki/Documents/GitHub/RepMaster/Popup/SeriesEditPopup.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Popup.SeriesEditPopup.xaml
@@ -71,6 +65,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Resources.Style
 build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
 
+[/Users/ilyestourki/Documents/GitHub/RepMaster/View/BodyPartsView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.View.BodyPartsView.xaml
+build_metadata.AdditionalFiles.TargetPath = View/BodyPartsView.xaml
+build_metadata.AdditionalFiles.RelativePath = View/BodyPartsView.xaml
+
 [/Users/ilyestourki/Documents/GitHub/RepMaster/View/DetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.View.DetailsPage.xaml
@@ -83,8 +83,26 @@ build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.View.ExercicesP
 build_metadata.AdditionalFiles.TargetPath = View/ExercicesPage.xaml
 build_metadata.AdditionalFiles.RelativePath = View/ExercicesPage.xaml
 
+[/Users/ilyestourki/Documents/GitHub/RepMaster/View/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.View.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = View/MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = View/MainPage.xaml
+
 [/Users/ilyestourki/Documents/GitHub/RepMaster/View/MuscleType.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.View.MuscleType.xaml
 build_metadata.AdditionalFiles.TargetPath = View/MuscleType.xaml
 build_metadata.AdditionalFiles.RelativePath = View/MuscleType.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/View/ProfileView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.View.ProfileView.xaml
+build_metadata.AdditionalFiles.TargetPath = View/ProfileView.xaml
+build_metadata.AdditionalFiles.RelativePath = View/ProfileView.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/View/WatchView.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.View.WatchView.xaml
+build_metadata.AdditionalFiles.TargetPath = View/WatchView.xaml
+build_metadata.AdditionalFiles.RelativePath = View/WatchView.xaml

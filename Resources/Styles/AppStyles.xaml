@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tabs="http://sharpnado.com">
 
     <!--Image-->
     <Style x:Key="DetailImage" TargetType="Image">
@@ -9,20 +10,18 @@
     </Style>
 
     <!--StackLayout-->
-    <Style x:Key="StatsStack" TargetType="StackLayout">
-        <Setter Property="Orientation" Value="Horizontal" />
-        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
-        <Setter Property="Margin" Value="5,15" />
-    </Style>
+
+    <!--Grid-->
 
     <!--Frame-->
     <Style x:Key="StatBox" TargetType="Frame">
        <Setter Property="HasShadow" Value="False" />
         <Setter Property="CornerRadius" Value="10" />
         <Setter Property="HeightRequest" Value="100" />
-        <Setter Property="WidthRequest" Value="180" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
         <Setter Property="Padding" Value="0" />
-        <Setter Property="Margin" Value="5" />
+        <Setter Property="Margin" Value="1" />
         <Setter Property="BackgroundColor" Value="Black" />
         <Setter Property="BorderColor" Value="White" />
     </Style>
@@ -31,7 +30,7 @@
         <Setter Property="Margin" Value="0,10" />
         <Setter Property="Padding" Value="3,1" />
         <Setter Property="HeightRequest" Value="200" />
-        <Setter Property="WidthRequest" Value="300" />
+        <Setter Property="WidthRequest" Value="330" />
         <Setter Property="BorderColor" Value="White" />
         <Setter Property="BackgroundColor" Value="Black" />
     </Style>
@@ -49,6 +48,9 @@
         <Setter Property="VerticalTextAlignment" Value="Center" />
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="TextColor" Value="White" />
+        <Setter Property="LineBreakMode" Value="WordWrap" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="MaxLines" Value="2" />
     </Style>
     <Style x:Key="StatValue" TargetType="Label">
         <Setter Property="FontSize" Value="50" />
@@ -75,10 +77,29 @@
         <Setter Property="FontSize" Value="15" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
     </Style>
+
     <!--Span-->
     <Style x:Key="StatUnitSpan" TargetType="Span">
         <Setter Property="FontSize" Value="13" />
         <Setter Property="TextColor" Value="White" />
         <Setter Property="FontAttributes" Value="Bold" />
     </Style>
+
+    <!--Tab page Menu-->
+    <Style x:Key="BottomTabItems" TargetType="tabs:BottomTabItem">
+        <Setter Property="SelectedTabColor"     Value="{StaticResource Primary}" />
+        <Setter Property="UnselectedLabelColor" Value="#808080" />
+        <Setter Property="LabelSize"            Value="12" />
+        <Setter Property="UnselectedIconColor"  Value="#808080" />
+        <Setter Property="IconSize"             Value="24" />
+        <Setter Property="BackgroundColor"      Value="Transparent" />
+    </Style>
+     <Style x:Key="BottomTab" TargetType="tabs:TabHostView">
+        <Setter Property="HorizontalOptions"    Value="FillAndExpand" />
+        <Setter Property="HeightRequest"        Value="50" />
+        <Setter Property="BackgroundColor"      Value="#000000" />
+        <Setter Property="Orientation"          Value="Horizontal" />
+        <Setter Property="TabType"              Value="Fixed" />
+    </Style>
+
 </ResourceDictionary>

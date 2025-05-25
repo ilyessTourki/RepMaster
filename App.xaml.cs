@@ -9,6 +9,6 @@ public partial class App : Application
 		InitializeComponent();
 
 
-		MainPage = new NavigationPage(new MuscleType());
+		MainPage = new NavigationPage(new MainPage());
 	}
 }
