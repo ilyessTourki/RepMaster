@@ -9,9 +9,6 @@
              xmlns:control="clr-namespace:TrainSheet.Control">
     <ScrollView VerticalScrollBarVisibility="Always">
     <StackLayout InputTransparent="False">
-
-         <control:TimerBox/>
-        
         <!--Back Button-->
         <control:BackButton/>    
 <CollectionView  ItemsSource="{Binding musclceExercices}"
@@ -63,7 +60,7 @@
                         </Frame.GestureRecognizers>
                              <Frame.Background>
         <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#ffd500" Offset="0.0"/>
+            <GradientStop Color="#806a00" Offset="0.0"/>
                                     <GradientStop Color="Black" Offset="0.5"/> 
             <GradientStop Color="Black" Offset="1.0"/>
         </LinearGradientBrush>

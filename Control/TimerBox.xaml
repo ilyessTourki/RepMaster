@@ -2,13 +2,23 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrainSheet.Control.TimerBox">
-   <Grid    HorizontalOptions="FillAndExpand"
+    <StackLayout   VerticalOptions="Start"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="Red">
+        <Label HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"
+               Text="{Binding ElapsedTime, StringFormat='{0:hh\\:mm\\:ss}'}"
+               TextColor="White"
+               FontFamily="Horizon"
+                FontAttributes="Bold"
+               FontSize="30"/>
+        <Grid    
+                 VerticalOptions="EndAndExpand"
             HeightRequest="80"
             Margin="10,0">
        <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="0.1*"/>
-           <ColumnDefinition Width="0.8*"/>
-           <ColumnDefinition Width="0.1*"/>
+           <ColumnDefinition Width="0.5*"/>
+           <ColumnDefinition Width="0.5*"/>
        </Grid.ColumnDefinitions>
        <Frame   HeightRequest="40"
                 WidthRequest="40"
@@ -29,13 +39,7 @@
             </Frame.GestureRecognizers>
        </Frame>
        
-        <Label Grid.Column="1" HorizontalOptions="Center"
-               VerticalOptions="Center"
-               Text="{Binding ElapsedTime, StringFormat='{0:hh\\:mm\\:ss}'}"
-               TextColor="White"
-               FontFamily="Horizon"
-                FontAttributes="Bold"
-               FontSize="30"/>
+        
        <Frame   HeightRequest="40"
                 WidthRequest="40"
                 HorizontalOptions="Center"
@@ -44,7 +48,7 @@
                 BackgroundColor="Transparent"
                 CornerRadius="20"
                 Padding="0"
-                Grid.Column="2">
+                Grid.Column="1">
             <Label   Text="&#xe042;"
                     FontFamily="Material"
                     FontSize="25"
@@ -56,4 +60,5 @@
             </Frame.GestureRecognizers>
        </Frame>
     </Grid>
+    </StackLayout>
 </ContentView>

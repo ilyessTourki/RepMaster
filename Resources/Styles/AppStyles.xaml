@@ -22,8 +22,7 @@
         <Setter Property="VerticalOptions" Value="FillAndExpand" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="Margin" Value="1" />
-        <Setter Property="BackgroundColor" Value="Black" />
-        <Setter Property="BorderColor" Value="White" />
+        <Setter Property="BorderColor" Value="white" />
     </Style>
     <Style x:Key="DetailImageFrame" TargetType="Frame">
         <Setter Property="HorizontalOptions" Value="Center" />
@@ -31,7 +30,7 @@
         <Setter Property="Padding" Value="3,1" />
         <Setter Property="HeightRequest" Value="200" />
         <Setter Property="WidthRequest" Value="330" />
-        <Setter Property="BorderColor" Value="White" />
+        <Setter Property="BorderColor" Value="white" />
         <Setter Property="BackgroundColor" Value="Black" />
     </Style>
 

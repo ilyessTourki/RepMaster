@@ -19,6 +19,7 @@
             <Frame Style="{StaticResource Key=DetailImageFrame}">
                 <Image  Source="{Binding machineTrain.image}"
                         Style="{StaticResource Key=DetailImage}"/>
+                
             </Frame>
             
             
@@ -49,6 +50,13 @@
                                     Style="{StaticResource Key=StatUnit}"/>
                         </StackLayout>
                     </StackLayout>
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#806a00" Offset="0.0"/>
+                            <GradientStop Color="Black" Offset="0.7"/>
+                            <GradientStop Color="Black" Offset="1.0"/>
+                        </LinearGradientBrush>
+                    </Frame.Background>
                 </Frame>
 
                 <!--Best repetition-->
@@ -77,6 +85,13 @@
                             </Label>
                         </StackLayout>
                     </StackLayout>
+                    <Frame.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#806a00" Offset="0.0"/>
+                            <GradientStop Color="Black" Offset="0.7"/>
+                            <GradientStop Color="Black" Offset="1.0"/>
+                        </LinearGradientBrush>
+                    </Frame.Background>
                 </Frame>
 
             </Grid>
@@ -110,7 +125,8 @@
                                 <Label FontAttributes="Bold"
                            FontSize="16"
                            VerticalTextAlignment="Center"
-                           HorizontalTextAlignment="Center" >
+                           HorizontalTextAlignment="Center"
+                           BackgroundColor="Transparent">
                                     <Label.FormattedText>
                                         <FormattedString>
                                             <Span Text="Set " TextColor="White"/>
@@ -127,7 +143,8 @@
                 <ListView   ItemsSource="{Binding sets}"
                 RowHeight="100"
                 x:Name="repets"
-                Grid.Column="1">
+                Grid.Column="1"
+                BackgroundColor="Transparent">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
@@ -195,7 +212,7 @@
                                 Margin="2"
                                 Text="&#xe872;"
                                 TextColor="White"
-                                                BorderWidth="1"
+                                BorderWidth="1"
                                 FontFamily="Material"
                                 BackgroundColor="Black"
                                 Command="{Binding BindingContext.deleteSet, Source={x:Reference DetailPage}}"
@@ -206,12 +223,19 @@
                                         <TapGestureRecognizer Command="{Binding BindingContext.exerciceEditor, Source={x:Reference DetailPage}}"
                                           CommandParameter="{Binding}"/>
                                     </Grid.GestureRecognizers>
+                                    
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#806a00" Offset="0.0"/>
+                        <GradientStop Color="Black" Offset="0.6"/>
+                        <GradientStop Color="Black" Offset="1.0"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
             </Grid>
 
         </StackLayout>

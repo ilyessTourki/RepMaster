@@ -9,7 +9,7 @@
 
     <ShellContent
          Shell.NavBarIsVisible="False" 
-        ContentTemplate="{DataTemplate local:MuscleType}"
+        ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
 </Shell>

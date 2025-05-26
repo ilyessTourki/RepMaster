@@ -1,2 +1,2 @@
-AdbTarget=-s R5CR92D5FPA
+AdbTarget=-s emulator-5554
 AdbOptions=
