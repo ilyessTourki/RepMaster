@@ -48,6 +48,7 @@
                                      WidthRequest="160"
                                     HeightRequest="120"
                                     Aspect="AspectFill"
+                                    BackgroundColor="Black"
                                     />
 
                                 </Frame>

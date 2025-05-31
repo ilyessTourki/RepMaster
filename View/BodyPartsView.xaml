@@ -44,9 +44,7 @@
                                     Source="{Binding image}"
                                      WidthRequest="160"
                                     HeightRequest="120"
-                                    Aspect="AspectFill"
-                                    />
-
+                                    Aspect="AspectFill"/>
                                 </Frame>
 
                             </Grid>

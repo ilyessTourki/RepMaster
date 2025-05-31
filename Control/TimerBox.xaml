@@ -2,63 +2,44 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrainSheet.Control.TimerBox">
-    <StackLayout   VerticalOptions="Start"
-            HorizontalOptions="FillAndExpand"
-            BackgroundColor="Red">
-        <Label HorizontalOptions="CenterAndExpand"
-               VerticalOptions="CenterAndExpand"
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+         <Label 
                Text="{Binding ElapsedTime, StringFormat='{0:hh\\:mm\\:ss}'}"
                TextColor="White"
                FontFamily="Horizon"
+               HeightRequest="100"
                 FontAttributes="Bold"
-               FontSize="30"/>
-        <Grid    
-                 VerticalOptions="EndAndExpand"
-            HeightRequest="80"
-            Margin="10,0">
-       <Grid.ColumnDefinitions>
-           <ColumnDefinition Width="0.5*"/>
-           <ColumnDefinition Width="0.5*"/>
-       </Grid.ColumnDefinitions>
-       <Frame   HeightRequest="40"
-                WidthRequest="40"
+                VerticalTextAlignment="Center"
+                VerticalOptions="EndAndExpand"
                 HorizontalOptions="Center"
-               VerticalOptions="Center"
-                BorderColor="White"
-                BackgroundColor="Transparent"
-                CornerRadius="20"
-                Padding="0">
-           <Label   Text="{Binding StartStopButtonText}"
-                    FontFamily="Material"
-                    FontSize="25"
-                    TextColor="White"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand"/>
-            <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ToggleTimerCommand}" />
-            </Frame.GestureRecognizers>
-       </Frame>
-       
-        
-       <Frame   HeightRequest="40"
-                WidthRequest="40"
-                HorizontalOptions="Center"
-               VerticalOptions="Center"
-                BorderColor="White"
-                BackgroundColor="Transparent"
-                CornerRadius="20"
-                Padding="0"
-                Grid.Column="1">
-            <Label   Text="&#xe042;"
-                    FontFamily="Material"
-                    FontSize="25"
-                    TextColor="White"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="CenterAndExpand"/>
-            <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding ResetTimerCommand}" />
-            </Frame.GestureRecognizers>
-       </Frame>
+               FontSize="50"/>
+        <Grid   HeightRequest="60"
+                Margin="0,20"
+                Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Frame   Style="{StaticResource ClockButtons}">
+                <Label   Text="{Binding StartStopButtonText}"
+                        Style="{StaticResource ButtonClock}"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ToggleTimerCommand}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame  Style="{StaticResource ClockButtons}"
+                    Grid.Column="1">
+                <Label  Text="&#xe042;"
+                        Style="{StaticResource ButtonClock}"/>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ResetTimerCommand}" />
+                </Frame.GestureRecognizers>
+            </Frame>
+        </Grid>
     </Grid>
-    </StackLayout>
 </ContentView>

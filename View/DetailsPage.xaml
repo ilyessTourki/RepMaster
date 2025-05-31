@@ -20,6 +20,13 @@
                 <Image  Source="{Binding machineTrain.image}"
                         Style="{StaticResource Key=DetailImage}"/>
                 
+                                    <Frame.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#806a00" Offset="0.0"/>
+                                    <GradientStop Color="Black" Offset="0.5"/>
+                                    <GradientStop Color="Black" Offset="1.0"/>
+                                </LinearGradientBrush>
+                            </Frame.Background>
             </Frame>
             
             

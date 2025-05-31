@@ -9,16 +9,14 @@
              BackgroundColor="White"
              NavigationPage.HasNavigationBar="False"
              NavigationPage.HasBackButton="False">
-    <FlexLayout Direction="Column"
-                VerticalOptions="FillAndExpand">
+    <FlexLayout Direction="Column">
         <tabs:ViewSwitcher  x:Name="MenuSwitcher"
                             Margin="0"
                             Animate="True"
                             SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}"
-                            FlexLayout.Basis="93%">
-           
+                            FlexLayout.Basis="95%">
             <tabs:LazyView x:TypeArguments="views:BodyPartsView"    x:Name="BodyPartsV"   Animate="True"  UseActivityIndicator="True"/>
-            <tabs:LazyView x:TypeArguments="views:WatchView"        x:Name="WatchV" />
+            <tabs:LazyView x:TypeArguments="views:WatchView"        x:Name="WatchV"/>
             <tabs:LazyView x:TypeArguments="views:ProfileView"      x:Name="ProfileV"/>
         </tabs:ViewSwitcher>
 

@@ -33,6 +33,16 @@
         <Setter Property="BorderColor" Value="white" />
         <Setter Property="BackgroundColor" Value="Black" />
     </Style>
+    <Style x:Key="ClockButtons" TargetType="Frame">
+        <Setter Property="HeightRequest" Value="50" />
+        <Setter Property="WidthRequest" Value="50" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="BorderColor" Value="White" />
+        <Setter Property="CornerRadius" Value="50" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
 
     <!--Label-->
     <Style x:Key="StatIcon" TargetType="Label">
@@ -75,6 +85,13 @@
         <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="FontSize" Value="15" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="ButtonClock" TargetType="Label">
+        <Setter Property="FontFamily" Value="Material" />
+        <Setter Property="FontSize" Value="25" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
     </Style>
 
     <!--Span-->

@@ -4,10 +4,6 @@
              x:Class="TrainSheet.View.WatchView"
              xmlns:local="clr-namespace:TrainSheet.Control"
              BackgroundColor="Black">
-    <VerticalStackLayout HeightRequest="100"
-                         HorizontalOptions="CenterAndExpand"
-                        VerticalOptions="CenterAndExpand">
-            <local:TimerBox/>
-    </VerticalStackLayout>
+     <local:TimerBox/>
 </ContentView>
 
