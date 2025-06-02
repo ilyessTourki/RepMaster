@@ -11,8 +11,8 @@
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
                 <ResourceDictionary Source="Resources/Styles/AppStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
-
-            <converters:IndexToDisplayConverter x:Key="IndexToDisplayConverter"/>
+            <converters:IndexToDisplayConverter     x:Key="IndexToDisplayConverter"/>
+            <converters:BoolToVisibilityConverter   x:Key="BoolToVisibilityConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

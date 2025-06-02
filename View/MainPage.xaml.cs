@@ -11,7 +11,7 @@ public partial class MainPage : ContentPage
     }
     protected override async void OnAppearing()
     {
-        TabSwitcher.SelectedIndex = 0;
+        TabSwitcher.SelectedIndex =2;
 
     }
     async void TabSwitcher_SelectedTabIndexChanged(System.Object sender, Microsoft.Maui.Controls.SelectedPositionChangedEventArgs e)
@@ -58,6 +58,7 @@ public partial class MainPage : ContentPage
         //HomeView.BindingContext = vmHome;
         await Task.Delay(500);
         var profile = ProfileV.Content as ProfileView;
+        ProfileV.BindingContext = profile;
         //if (bodyParts != null)
         //{
         //    await homeView.OnViewAppeard();

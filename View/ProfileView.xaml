@@ -1,12 +1,246 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TrainSheet.View.ProfileView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Profile"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             x:Class="TrainSheet.View.ProfileView"
+              BackgroundColor="Black"
+              x:Name="ProfilePage">
+    <ScrollView>
+        <StackLayout>
+            <!--Iamge Profile + Name-->
+            
+            <Grid HorizontalOptions="Center"
+              VerticalOptions="Center"
+              WidthRequest="110"
+              HeightRequest="110"
+              Margin="0,40,0,20">
+            <Ellipse Stroke="White"
+                     StrokeThickness="1"
+                     WidthRequest="130"
+                     HeightRequest="130" />
+            <Image Source="profilepic.png"
+                   WidthRequest="120"
+                   HeightRequest="120"
+                   Aspect="AspectFill">
+                <Image.Clip>
+                    <EllipseGeometry Center="60,60" RadiusX="60" RadiusY="60" />
+                </Image.Clip>
+            </Image>
+
+        </Grid>
+            <Label Text="{Binding editUserIcon}"
+                   FontFamily="Material"
+                   FontAttributes="Bold"
+                   FontSize="19"
+                   TextColor="White"
+                   HorizontalOptions="EndAndExpand"
+                   VerticalOptions="StartAndExpand"
+                   Margin="15,5">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BindingContext.editUserInfo, Source={x:Reference ProfilePage}}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Grid Margin="20,0,20,10">
+                <Grid.ColumnDefinitions>
+                   <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.3*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Margin="10">
+                    <Label Text="balance"
+                           FontFamily="Material"
+                           FontSize="22"
+                           TextColor="White"
+                           Margin="0,3"
+                           HorizontalOptions="Center"/>
+                    <Label Text="WEIGHT"
+                           FontFamily="Horizon"
+                           FontSize="9"
+                           TextColor="White"
+                           Margin="0,0,0,5"
+                           HorizontalOptions="Center"/>
+                    <Label Text="74 Kg"
+                           FontFamily="Horizon"
+                           FontSize="15"
+
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
+                    <StackLayout Orientation="Horizontal"
+                                 IsVisible="{Binding isEditingUser}"
+                                 HeightRequest="40">
+                        <Editor Text="74"
+                           FontFamily="Horizon"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           VerticalOptions="End"
+                           HorizontalOptions="Center"
+                           IsVisible="{Binding isEditingUser}"/>
+                         <Label Text=" Kg"
+                           FontFamily="Horizon"
+                           VerticalOptions="End"
+                           FontSize="11"
+                           FontAttributes="Bold"
+                           TextColor="White"/>
+
+                    </StackLayout>
+                    
+
+                </StackLayout>
+                <StackLayout Margin="10"
+                             Grid.Column="1">
+                    <Label Text="straighten"
+                           FontFamily="Material"
+                           FontSize="22"
+                           TextColor="White"
+                           Margin="0,3"
+                           HorizontalOptions="Center"/>
+                    <Label Text="HEIGHT"
+                           FontFamily="Horizon"
+                           FontSize="9"
+                           TextColor="White"
+                           Margin="0,0,0,5"
+                           HorizontalOptions="Center"/>
+                    <Label Text="174 cm"
+                           FontFamily="Horizon"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
+                    <StackLayout Orientation="Horizontal"
+                                 IsVisible="{Binding isEditingUser}"
+                                 HeightRequest="40">
+                        <Editor Text="174"
+                           FontFamily="Horizon"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           VerticalOptions="End"
+                           HorizontalOptions="Center"
+                           IsVisible="{Binding isEditingUser}"/>
+                         <Label Text=" cm"
+                           FontFamily="Horizon"
+                           VerticalOptions="End"
+                           FontSize="11"
+                           FontAttributes="Bold"
+                           TextColor="White"/>
+
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout Margin="10"
+                             Grid.Column="2">
+                    <Label Text="speed"
+                           FontFamily="Material"
+                           FontSize="22"
+                           TextColor="White"
+                           Margin="0,3"
+                           HorizontalOptions="Center"/>
+                    <Label Text="BMI"
+                           FontFamily="Horizon"
+                           FontSize="9"
+                           TextColor="White"
+                           Margin="0,0,0,5"
+                           HorizontalOptions="Center"/>
+                    <Label Text="26,4"
+                           FontFamily="Horizon"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           HorizontalOptions="Center"
+                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
+                     <StackLayout Orientation="Horizontal"
+                                 IsVisible="{Binding isEditingUser}"
+                                 HeightRequest="40">
+                        <Editor Text="26,4"
+                           FontFamily="Horizon"
+                           FontSize="15"
+                           FontAttributes="Bold"
+                           TextColor="White"
+                           VerticalOptions="End"
+                           HorizontalOptions="Center"
+                           IsVisible="{Binding isEditingUser}"/>
+                    </StackLayout>
+
+                </StackLayout>
+
+            </Grid>
+
+            <StackLayout Orientation="Horizontal"
+                         Margin="10,80,10,20"
+                         HorizontalOptions="FillAndExpand">
+                 <Label Text="My Mesurments : "
+                   FontFamily="Horizon"
+                   FontAttributes="Bold"
+                   FontSize="12"
+                   TextColor="White"/>
+                <Label Text="edit"
+                   FontFamily="Material"
+                   FontAttributes="Bold"
+                   FontSize="19"
+                   TextColor="White"
+                   HorizontalOptions="EndAndExpand"
+                   VerticalOptions="StartAndExpand"
+                   Margin="5,0"/>
+
+            </StackLayout>
+           
+            <ListView   RowHeight="60"
+                SelectionMode="None"
+                x:Name="bodyPartsListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                               <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.15*"/>
+                    <ColumnDefinition Width="0.65*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Frame CornerRadius="50"
+                       HeightRequest="35"
+                       WidthRequest="35"
+                       BackgroundColor="#ffee99"
+                       HasShadow="False"
+                       Padding="0"
+                       BorderColor="Black"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center">
+                      <Label    Text="{Binding Icon}"
+                                FontFamily="BodyParts"
+                                FontSize="25"
+                                VerticalOptions="Center"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                TextColor="{StaticResource Primary}"/>
+
+                </Frame>
+                <Label Text="{Binding Name}"
+                       FontSize="12"
+                       FontFamily="Horizon"
+                       TextColor="White"
+                       VerticalOptions="Center"
+                       FontAttributes="Bold"
+                       Grid.Column="1"/>
+                <Label Text="{Binding Mesure}"
+                       FontSize="11"
+                       TextColor="White"
+                       FontFamily="Horizon"
+                       VerticalOptions="Center"
+                       Grid.Column="2"
+                       Margin="10,0"
+                       HorizontalOptions="End"/>
+            </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            
+        </StackLayout>
+    </ScrollView>
+
 </ContentView>
 

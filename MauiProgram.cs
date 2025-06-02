@@ -25,6 +25,7 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 				fonts.AddFont("MaterialIcons-Regular.ttf", "Material");
+                fonts.AddFont("bodyparts.ttf", "BodyParts");
                 fonts.AddFont("horizon.otf", "Horizon");
             }).ConfigureMauiHandlers(handlers =>
             {
