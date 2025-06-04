@@ -35,6 +35,18 @@ build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Control.BackBut
 build_metadata.AdditionalFiles.TargetPath = Control/BackButton.xaml
 build_metadata.AdditionalFiles.RelativePath = Control/BackButton.xaml
 
+[/Users/ilyestourki/Documents/GitHub/RepMaster/Control/ProfileControl/GeneralInfoControl.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Control.ProfileControl.GeneralInfoControl.xaml
+build_metadata.AdditionalFiles.TargetPath = Control/ProfileControl/GeneralInfoControl.xaml
+build_metadata.AdditionalFiles.RelativePath = Control/ProfileControl/GeneralInfoControl.xaml
+
+[/Users/ilyestourki/Documents/GitHub/RepMaster/Control/ProfileControl/GeneralInfosTitle.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Control.ProfileControl.GeneralInfosTitle.xaml
+build_metadata.AdditionalFiles.TargetPath = Control/ProfileControl/GeneralInfosTitle.xaml
+build_metadata.AdditionalFiles.RelativePath = Control/ProfileControl/GeneralInfosTitle.xaml
+
 [/Users/ilyestourki/Documents/GitHub/RepMaster/Control/TimerBox.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = TrainSheet.Control.TimerBox.xaml

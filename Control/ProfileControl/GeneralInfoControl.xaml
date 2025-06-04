@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainSheet.Control.ProfileControl.GeneralInfoControl"
+             xmlns:control="clr-namespace:TrainSheet.Control.ProfileControl">
+   <Label Text="{Binding editUserIcon}"
+            FontFamily="Material"
+            FontAttributes="Bold"
+            FontSize="19"
+            TextColor="White"
+            HorizontalOptions="EndAndExpand"
+            VerticalOptions="StartAndExpand"
+            Margin="15,5">
+        <Label.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding editUserInfo}"/>
+        </Label.GestureRecognizers>
+    </Label>
+            <Grid Margin="20,0,20,10">
+                <Grid.ColumnDefinitions>
+                   <ColumnDefinition    Width="*"/>
+                    <ColumnDefinition   Width="*"/>
+                    <ColumnDefinition   Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Margin="10">
+                    <control:GeneralInfosTitle Icon="balance" Title="WEIGHT"/>
+                    
+                    <Label Text="74 Kg"
+                           Style="{StaticResource GeneralInfoValue}"
+                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
+                    <StackLayout Orientation="Horizontal"
+                                 IsVisible="{Binding isEditingUser}"
+                                 HeightRequest="40">
+                        <Editor Text="74"
+                                Style="{StaticResource GeneralInfoEditor}"
+                                VerticalOptions="End"
+                                HorizontalOptions="Center"/>
+                         <Label Text=" Kg"
+                                Style="{StaticResource GeneralInfoUnit}"/>
+
+                    </StackLayout>
+                    
+
+                </StackLayout>
+                <StackLayout Margin="10"
+                             Grid.Column="1">
+                    <control:GeneralInfosTitle Icon="straighten" Title="HEIGHT"/>
+                    <Label Text="174 cm"
+                           Style="{StaticResource GeneralInfoValue}"
+                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
+                    <StackLayout Orientation="Horizontal"
+                                 IsVisible="{Binding isEditingUser}"
+                                 HeightRequest="40">
+                        <Editor Text="174"
+                                Style="{StaticResource GeneralInfoEditor}"
+                                VerticalOptions="End"
+                                HorizontalOptions="Center"/>
+                         <Label Text=" cm"
+                                Style="{StaticResource GeneralInfoUnit}"/>
+
+                    </StackLayout>
+
+                </StackLayout>
+                <StackLayout Margin="10"
+                             Grid.Column="2">
+                    <control:GeneralInfosTitle Icon="speed" Title="BMI"/>
+                    <Label Text="26,4"
+                           Style="{StaticResource GeneralInfoValue}"
+                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
+                     <StackLayout Orientation="Horizontal"
+                                 IsVisible="{Binding isEditingUser}"
+                                 HeightRequest="40">
+                        <Editor Text="26,4"
+                                Style="{StaticResource GeneralInfoEditor}"
+                                VerticalOptions="Start"
+                                HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+</StackLayout>

@@ -9,19 +9,18 @@ namespace TrainSheet.View;
 public partial class ProfileView : ContentView
 {
 	public ObservableCollection<BodyParts> bodyParts { get; set; } = new ObservableCollection<BodyParts>();
-    public ICommand editUserInfo { get; }
-    public bool isEditingUser { get; set; }
-    public string editUserIcon { get; set; }
+    public bool     isEditingMesurments { get; set; }
+    public string   editUserMesurments { get; set; }
+    public ICommand editUserMesurment { get; }
 
     public ProfileView()
     {
         InitializeComponent();
+        isEditingMesurments = false;
+        editUserMesurments = "edit";
+        editUserMesurment = new Command(EditUserMesurment);
         BindingContext = this;
         SetBodyParts();
-        isEditingUser = false;
-        editUserIcon = "edit";
-        editUserInfo = new Command(EditUserInfo);
-       
     }
 	private void SetBodyParts()
 	{
@@ -44,12 +43,12 @@ public partial class ProfileView : ContentView
         bodyPartsListView.ItemsSource = bodyParts;
 
     }
-    private void EditUserInfo()
+    private void EditUserMesurment()
     {
-        isEditingUser = !isEditingUser;
-        OnPropertyChanged(nameof(isEditingUser));
-        editUserIcon = isEditingUser? "check" : "edit";
-        OnPropertyChanged(nameof(editUserIcon));
+        isEditingMesurments = !isEditingMesurments;
+        OnPropertyChanged(nameof(isEditingMesurments));
+        editUserMesurments = isEditingMesurments ? "check" : "edit";
+        OnPropertyChanged(nameof(editUserMesurments));
     }
 
 
