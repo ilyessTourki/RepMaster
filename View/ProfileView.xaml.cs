@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Android.Icu.Text;
-using CommunityToolkit.Mvvm.Input;
+using static TrainSheet.Utilities.Utilities;
 using TrainSheet.Model.ServiceModel;
 
 namespace TrainSheet.View;
@@ -22,25 +21,22 @@ public partial class ProfileView : ContentView
         BindingContext = this;
         SetBodyParts();
     }
-	private void SetBodyParts()
+    public async Task OnViewAppeard()
+    {
+        await SetBodyParts();
+    }
+    private async Task SetBodyParts()
 	{
-        bodyParts = new ObservableCollection<BodyParts> {
-            new BodyParts { Name = "Neck", Icon = "neck", Mesure = "58 cm" },
-           new BodyParts { Name = "Shoulder", Icon = "back", Mesure = "146 cm" },
-        new BodyParts { Name = "Chest", Icon = "chest", Mesure = "106 cm" },
-        new BodyParts { Name = "Right Biceps", Icon = "biceps", Mesure = "42 cm" },
-        new BodyParts { Name = "Left Biceps", Icon = "biceps", Mesure = "40 cm" },
-        new BodyParts { Name = "Right Forearm", Icon = "forearm", Mesure = "32 cm" },
-        new BodyParts { Name = "Left Forearm", Icon = "forearm", Mesure = "32 cm" },
-        new BodyParts { Name = "Waist", Icon = "waist", Mesure = "186 cm" },
-        new BodyParts { Name = "Left Calves", Icon = "calves", Mesure = "76 cm" },
-        new BodyParts { Name = "Right Calves", Icon = "calves", Mesure = "76 cm" },
-        new BodyParts { Name = "Left Thighs", Icon = "thighs", Mesure = "106 cm" },
-        new BodyParts { Name = "Right Thighs", Icon = "thighs", Mesure = "106 cm" }
-    };
-
-        OnPropertyChanged(nameof(bodyParts));
-        bodyPartsListView.ItemsSource = bodyParts;
+        if(bodyParts.Count == 0)
+        {
+            var bodyPartsFromDB = await bodyPartsDB.GetAllAsync();
+            foreach (var bodyPart in bodyPartsFromDB)
+            {
+                bodyParts.Add(bodyPart);
+            }
+            OnPropertyChanged(nameof(bodyParts));
+            bodyPartsListView.ItemsSource = bodyParts;
+        }
 
     }
     private void EditUserMesurment()

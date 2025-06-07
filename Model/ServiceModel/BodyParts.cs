@@ -12,5 +12,5 @@ public class BodyParts : IPrimaryKey
 
     public string Icon { get; set; }
 
-    public string Mesure { get; set; }
+    public int Mesure { get; set; }
 }

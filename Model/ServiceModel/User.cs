@@ -9,9 +9,10 @@ namespace TrainSheet.Model.ServiceModel
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
 
-        public string Name { get; set; }
-
-        public string Email { get; set; }
+        public string Image { get; set; }
+        public int Weight { get; set; }
+        public int Height { get; set; }
+        public int BMI { get; set; }
     }
 
 }
