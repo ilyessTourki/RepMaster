@@ -55,11 +55,20 @@
            
             <ListView   RowHeight="60"
                 SelectionMode="None"
+                SeparatorVisibility="None"
                 x:Name="bodyPartsListView">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                               <Grid>
+                            <Frame Padding="0"
+                                   Margin="10,2"
+                                   VerticalOptions="FillAndExpand"
+                                   HorizontalOptions="FillAndExpand"
+                                   HasShadow="False"
+                                   CornerRadius="10"
+                                   BackgroundColor="#1a1a1a"
+                                   BorderColor="Transparent">
+                               <Grid >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.15*"/>
                     <ColumnDefinition Width="0.6*"/>
@@ -67,24 +76,14 @@
                     <ColumnDefinition Width="0.1*"/>
                 </Grid.ColumnDefinitions>
 
-                <Frame CornerRadius="50"
-                       HeightRequest="35"
-                       WidthRequest="35"
-                       BackgroundColor="#e6bf00"
-                       HasShadow="False"
-                       Padding="0"
-                       BorderColor="Black"
-                       VerticalOptions="Center"
-                       HorizontalOptions="Center">
-                      <Label    Text="{Binding Icon}"
+                <Label    Text="{Binding Icon}"
                                 FontFamily="BodyParts"
                                 FontSize="25"
+                                BackgroundColor="Transparent"
                                 VerticalOptions="Center"
                                 FontAttributes="Bold"
                                 HorizontalOptions="Center"
-                                TextColor="{StaticResource Primary}"/>
-
-                </Frame>
+                                TextColor="White"/>
                 <Label Text="{Binding Name}"
                        FontSize="12"
                        FontFamily="Horizon"
@@ -107,7 +106,7 @@
                             Grid.Column="2"
                             VerticalOptions="Center"
                             HorizontalOptions="End"
-                            
+                            BackgroundColor="Black"
                             FontSize="11"
                        TextColor="White"
                        FontFamily="Horizon"/>
@@ -118,6 +117,7 @@
                        VerticalOptions="Center"
                        Grid.Column="3"/>
                     </Grid>
+                                </Frame>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

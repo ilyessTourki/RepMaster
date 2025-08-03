@@ -9,7 +9,7 @@
         BorderColor="White"
         BackgroundColor="Transparent"
         CornerRadius="5"
-        Margin="10"
+        Margin="10,20"
         Padding="0"
         Clicked="BackPreviousPage"
         Text="&#xe5cb;"

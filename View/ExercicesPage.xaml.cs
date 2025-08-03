@@ -19,7 +19,7 @@ public partial class ExercicesPage : ContentPage
         exerciceDetail = new AsyncRelayCommand<MuscleCategory>(GoToExerciceDetail);
 		var horizontalLayout = new GridItemsLayout(1, ItemsLayoutOrientation.Vertical)
             {
-                VerticalItemSpacing = 4,
+                VerticalItemSpacing = 7,
                 HorizontalItemSpacing = 4
             };
 		MyCollectionView.ItemsLayout = horizontalLayout;

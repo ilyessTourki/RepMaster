@@ -16,22 +16,21 @@
     <!--Frame-->
     <Style x:Key="StatBox" TargetType="Frame">
        <Setter Property="HasShadow" Value="False" />
-        <Setter Property="CornerRadius" Value="10" />
-        <Setter Property="HeightRequest" Value="100" />
+        <Setter Property="CornerRadius" Value="15" />
+        <Setter Property="HeightRequest" Value="130" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="VerticalOptions" Value="FillAndExpand" />
         <Setter Property="Padding" Value="0" />
-        <Setter Property="Margin" Value="1" />
-        <Setter Property="BorderColor" Value="white" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="{StaticResource DarkGray}" />
     </Style>
     <Style x:Key="DetailImageFrame" TargetType="Frame">
-        <Setter Property="HorizontalOptions" Value="Center" />
-        <Setter Property="Margin" Value="0,10" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="Margin" Value="10" />
         <Setter Property="Padding" Value="3,1" />
         <Setter Property="HeightRequest" Value="200" />
-        <Setter Property="WidthRequest" Value="330" />
-        <Setter Property="BorderColor" Value="white" />
-        <Setter Property="BackgroundColor" Value="Black" />
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="Black"/>
     </Style>
     <Style x:Key="ClockButtons" TargetType="Frame">
         <Setter Property="HeightRequest" Value="50" />
@@ -47,19 +46,26 @@
     <!--Label-->
     <Style x:Key="StatIcon" TargetType="Label">
         <Setter Property="FontFamily" Value="Material" />
-        <Setter Property="FontSize" Value="23" />
-        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{StaticResource Primary}" />
         <Setter Property="Margin" Value="5,0" />
     </Style>
     <Style x:Key="StatTitle" TargetType="Label">
         <Setter Property="FontFamily" Value="Horizon" />
         <Setter Property="FontSize" Value="10" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
-        <Setter Property="FontAttributes" Value="Bold" />
         <Setter Property="TextColor" Value="White" />
         <Setter Property="LineBreakMode" Value="WordWrap" />
         <Setter Property="HorizontalOptions" Value="FillAndExpand" />
         <Setter Property="MaxLines" Value="2" />
+    </Style>
+    <Style x:Key="SectionT" TargetType="Label">
+        <Setter Property="FontFamily" Value="Horizon" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="Start" />
+         <Setter Property="WidthRequest" Value="300" />
     </Style>
     <Style x:Key="StatValue" TargetType="Label">
         <Setter Property="FontSize" Value="50" />

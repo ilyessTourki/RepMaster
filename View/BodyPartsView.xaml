@@ -15,6 +15,8 @@
                         <Frame   CornerRadius="10"
                     Padding="2"
                     BorderColor="Black"
+                    HeightRequest="120"
+                    BackgroundColor="{StaticResource DarkGray}"
                    >
                             <Grid VerticalOptions="CenterAndExpand"
                         HorizontalOptions="FillAndExpand"
@@ -53,13 +55,6 @@
                                 <TapGestureRecognizer Command="{Binding BindingContext.muscleExercices, Source={x:Reference BodyPartsPage}}"
                                                   CommandParameter="{Binding muscleEnum}"/>
                             </Frame.GestureRecognizers>
-                            <Frame.Background>
-                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                                    <GradientStop Color="#806a00" Offset="0.0"/>
-                                    <GradientStop Color="Black" Offset="0.5"/>
-                                    <GradientStop Color="Black" Offset="1.0"/>
-                                </LinearGradientBrush>
-                            </Frame.Background>
                         </Frame>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

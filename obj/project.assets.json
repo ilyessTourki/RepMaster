@@ -29491,11 +29491,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/ilyestourki/Documents/GitHub/RepMaster/TrainSheet.csproj",
+      "projectUniqueName": "/Users/ilyestourki/Desktop/RepMaster/TrainSheet.csproj",
       "projectName": "TrainSheet",
-      "projectPath": "/Users/ilyestourki/Documents/GitHub/RepMaster/TrainSheet.csproj",
+      "projectPath": "/Users/ilyestourki/Desktop/RepMaster/TrainSheet.csproj",
       "packagesPath": "/Users/ilyestourki/.nuget/packages/",
-      "outputPath": "/Users/ilyestourki/Documents/GitHub/RepMaster/obj/",
+      "outputPath": "/Users/ilyestourki/Desktop/RepMaster/obj/",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [

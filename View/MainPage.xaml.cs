@@ -62,6 +62,7 @@ public partial class MainPage : ContentPage
     }
     private async Task CreateUser()
     {
+        userDB.InitializeAsync(SQLiteDataAccessPath);
         var users = await userDB.GetAllAsync();
         if(users is null || users.Count == 0)
         {
@@ -71,6 +72,7 @@ public partial class MainPage : ContentPage
     }
     private async Task CreateBodyPartsMesures()
     {
+        bodyPartsDB.InitializeAsync(SQLiteDataAccessPath);
         var bodyParts = await bodyPartsDB.GetAllAsync();
         if (bodyParts == null || bodyParts.Count == 0)
         {

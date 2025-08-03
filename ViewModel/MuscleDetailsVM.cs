@@ -2,9 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
-using AndroidX.Lifecycle;
 using CommunityToolkit.Mvvm.Input;
-using Java.Util;
 using Mopups.Services;
 using TrainSheet.Model;
 using TrainSheet.Model.ServiceModel;
