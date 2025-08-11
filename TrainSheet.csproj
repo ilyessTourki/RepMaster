@@ -40,8 +40,8 @@
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
-	  <CodesignKey>Apple Development: tourkiilyess@gmail.com (LJ3Z33C9G6)</CodesignKey>
-	  <CodesignProvision>iOS Team Provisioning Profile: IlyesTourki.RepMaster</CodesignProvision>
+	  <CodesignKey>iPhone Developer</CodesignKey>
+	  <CodesignProvision></CodesignProvision>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
@@ -65,6 +65,16 @@
 
 		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
 		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+		<MauiImage Include="Resources\Images\calisthenics\chesttowallhandstandpushup.png" />
+		<MauiImage Include="Resources\Images\calisthenics\declinepushup.png" />
+		<MauiImage Include="Resources\Images\calisthenics\diamondpushup.png" />
+		<MauiImage Include="Resources\Images\calisthenics\handstand.png" />
+		<MauiImage Include="Resources\Images\calisthenics\neutralpullup.png" />
+		<MauiImage Include="Resources\Images\calisthenics\overhandpullup.png" />
+		<MauiImage Include="Resources\Images\calisthenics\pikepushup.png" />
+		<MauiImage Include="Resources\Images\calisthenics\pushup.png" />
+		<MauiImage Include="Resources\Images\calisthenics\stricthandstandpushup.png" />
+		<MauiImage Include="Resources\Images\calisthenics\underhandpullup.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -136,5 +146,15 @@
 	  <None Remove="Model\ServiceModel\" />
 	  <None Remove="Interface\" />
 	  <None Remove="Control\ProfileControl\" />
+	  <None Remove="Resources\Images\calisthenics\chesttowallhandstandpushup.png" />
+	  <None Remove="Resources\Images\calisthenics\declinepushup.png" />
+	  <None Remove="Resources\Images\calisthenics\diamondpushup.png" />
+	  <None Remove="Resources\Images\calisthenics\handstand.png" />
+	  <None Remove="Resources\Images\calisthenics\neutralpullup.png" />
+	  <None Remove="Resources\Images\calisthenics\overhandpullup.png" />
+	  <None Remove="Resources\Images\calisthenics\pikepushup.png" />
+	  <None Remove="Resources\Images\calisthenics\pushup.png" />
+	  <None Remove="Resources\Images\calisthenics\stricthandstandpushup.png" />
+	  <None Remove="Resources\Images\calisthenics\underhandpullup.png" />
 	</ItemGroup>
 </Project>

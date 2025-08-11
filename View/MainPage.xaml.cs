@@ -12,7 +12,7 @@ public partial class MainPage : ContentPage
     }
     protected override async void OnAppearing()
     {
-        TabSwitcher.SelectedIndex =2;
+        TabSwitcher.SelectedIndex =0;
         await CreateUser();
         await CreateBodyPartsMesures();
     }

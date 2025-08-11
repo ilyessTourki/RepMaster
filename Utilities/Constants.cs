@@ -15,46 +15,12 @@ public static class Constants
         muscleType = MuscleEnum.Pec ,
         name = "Assisted Bar Chest",
         image = "assistedbarchest.png",
-        //bestRepetition = new Repetition{weight=1,repetion=1},
-        //bestWeight = 2,
-        //lastRepetition = new List<List<Repetition>>
-        //{
-        //    new List<Repetition>{
-        //        new Repetition{weight=2,repetion=2},
-        //        new Repetition{weight=3,repetion=3},
-        //        new Repetition{weight=2,repetion=2},
-        //        new Repetition{weight=3,repetion=3},
-        //    },
-        //    new List<Repetition>{
-        //        new Repetition{weight=2,repetion=2},
-        //        new Repetition{weight=3,repetion=3},
-        //    },
-        //    new List<Repetition>{
-        //        new Repetition{weight=2,repetion=2},
-        //    },
-        //}
     };
     public static MuscleCategory assistedBarUpChest = new MuscleCategory
     {
         muscleType = MuscleEnum.Pec ,
         name = "Assisted Bar Up Chest",
         image = "assistedbarupchest.png",
-        //bestRepetition = new Repetition{weight=1,repetion=1},
-        //bestWeight  = 20,
-        //lastRepetition = new List<List<Repetition>>
-        //{
-        //    new List<Repetition>{
-        //        new Repetition{weight=2,repetion=2},
-        //        new Repetition{weight=3,repetion=3},
-        //    },
-        //    new List<Repetition>{
-        //        new Repetition{weight=2,repetion=2},
-        //        new Repetition{weight=3,repetion=3},
-        //    },
-        //    new List<Repetition>{
-        //        new Repetition{weight=2,repetion=2},
-        //    },
-        //}
     };
     public static MuscleCategory MachineDownChest = new MuscleCategory
     {
@@ -130,12 +96,6 @@ public static class Constants
         muscleType = MuscleEnum.Back,
         name = "Front Pull Down",
         image = "frotpulldown.png",
-    };
-    public static MuscleCategory GripPullUp = new MuscleCategory
-    {
-        muscleType = MuscleEnum.Back,
-        name = "Grip Pul lUp",
-        image = "grippullup.png",
     };
     public static MuscleCategory LatPullDown = new MuscleCategory
     {
@@ -282,6 +242,79 @@ public static class Constants
     public static List<MuscleCategory> TricepsExercices = new List<MuscleCategory>();
     #endregion
 
+    #region Calisthenics
+    public static MuscleCategory NormalPushUp = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "PushUp",
+        image = "calisthenics/pushup.png",
+    };
+    public static MuscleCategory DeclinePushUp = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "DeclinePushUp",
+        image = "calisthenics/declinepushup.png",
+    };
+    public static MuscleCategory DiamondPushUp = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "Diamond Push Up",
+        image = "calisthenics/diamondpushup.png",
+    };
+    public static MuscleCategory CalDips = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "Dips",
+        image = "calisthenics/dips.png",
+    };
+    public static MuscleCategory OverhandPullUp = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "Overhand Pull Up",
+        image = "calisthenics/overhandpullup.png",
+    };
+    public static MuscleCategory UnderhandPullUp = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "Underhand Pull Up",
+        image = "calisthenics/underhandpullup.png",
+    };
+    public static MuscleCategory NeutraldPullUp = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "Neutral Pull Up",
+        image = "calisthenics/neutralpullup.png",
+    };
+    public static MuscleCategory Handstand = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "Handstand",
+        image = "calisthenics/handstand.png",
+    };
+    public static MuscleCategory PikePushUp = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "Pike Push Up",
+        image = "calisthenics/pikepushup.png",
+    };
+    public static MuscleCategory StrictHandstandPushUp = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "Strict Handstand Push Up",
+        image = "calisthenics/stricthandstandpushup.png",
+    };
+    public static MuscleCategory ChestToWallHandstandPushUp = new MuscleCategory
+    {
+        muscleType = MuscleEnum.Calisthenics,
+        name = "Chest To Wall Handstand Push Up",
+        image = "calisthenics/chesttowallhandstandpushup.png",
+    };
+
+    public static List<MuscleCategory> CalisthenicsExercices = new List<MuscleCategory>();
+
+    #endregion
+
+
     // Static constructor to populate the list
     static Constants()
     {
@@ -305,7 +338,6 @@ public static class Constants
         #region Back
         BackExercices.Add(CableRow);
         BackExercices.Add(FrontPullDown);
-        BackExercices.Add(GripPullUp);
         BackExercices.Add(LatPullDown);
         BackExercices.Add(TBarRow);
         BackExercices.Add(TRow);
@@ -340,6 +372,19 @@ public static class Constants
         TricepsExercices.Add(RopeOverHead);
         TricepsExercices.Add(RopePushDown);
         #endregion
+
+        #region Calisthenics
+        CalisthenicsExercices.Add(NormalPushUp);
+        CalisthenicsExercices.Add(DeclinePushUp);
+        CalisthenicsExercices.Add(DiamondPushUp);
+        CalisthenicsExercices.Add(OverhandPullUp);
+        CalisthenicsExercices.Add(UnderhandPullUp);
+        CalisthenicsExercices.Add(NeutraldPullUp);
+        CalisthenicsExercices.Add(Handstand);
+        CalisthenicsExercices.Add(PikePushUp);
+        CalisthenicsExercices.Add(StrictHandstandPushUp);
+        CalisthenicsExercices.Add(ChestToWallHandstandPushUp);
+        #endregion
     }
-    
+
 }

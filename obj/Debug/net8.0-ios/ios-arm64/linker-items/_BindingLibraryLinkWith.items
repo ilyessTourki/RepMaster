@@ -1,4 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup />
+  <ItemGroup>
+    <_BindingLibraryLinkWith Include="/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-ios/ios-arm64/linker-cache/e_sqlcipher.a">
+      <ForceLoad>true</ForceLoad>
+      <LinkWithSwiftSystemLibraries>false</LinkWithSwiftSystemLibraries>
+      <Assembly>SQLitePCLRaw.lib.e_sqlcipher.ios</Assembly>
+    </_BindingLibraryLinkWith>
+  </ItemGroup>
 </Project>

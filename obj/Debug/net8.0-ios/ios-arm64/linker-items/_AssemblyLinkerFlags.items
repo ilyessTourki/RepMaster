@@ -4,6 +4,5 @@
     <_AssemblyLinkerFlags Include="-lcompression">
       <Assembly>Microsoft.iOS</Assembly>
     </_AssemblyLinkerFlags>
-    <_AssemblyLinkerFlags Include="-dead_strip" />
   </ItemGroup>
 </Project>

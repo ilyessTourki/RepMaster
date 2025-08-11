@@ -9,5 +9,6 @@ public enum MuscleEnum
     Triceps,
     Frontarms,
     Legs,
-    Abs
+    Abs,
+    Calisthenics
 }

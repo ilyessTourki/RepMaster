@@ -15,7 +15,7 @@
                         <Frame   CornerRadius="10"
                     Padding="2"
                     BorderColor="Black"
-                    HeightRequest="120"
+                    HeightRequest="100"
                     BackgroundColor="{StaticResource DarkGray}"
                    >
                             <Grid VerticalOptions="CenterAndExpand"
@@ -35,7 +35,7 @@
                            HorizontalTextAlignment="Center"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="CenterAndExpand"/>
-                                <Frame HeightRequest="120"
+                                <Frame HeightRequest="100"
                                     VerticalOptions="Center"
                                     WidthRequest="160"
                                     HorizontalOptions="EndAndExpand"
@@ -45,7 +45,7 @@
                                     <Image
                                     Source="{Binding image}"
                                      WidthRequest="160"
-                                    HeightRequest="120"
+                                    HeightRequest="100"
                                     Aspect="AspectFill"/>
                                 </Frame>
 

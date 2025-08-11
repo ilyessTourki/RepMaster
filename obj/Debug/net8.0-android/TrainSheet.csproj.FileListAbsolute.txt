@@ -2234,3 +2234,13 @@
 /Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/stamp/_GenerateJavaStubs.stamp
 /Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/stamp/_GeneratePackageManagerJava.stamp
 /Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/stamp/_ResolveLibraryProjectImports.stamp
+/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/resizetizer/r/drawable/stricthandstandpushup.png
+/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/resizetizer/r/drawable/overhandpullup.png
+/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/resizetizer/r/drawable/underhandpullup.png
+/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/resizetizer/r/drawable/chesttowallhandstandpushup.png
+/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/resizetizer/r/drawable/pushup.png
+/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/resizetizer/r/drawable/handstand.png
+/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/resizetizer/r/drawable/declinepushup.png
+/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/resizetizer/r/drawable/pikepushup.png
+/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/resizetizer/r/drawable/neutralpullup.png
+/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-android/resizetizer/r/drawable/diamondpushup.png

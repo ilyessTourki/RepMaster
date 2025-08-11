@@ -1,40 +1,46 @@
 ﻿<Properties StartupConfiguration="{00777D08-5931-4ABB-B53F-55C215E77C32}|Default">
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="View/DetailsPage.xaml">
+  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="MyAppleMacCatalystID" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Utilities/Constants.cs">
     <Files>
-      <File FileName="View/ProfileView.xaml" />
-      <File FileName="View/DetailsPage.xaml" Line="94" Column="25" />
-      <File FileName="View/ExercicesPage.xaml" />
-      <File FileName="View/ExercicesPage.xaml.cs" />
-      <File FileName="ViewModel/MuscleDetailsVM.cs" Line="21" Column="52" />
+      <File FileName="View/ProfileView.xaml" Line="1" Column="1" />
+      <File FileName="ViewModel/MuscleDetailsVM.cs" Line="1" Column="1" />
+      <File FileName="ViewModel/TimerBoxViewModel.cs" Line="22" Column="14" />
+      <File FileName="Utilities/Utilities.cs" Line="1" Column="1" />
+      <File FileName="Model/Enum/MuscleEnum.cs" Line="13" Column="6" />
+      <File FileName="Utilities/ServiceHelper.cs" Line="1" Column="1" />
+      <File FileName="Utilities/Constants.cs" Line="291" Column="28" />
       <File FileName="Model/ServiceModel/User.cs" NotebookId="1" />
       <File FileName="View/ProfileView.xaml.cs" NotebookId="1" />
       <File FileName="Resources/Styles/Colors.xaml" NotebookId="1" />
-      <File FileName="Resources/Styles/AppStyles.xaml" Line="69" Column="52" NotebookId="1" />
+      <File FileName="Resources/Styles/AppStyles.xaml" Line="143" Column="31" NotebookId="1" />
+      <File FileName="View/ExercicesPage.xaml" Line="39" Column="30" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="TrainSheet">
-            <Node name="TrainSheet" expanded="True">
-              <Node name="View" expanded="True">
-                <Node name="DetailsPage.xaml" selected="True" />
-                <Node name="MainPage.xaml" expanded="True" />
-                <Node name="ProfileView.xaml" expanded="True" />
+          <Node name="TrainSheet" expanded="True">
+            <Node name="TrainSheet">
+              <Node name="Resources" expanded="True">
+                <Node name="Styles" expanded="True" />
               </Node>
+              <Node name="Utilities">
+                <Node name="Constants.cs" selected="True" />
+              </Node>
+              <Node name="View" expanded="True" />
               <Node name="ViewModel" expanded="True" />
+              <Node name="App.xaml" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33" />
-  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="Android.pixel_5_-_api_33" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MyAppleMacCatalystID" />
 </Properties>

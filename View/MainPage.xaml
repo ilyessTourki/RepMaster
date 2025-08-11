@@ -6,21 +6,25 @@
              xmlns:views="clr-namespace:TrainSheet.View"
              xmlns:tabs="http://sharpnado.com"
              x:Name="TabedPage"
-             BackgroundColor="White"
+             Padding="0"
+             BackgroundColor="Black"
              NavigationPage.HasNavigationBar="False"
              NavigationPage.HasBackButton="False">
-    <FlexLayout Direction="Column">
+    <FlexLayout Direction="Column" Margin="0" Padding="0">
         <tabs:ViewSwitcher  x:Name="MenuSwitcher"
                             Margin="0"
                             Animate="True"
                             SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}"
-                            FlexLayout.Basis="95%">
+                            FlexLayout.Basis="95%"
+                            FlexLayout.Grow="1">
             <tabs:LazyView x:TypeArguments="views:BodyPartsView"    x:Name="BodyPartsV"   Animate="True"  UseActivityIndicator="True"/>
             <tabs:LazyView x:TypeArguments="views:WatchView"        x:Name="WatchV"/>
             <tabs:LazyView x:TypeArguments="views:ProfileView"      x:Name="ProfileV"/>
         </tabs:ViewSwitcher>
 
-        <ContentView   FlexLayout.Basis="Auto">
+        <ContentView   FlexLayout.Basis="Auto"
+                       HeightRequest="50"
+                       VerticalOptions="FillAndExpand">
             <tabs:TabHostView   x:Name="TabSwitcher"
                                 Style="{StaticResource BottomTab}"
                                 SelectedIndex="{Binding Source={x:Reference MenuSwitcher}, Path=SelectedIndex, Mode=TwoWay}"

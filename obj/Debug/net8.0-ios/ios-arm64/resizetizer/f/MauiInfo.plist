@@ -5,8 +5,10 @@
   <key>UIAppFonts</key>
   <array>
 	<string>.DS_Store</string>
+	<string>bodyparts.ttf</string>
 	<string>horizon.otf</string>
 	<string>MaterialIcons-Regular.ttf</string>
+	<string>MauiInfo.plist</string>
 	<string>OpenSans-Regular.ttf</string>
 	<string>OpenSans-Semibold.ttf</string>
   </array>

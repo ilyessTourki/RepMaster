@@ -54,6 +54,9 @@ public partial class ExercicesPage : ContentPage
             case MuscleEnum.Legs:
                 musclceExercices = Constants.LegsExercices;
                 break;
+            case MuscleEnum.Calisthenics:
+                musclceExercices = Constants.CalisthenicsExercices;
+                break;
         }
         OnPropertyChanged(nameof(musclceExercices));
     }

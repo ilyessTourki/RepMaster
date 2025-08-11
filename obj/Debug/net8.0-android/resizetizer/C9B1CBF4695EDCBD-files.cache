@@ -9,10 +9,13 @@ obj/Debug/net8.0-android/resizetizer/r/mipmap-hdpi/appicon_background.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/triceps.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/biceps.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/shoulder.png
+obj/Debug/net8.0-android/resizetizer/r/drawable/neutralpullup.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/lyingbarbell.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/assistedbarchest.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/legpress.png
+obj/Debug/net8.0-android/resizetizer/r/drawable/stricthandstandpushup.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/preachercurl.png
+obj/Debug/net8.0-android/resizetizer/r/drawable/pushup.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/inclinedumbbellfly.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/facepull.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/dumbellpress.png
@@ -22,8 +25,12 @@ obj/Debug/net8.0-android/resizetizer/r/drawable/machinedownchest.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/machineupchest.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/abs.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/ropeoverhead.png
+obj/Debug/net8.0-android/resizetizer/r/drawable/declinepushup.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/profilepic.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/legextension.png
+obj/Debug/net8.0-android/resizetizer/r/drawable/underhandpullup.png
+obj/Debug/net8.0-android/resizetizer/r/drawable/handstand.png
+obj/Debug/net8.0-android/resizetizer/r/drawable/overhandpullup.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/restart.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/calecurl.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/squatsmachine.png
@@ -31,6 +38,7 @@ obj/Debug/net8.0-android/resizetizer/r/drawable/grippullup.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/reverselegcurl.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/machinefly.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/machinelateralraise.png
+obj/Debug/net8.0-android/resizetizer/r/drawable/chesttowallhandstandpushup.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/legcurl.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/barcurl.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/calfmachine.png
@@ -39,6 +47,7 @@ obj/Debug/net8.0-android/resizetizer/r/drawable/pause.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/dumbbellpress.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/frotpulldown.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/reversecalefly.png
+obj/Debug/net8.0-android/resizetizer/r/drawable/pikepushup.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/tbbarrow.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/inclinedumbbellpress.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/lateralraise.png
@@ -51,6 +60,7 @@ obj/Debug/net8.0-android/resizetizer/r/drawable/latpulldown.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/ropepushdown.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/back.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/start.png
+obj/Debug/net8.0-android/resizetizer/r/drawable/diamondpushup.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/frontarms.png
 obj/Debug/net8.0-android/resizetizer/r/drawable/cablerow.png
 obj/Debug/net8.0-android/resizetizer/r/mipmap-xxxhdpi/appicon_foreground.png

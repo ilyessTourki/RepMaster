@@ -132,7 +132,7 @@
     </Style>
      <Style x:Key="BottomTab" TargetType="tabs:TabHostView">
         <Setter Property="HorizontalOptions"    Value="FillAndExpand" />
-        <Setter Property="HeightRequest"        Value="50" />
+        <Setter Property="VerticalOptions"    Value="FillAndExpand" />
         <Setter Property="BackgroundColor"      Value="#000000" />
         <Setter Property="Orientation"          Value="Horizontal" />
         <Setter Property="TabType"              Value="Fixed" />

@@ -8,9 +8,9 @@
       <dSYMSourcePathExists>false</dSYMSourcePathExists>
       <NoSymbolStrip>false</NoSymbolStrip>
       <dSYMInfoPlistRelativePath>TrainSheet.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
-      <SymbolFile>/Users/ilyestourki/Documents/GitHub/RepMaster/obj/Debug/net8.0-ios/mtouch-symbols-ios-arm64.list</SymbolFile>
+      <SymbolFile>/Users/ilyestourki/Desktop/RepMaster/obj/Debug/net8.0-ios/ios-arm64/mtouch-symbols.list</SymbolFile>
       <DSymName>TrainSheet.app.dSYM</DSymName>
-      <SourceProjectPath>/Users/ilyestourki/Documents/GitHub/RepMaster</SourceProjectPath>
+      <SourceProjectPath>/Users/ilyestourki/Desktop/RepMaster</SourceProjectPath>
       <IsXPCService></IsXPCService>
     </_PostProcessingItem>
   </ItemGroup>
