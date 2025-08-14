@@ -1,0 +1,31 @@
+# Build output
+**/bin/
+**/obj/
+# VS / tooling
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+# Packages & logs
+*.nupkg
+*.snupkg
+*.logs
+*.log
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Mobile bundles (MAUI)
+*.apk
+*.aab
+*.ipa
+
+# Native/compiled artifacts sometimes accidentally committed
+*.dll
+*.exe
+*.pdb
+*.so
+*.dylib
+*.a
+*.wasm
