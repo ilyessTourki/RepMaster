@@ -25,7 +25,7 @@ public partial class BodyPartsView : ContentView
             new Muscle{ name = "FOREARM"    ,muscleEnum= MuscleEnum.Frontarms,image ="frontarms.png" },
             new Muscle{ name = "LEGS"       ,muscleEnum= MuscleEnum.Legs,    image ="legs.png" },
             new Muscle{ name = "ABS"        ,muscleEnum= MuscleEnum.Abs,     image ="abs.png" },
-        new Muscle{ name = "CALISTHENICS"        ,muscleEnum= MuscleEnum.Calisthenics,     image ="abs.png" }};
+            new Muscle{ name = "CALISTHENICS"        ,muscleEnum= MuscleEnum.Calisthenics,     image ="calisthenics.jpg" }};
         muscleExercices = new AsyncRelayCommand<MuscleEnum>(GoToMuscleExercices);
         BindingContext = this;
         var horizontalLayout = new GridItemsLayout(1, ItemsLayoutOrientation.Vertical)
