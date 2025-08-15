@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainSheet.Control.WatchControl.TimePicker"
+             >
+    <!-- Time selection -->
+    <Label Text="Set your session duration, then click ‘Start’ to begin the countdown."
+           FontSize="15"
+           TextColor="White"
+           Margin="10,20"
+           FontAttributes="Bold"/>
+
+    <StackLayout Orientation="Horizontal"
+                 HeightRequest="60"
+                 HorizontalOptions="Center">
+        <Border Style="{StaticResource TimePickerBorder}">
+             <Entry x:Name="HoursEntry"
+                    Placeholder="Hours"
+                    TextChanged="OnHoursTextChanged"
+                    Text="{Binding Hours}"
+                    Style="{StaticResource TimePickerEditor}"/>
+        </Border>
+       
+    <Label Text=":" FontSize="24"
+           VerticalOptions="Center"
+           TextColor="White"
+           Margin="10,0"/>
+
+        <Border Style="{StaticResource TimePickerBorder}">
+             <Entry x:Name="MinutesEntry"
+                    Placeholder="Minutes"
+                    TextChanged="OnMinutesTextChanged"
+                    Text="{Binding Minutes}"
+                    Style="{StaticResource TimePickerEditor}"/>
+        </Border>
+    </StackLayout>
+</StackLayout>

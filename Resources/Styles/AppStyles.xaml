@@ -147,5 +147,26 @@
         <Setter Property="VerticalTextAlignment"  Value="Center" />
         <Setter Property="HorizontalTextAlignment"  Value="Center" />
     </Style>
+    <Style x:Key="TimePickerEditor" TargetType="Editor">
+        <Setter Property="FontSize"         Value="15" />
+        <Setter Property="FontAttributes"   Value="Bold" />
+        <Setter Property="TextColor"        Value="White" />
+        <Setter Property="VerticalTextAlignment"  Value="Center" />
+        <Setter Property="HorizontalTextAlignment"  Value="Center" />
+        <Setter Property="Keyboard"  Value="Numeric" />
+        <Setter Property="HorizontalOptions"  Value="Center" />
+        <Setter Property="Margin"  Value="2,0" />
+        <Setter Property="HeightRequest"  Value="40" />
+        <Setter Property="WidthRequest"  Value="80" />
+    </Style>
 
+    <!--Border-->
+    <Style x:Key="TimePickerBorder" TargetType="Border">
+        <Setter Property="WidthRequest"  Value="80" />
+        <Setter Property="Stroke"         Value="Gray" />
+        <Setter Property="StrokeThickness"   Value="1" />
+        <Setter Property="StrokeShape"        Value="RoundRectangle 5" />
+        <Setter Property="BackgroundColor"  Value="#1a1a1a" />
+        <Setter Property="HeightRequest"  Value="40" />
+    </Style>
 </ResourceDictionary>

@@ -35,7 +35,7 @@ public static class MauiProgram
 #endif
             });
         builder.Services.AddSingleton<MuscleDetailsVM>();
-        builder.Services.AddSingleton<TimerService>();
+        builder.Services.AddSingleton<TimerBoxViewModel>();
 #if DEBUG
         builder.Logging.AddDebug();
 #endif

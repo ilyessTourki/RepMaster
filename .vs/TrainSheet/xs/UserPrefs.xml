@@ -7,35 +7,35 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="Android.pixel_5_-_api_33" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="View/BodyPartsView.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="View/WatchView.xaml">
     <Files>
-      <File FileName="Utilities/Constants.cs" Line="309" Column="50" />
-      <File FileName="TrainSheet.csproj" Line="1" Column="1" />
-      <File FileName="View/MainPage.xaml.cs" Line="41" Column="37" />
-      <File FileName="View/BodyPartsView.xaml.cs" Line="28" Column="116" />
-      <File FileName="Model/ServiceModel/User.cs" NotebookId="1" />
-      <File FileName="View/ProfileView.xaml.cs" NotebookId="1" />
-      <File FileName="Resources/Styles/Colors.xaml" NotebookId="1" />
-      <File FileName="Resources/Styles/AppStyles.xaml" NotebookId="1" />
-      <File FileName="View/ExercicesPage.xaml" Line="39" Column="30" NotebookId="1" />
+      <File FileName="View/WatchView.xaml" Line="23" Column="48" />
+      <File FileName="View/WatchView.xaml.cs" Line="63" Column="6" />
+      <File FileName="Control/TimerBox.xaml.cs" Line="13" Column="37" />
+      <File FileName="ViewModel/TimerBoxViewModel.cs" Line="13" Column="16" />
+      <File FileName="Resources/Styles/Colors.xaml" Line="9" Column="35" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TrainSheet">
             <Node name="TrainSheet">
-              <Node name="Resources">
-                <Node name="Images">
-                  <Node name="calisthenics" expanded="True" />
-                </Node>
+              <Node name="Control" expanded="True">
+                <Node name="TimerBox.xaml" expanded="True" />
+              </Node>
+              <Node name="Popup" expanded="True">
+                <Node name="SeriesEditPopup.xaml" expanded="True" />
+              </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="Images" expanded="True" />
+                <Node name="Styles" expanded="True" />
               </Node>
               <Node name="Utilities" expanded="True" />
               <Node name="View">
-                <Node name="BodyPartsView.xaml" expanded="True">
-                  <Node name="BodyPartsView.xaml.cs" selected="True" />
-                </Node>
-                <Node name="ExercicesPage.xaml" expanded="True" />
+                <Node name="BodyPartsView.xaml" expanded="True" />
                 <Node name="MainPage.xaml" expanded="True" />
+                <Node name="ProfileView.xaml" expanded="True" />
+                <Node name="WatchView.xaml" selected="True" />
               </Node>
               <Node name="ViewModel" expanded="True" />
               <Node name="App.xaml" expanded="True" />

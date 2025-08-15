@@ -97,6 +97,8 @@
 	  <Folder Include="Model\ServiceModel\" />
 	  <Folder Include="Interface\" />
 	  <Folder Include="Control\ProfileControl\" />
+	  <Folder Include="Control\WatchControl\" />
+	  <Folder Include="Utilities\Design\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -156,5 +158,7 @@
 	  <None Remove="Resources\Images\calisthenics\pushup.png" />
 	  <None Remove="Resources\Images\calisthenics\stricthandstandpushup.png" />
 	  <None Remove="Resources\Images\calisthenics\underhandpullup.png" />
+	  <None Remove="Control\WatchControl\" />
+	  <None Remove="Utilities\Design\" />
 	</ItemGroup>
 </Project>

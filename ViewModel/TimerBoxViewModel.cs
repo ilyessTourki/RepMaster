@@ -1,53 +1,133 @@
-﻿using System;
-using System.ComponentModel;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using TrainSheet.Service;
+using TrainSheet.Utilities.Design;
 
 namespace TrainSheet.ViewModel
 {
     public class TimerBoxViewModel : BindableObject
     {
-        private readonly TimerService _timerService;
         public string StartStopButtonText { get; set; }
+        public string Hours { get; set; }
+        public string Minutes { get; set; }
+        private bool _isRunning;
+        private int hours = 0;
+        private int minutes = 0;
+        public int totalSeconds;
+        public int remainingSeconds;
 
-        public TimerBoxViewModel(TimerService timerService)
+        private CountdownDrawable drawable;
+        private GraphicsView ProgressCircle;
+        private Label TimeLabel;
+        private Label TotalLabel;
+        private Entry HoursEntry;
+        private Entry MinutesEntry;
+        public ICommand toggleTimerCommand { get; }
+        public ICommand resetTimerCommand { get; }
+
+
+        public TimerBoxViewModel()
         {
-            _timerService = timerService;
-            _timerService.PropertyChanged += (s, e) => OnPropertyChanged(e.PropertyName);
-            if (_timerService.IsRunning)
+            StartStopButtonText = "play_arrow";
+            toggleTimerCommand  = new Command(StartButton);
+            resetTimerCommand   = new Command(ResetTimer);
+
+            
+        }
+        public void SetComponents(GraphicsView progressCircle, Label timeLabel ,Label totalLabel)
+        {
+            ProgressCircle = progressCircle;
+            TimeLabel = timeLabel;
+            TotalLabel = totalLabel;
+
+            drawable = new CountdownDrawable(() => remainingSeconds, totalSeconds);
+            ProgressCircle.Drawable = drawable;
+        }
+        private void StartButton()
+        {
+            if (!_isRunning)
             {
+                CheckTime();
+                hours = int.Parse(Hours); 
+                minutes = int.Parse(Minutes);
+
+                StartCountdown();
                 StartStopButtonText = "pause";
+                _isRunning = true;
             }
             else
             {
                 StartStopButtonText = "play_arrow";
+                _isRunning = false;
             }
-            ToggleTimerCommand = new Command(() =>
-            {
-                if (_timerService.IsRunning)
-                {
-                    _timerService.Stop();
-                    StartStopButtonText = "play_arrow";
-                }
-                else
-                {
-                    _timerService.Start();
-                    StartStopButtonText = "pause";
-                }
-                OnPropertyChanged(nameof(StartStopButtonText));
-            });
-            ResetTimerCommand = new Command(() =>
-            {
-                _timerService.Reset();
-                StartStopButtonText = "play_arrow";
-                OnPropertyChanged(nameof(StartStopButtonText));
-            });
+            OnPropertyChanged(nameof(StartStopButtonText));
         }
-        public TimeSpan ElapsedTime => _timerService.ElapsedTime;
+        private void CheckTime()
+        {
+            if (Hours is null)
+            {
+                Hours = "00";
+            }
+            else if (0 < int.Parse(Hours) && int.Parse(Hours) < 10)
+            {
+                Hours = "0" + Hours;
+            }
+            if (Minutes is null)
+            {
+                Minutes = "00";
+            }
+            else if (0<int.Parse(Minutes) && int.Parse(Minutes) < 10)
+            {
+                Minutes = "0" + Minutes;
+                
+            }
+            OnPropertyChanged(nameof(Hours));
+            OnPropertyChanged(nameof(Minutes));
+        }
+        private void ResetTimer()
+        {
+            hours = 0;
+            minutes = 2;
+            totalSeconds = (hours * 3600) + (minutes * 60);
+            remainingSeconds = totalSeconds;
+            drawable = new CountdownDrawable(() => remainingSeconds, totalSeconds);
+            ProgressCircle.Drawable = drawable;
+        }
+        private void StartCountdown()
+        {
 
+            // Only calculate totalSeconds if first start (not resume)
+            if (totalSeconds == 0)
+            {
+                totalSeconds = (hours * 3600) + (minutes * 60);
+                remainingSeconds = totalSeconds;
+            }
 
-        public ICommand ToggleTimerCommand { get; }
-        public ICommand ResetTimerCommand { get; }
+            drawable = new CountdownDrawable(() => remainingSeconds, totalSeconds);
+            ProgressCircle.Drawable = drawable;
+
+            Device.StartTimer(TimeSpan.FromSeconds(1), () =>
+            {
+                if (!_isRunning) // If paused, stop ticking
+                    return false;
+
+                if (remainingSeconds > 0)
+                {
+                    remainingSeconds--;
+                    UpdateLabels();
+                    ProgressCircle.Invalidate();
+                    return true;
+                }
+                return false;
+            });
+
+            UpdateLabels();
+        }
+        private void UpdateLabels()
+        {
+            var remaining = TimeSpan.FromSeconds(remainingSeconds);
+            TimeLabel.Text = $"{(int)remaining.TotalHours:D2}:{remaining.Minutes:D2}:{remaining.Seconds:D2}";
+            TotalLabel.Text = $"of {(int)TimeSpan.FromSeconds(totalSeconds).TotalHours:D2}:{TimeSpan.FromSeconds(totalSeconds).Minutes:D2} total";
+        }
 
     }
 }

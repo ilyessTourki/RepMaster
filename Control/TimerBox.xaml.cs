@@ -6,10 +6,11 @@ namespace TrainSheet.Control;
 
 public partial class TimerBox : ContentView
 {
-	public TimerBox()
+    private TimerBoxViewModel vm = ServiceHelper.GetService<TimerBoxViewModel>();
+
+    public TimerBox()
 	{
         InitializeComponent();
-        var timerService = ServiceHelper.GetService<TimerService>();
-        BindingContext = new TimerBoxViewModel(timerService);
+        BindingContext = vm;
     }
 }
