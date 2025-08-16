@@ -15,15 +15,18 @@ public partial class TimePicker : StackLayout
 	}
     private void OnHoursTextChanged(object sender, TextChangedEventArgs e)
     {
-        // Keep only digits
-        if (!int.TryParse(e.NewTextValue, out int value))
+        if (!int.TryParse(e.NewTextValue, out int value) || e.NewTextValue.Length > 2)
         {
             HoursEntry.Text = string.Empty;
+        }
+        else if (value > 9)
+        {
+            HoursEntry.Text = "01";
         }
     }
     private void OnMinutesTextChanged(object sender, TextChangedEventArgs e)
     {
-        if (!int.TryParse(e.NewTextValue, out int value))
+        if (!int.TryParse(e.NewTextValue, out int value) || e.NewTextValue.Length >2)
         {
             MinutesEntry.Text = string.Empty;
         }

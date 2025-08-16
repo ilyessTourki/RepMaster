@@ -1,5 +1,8 @@
 ﻿using System.Windows.Input;
-using TrainSheet.Service;
+using CommunityToolkit.Mvvm.Input;
+using Mopups.Services;
+using TrainSheet.Popup;
+using Microsoft.Maui.Controls;
 using TrainSheet.Utilities.Design;
 
 namespace TrainSheet.ViewModel
@@ -19,8 +22,6 @@ namespace TrainSheet.ViewModel
         private GraphicsView ProgressCircle;
         private Label TimeLabel;
         private Label TotalLabel;
-        private Entry HoursEntry;
-        private Entry MinutesEntry;
         public ICommand toggleTimerCommand { get; }
         public ICommand resetTimerCommand { get; }
 
@@ -29,9 +30,7 @@ namespace TrainSheet.ViewModel
         {
             StartStopButtonText = "play_arrow";
             toggleTimerCommand  = new Command(StartButton);
-            resetTimerCommand   = new Command(ResetTimer);
-
-            
+            resetTimerCommand   = new AsyncRelayCommand(ResetTimer);
         }
         public void SetComponents(GraphicsView progressCircle, Label timeLabel ,Label totalLabel)
         {
@@ -67,7 +66,7 @@ namespace TrainSheet.ViewModel
             {
                 Hours = "00";
             }
-            else if (0 < int.Parse(Hours) && int.Parse(Hours) < 10)
+            else if (0 < int.Parse(Hours) && int.Parse(Hours) < 10 && !Hours.Contains("0"))
             {
                 Hours = "0" + Hours;
             }
@@ -75,22 +74,31 @@ namespace TrainSheet.ViewModel
             {
                 Minutes = "00";
             }
-            else if (0<int.Parse(Minutes) && int.Parse(Minutes) < 10)
+            else if (0<int.Parse(Minutes) && int.Parse(Minutes) < 10 && !Minutes.Contains("0"))
             {
                 Minutes = "0" + Minutes;
-                
             }
             OnPropertyChanged(nameof(Hours));
             OnPropertyChanged(nameof(Minutes));
         }
-        private void ResetTimer()
+        private async Task ResetTimer()
         {
-            hours = 0;
-            minutes = 2;
-            totalSeconds = (hours * 3600) + (minutes * 60);
-            remainingSeconds = totalSeconds;
-            drawable = new CountdownDrawable(() => remainingSeconds, totalSeconds);
-            ProgressCircle.Drawable = drawable;
+            bool answer = await Application.Current.MainPage.DisplayAlert("Reset Timer", "Are you sure you want to reset the timer?", "Yes", "No");
+
+            if (answer)
+            {
+                CheckTime();
+                hours = int.Parse(Hours);
+                minutes = int.Parse(Minutes);
+                totalSeconds = (hours * 3600) + (minutes * 60);
+                remainingSeconds = totalSeconds;
+
+                drawable = new CountdownDrawable(() => remainingSeconds, totalSeconds);
+                ProgressCircle.Drawable = drawable;
+                UpdateLabels();
+            }
+
+            
         }
         private void StartCountdown()
         {

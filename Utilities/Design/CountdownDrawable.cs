@@ -3,15 +3,14 @@ namespace TrainSheet.Utilities.Design
 {
 	public class CountdownDrawable : IDrawable
     {
-        private readonly Func<int> getRemaining;
-        private readonly int totalSeconds;
+        private  Func<int> getRemaining;
+        private  int totalSeconds;
 
         public CountdownDrawable(Func<int> getRemaining, int totalSeconds)
         {
             this.getRemaining = getRemaining;
             this.totalSeconds = totalSeconds;
         }
-
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
             float centerX = dirtyRect.Center.X;
