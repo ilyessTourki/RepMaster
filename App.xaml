@@ -13,6 +13,7 @@
             </ResourceDictionary.MergedDictionaries>
             <converters:IndexToDisplayConverter     x:Key="IndexToDisplayConverter"/>
             <converters:BoolToVisibilityConverter   x:Key="BoolToVisibilityConverter"/>
+            <converters:DayColorConverter           x:Key="DayColorConverter"/>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

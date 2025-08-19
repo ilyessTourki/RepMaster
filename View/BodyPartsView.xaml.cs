@@ -5,6 +5,7 @@ using TrainSheet.Model.Enum;
 using TrainSheet.Model.ServiceModel;
 using static TrainSheet.Utilities.Utilities;
 using static TrainSheet.Utilities.Constants;
+using System.Collections.ObjectModel;
 
 namespace TrainSheet.View;
 
@@ -12,6 +13,8 @@ public partial class BodyPartsView : ContentView
 {
     public List<Muscle> muscles { get; set; } = new List<Muscle>();
     public ICommand muscleExercices { get; }
+    public ObservableCollection<DayItem> WeekDays { get; set; }
+
 
     public BodyPartsView()
 	{
@@ -27,10 +30,11 @@ public partial class BodyPartsView : ContentView
             new Muscle{ name = "ABS"        ,muscleEnum= MuscleEnum.Abs,     image ="abs.png" },
             new Muscle{ name = "CALISTHENICS"        ,muscleEnum= MuscleEnum.Calisthenics,     image ="calisthenics.jpg" }};
         muscleExercices = new AsyncRelayCommand<MuscleEnum>(GoToMuscleExercices);
+        SetDaysCollection();
         BindingContext = this;
         var horizontalLayout = new GridItemsLayout(1, ItemsLayoutOrientation.Vertical)
         {
-            VerticalItemSpacing = 4,
+            VerticalItemSpacing = 10,
             HorizontalItemSpacing = 4
         };
 
@@ -64,6 +68,26 @@ public partial class BodyPartsView : ContentView
                     await muscleCateg.SaveAsync(pecExo);
                 }
             }
+        }
+    }
+    private void SetDaysCollection()
+    {
+        var today = DateTime.Today;
+        var startOfWeek = today.AddDays(-(int)today.DayOfWeek);
+
+        WeekDays = new ObservableCollection<DayItem>();
+
+        for (int i = 0; i < 7; i++)
+        {
+            var date = startOfWeek.AddDays(i);
+            WeekDays.Add(new DayItem
+            {
+                DayName = date.ToString("ddd"),
+                DayNumber = date.Day,
+                Date = date,
+                IsSelected = date == today,
+                HasSets = (date < today && date.Day % 2 == 0) // 👈 Example: fake rule (even days = has sets)
+            });
         }
     }
 }

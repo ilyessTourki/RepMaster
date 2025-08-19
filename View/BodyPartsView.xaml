@@ -3,13 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrainSheet.View.BodyPartsView"
              BackgroundColor="Black"
-             x:Name="BodyPartsPage">
+             x:Name="BodyPartsPage"
+             xmlns:control="clr-namespace:TrainSheet.Control.BodyPartsControl">
     <ScrollView VerticalScrollBarVisibility="Always">
 
         <StackLayout>
+            <control:DateItemsStuck Margin="5,20"/>
             <CollectionView  ItemsSource="{Binding muscles}"
                     x:Name="MyCollectionView"
-                    Margin="5">
+                    Margin="10">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame   CornerRadius="10"

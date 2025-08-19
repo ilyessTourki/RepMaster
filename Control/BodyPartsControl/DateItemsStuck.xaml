@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainSheet.Control.BodyPartsControl.DateItemsStuck"
+             >
+    <CollectionView
+    ItemsSource="{Binding WeekDays}"
+    ItemsLayout="HorizontalList"
+    HorizontalOptions="Center"
+    SelectionMode="None">
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+            <Frame 
+    CornerRadius="10"
+    Padding="5"
+    Margin="5"
+    HeightRequest="60"
+    WidthRequest="45"
+    HasShadow="False"
+    BackgroundColor="{Binding ., Converter={StaticResource DayColorConverter}}">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="{Binding DayName}" HorizontalOptions="Center" FontSize="13" TextColor="White"/>
+        <Label Text="{Binding DayNumber}" HorizontalOptions="Center" FontAttributes="Bold" FontSize="13" TextColor="White"/>
+    </StackLayout>
+</Frame>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+</CollectionView>
+</StackLayout>

@@ -1,9 +1,8 @@
 ﻿using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
-using Mopups.Services;
-using TrainSheet.Popup;
-using Microsoft.Maui.Controls;
 using TrainSheet.Utilities.Design;
+using System.Diagnostics;
+using Plugin.LocalNotification;
 
 namespace TrainSheet.ViewModel
 {
@@ -125,9 +124,9 @@ namespace TrainSheet.ViewModel
                     ProgressCircle.Invalidate();
                     return true;
                 }
+                _ = SendTimerNotification();
                 return false;
             });
-
             UpdateLabels();
         }
         private void UpdateLabels()
@@ -136,7 +135,17 @@ namespace TrainSheet.ViewModel
             TimeLabel.Text = $"{(int)remaining.TotalHours:D2}:{remaining.Minutes:D2}:{remaining.Seconds:D2}";
             TotalLabel.Text = $"of {(int)TimeSpan.FromSeconds(totalSeconds).TotalHours:D2}:{TimeSpan.FromSeconds(totalSeconds).Minutes:D2} total";
         }
+        private async Task SendTimerNotification()
+        {
+            var request = new NotificationRequest
+            {
+                NotificationId = 100,
+                Title = "Session Ended",
+                Description = "Time’s up! Wrap it up, avoid chit-chat, and finish strong for maximum results.",
+            };
 
+            await LocalNotificationCenter.Current.Show(request);
+        }
     }
 }
 

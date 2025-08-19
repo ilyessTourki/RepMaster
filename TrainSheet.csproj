@@ -87,6 +87,7 @@
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
 		<PackageReference Include="Sharpnado.Tabs.Maui" Version="3.0.1" />
+		<PackageReference Include="Plugin.LocalNotification" Version="11.1.4" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -99,6 +100,7 @@
 	  <Folder Include="Control\ProfileControl\" />
 	  <Folder Include="Control\WatchControl\" />
 	  <Folder Include="Utilities\Design\" />
+	  <Folder Include="Control\BodyPartsControl\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -139,6 +141,10 @@
 	  <MauiImage Include="Resources/Images/legs/squatsmachine.png" />
 	</ItemGroup>
 
+	<ItemGroup Condition="$(TargetFramework.Contains('-android'))">
+	 <PackageReference Include="Xamarin.AndroidX.Fragment.Ktx" Version="1.8.6.2" />
+	</ItemGroup>
+
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\start.png" />
 	  <BundleResource Include="Resources\Images\pause.png" />
@@ -160,5 +166,6 @@
 	  <None Remove="Resources\Images\calisthenics\underhandpullup.png" />
 	  <None Remove="Control\WatchControl\" />
 	  <None Remove="Utilities\Design\" />
+	  <None Remove="Control\BodyPartsControl\" />
 	</ItemGroup>
 </Project>

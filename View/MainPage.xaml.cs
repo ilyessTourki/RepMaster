@@ -1,4 +1,5 @@
-﻿using TrainSheet.Model.ServiceModel;
+﻿using Plugin.LocalNotification;
+using TrainSheet.Model.ServiceModel;
 using static TrainSheet.Utilities.Utilities;
 
 namespace TrainSheet.View;
@@ -13,8 +14,17 @@ public partial class MainPage : ContentPage
     protected override async void OnAppearing()
     {
         TabSwitcher.SelectedIndex =0;
+        await AskPermissions();
         await CreateUser();
         await CreateBodyPartsMesures();
+    }
+    private async Task AskPermissions()
+    {
+        if (await LocalNotificationCenter.Current.AreNotificationsEnabled() == false)
+        {
+            // Basic permission request
+            await LocalNotificationCenter.Current.RequestNotificationPermission();
+        }
     }
     async void TabSwitcher_SelectedTabIndexChanged(System.Object sender, Microsoft.Maui.Controls.SelectedPositionChangedEventArgs e)
     {
@@ -31,6 +41,7 @@ public partial class MainPage : ContentPage
                 break;
         }
     }
+    
     private async Task SetBodyPartsView()
     {
         var bodyParts = BodyPartsV.Content as BodyPartsView;
