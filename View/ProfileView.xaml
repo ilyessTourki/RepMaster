@@ -9,23 +9,41 @@
         <StackLayout>
             <!--Iamge Profile + Name-->
             
-            <Grid HorizontalOptions="Center"
-              VerticalOptions="Center"
-              WidthRequest="110"
-              HeightRequest="110"
+            <Grid HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand"
               Margin="0,40,0,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="0.6*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                </Grid.ColumnDefinitions>
             <Ellipse Stroke="White"
                      StrokeThickness="1"
                      WidthRequest="130"
-                     HeightRequest="130" />
+                     HeightRequest="130"
+                     Grid.Column="1"
+                     HorizontalOptions="CenterAndExpand"/>
             <Image Source="profilepic.png"
                    WidthRequest="120"
                    HeightRequest="120"
-                   Aspect="AspectFill">
+                   Aspect="AspectFill"
+                   Grid.Column="1">
                 <Image.Clip>
                     <EllipseGeometry Center="60,60" RadiusX="60" RadiusY="60" />
                 </Image.Clip>
             </Image>
+                <Label Text="camera_alt"
+            FontFamily="Material"
+            FontAttributes="Bold"
+            FontSize="19"
+            TextColor="White"
+            HorizontalOptions="EndAndExpand"
+            VerticalOptions="EndAndExpand"
+            Grid.Column="1">
+        <Label.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding editUserInfo}"/>
+        </Label.GestureRecognizers>
+    </Label>
 
         </Grid>
             <control:GeneralInfoControl/>
