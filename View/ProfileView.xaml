@@ -6,45 +6,28 @@
                 x:Name="ProfilePage"
                 xmlns:control="clr-namespace:TrainSheet.Control.ProfileControl">
     <ScrollView>
-        <StackLayout>
+        <StackLayout x:Name="ProfileStack">
             <!--Iamge Profile + Name-->
             
-            <Grid HorizontalOptions="FillAndExpand"
-              VerticalOptions="FillAndExpand"
+            <Grid HorizontalOptions="Center"
+              VerticalOptions="Center"
               Margin="0,40,0,20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.2*"/>
-                    <ColumnDefinition Width="0.6*"/>
-                    <ColumnDefinition Width="0.2*"/>
-                </Grid.ColumnDefinitions>
-            <Ellipse Stroke="White"
+            <Border Stroke="White"
                      StrokeThickness="1"
                      WidthRequest="130"
                      HeightRequest="130"
-                     Grid.Column="1"
-                     HorizontalOptions="CenterAndExpand"/>
-            <Image Source="profilepic.png"
+                     StrokeShape="RoundRectangle 65,65,65,65"
+                     HorizontalOptions="CenterAndExpand">
+            <Image Source="{Binding userPhoto}"
                    WidthRequest="120"
                    HeightRequest="120"
-                   Aspect="AspectFill"
-                   Grid.Column="1">
+                   Aspect="AspectFill">
                 <Image.Clip>
                     <EllipseGeometry Center="60,60" RadiusX="60" RadiusY="60" />
                 </Image.Clip>
             </Image>
-                <Label Text="camera_alt"
-            FontFamily="Material"
-            FontAttributes="Bold"
-            FontSize="19"
-            TextColor="White"
-            HorizontalOptions="EndAndExpand"
-            VerticalOptions="EndAndExpand"
-            Grid.Column="1">
-        <Label.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding editUserInfo}"/>
-        </Label.GestureRecognizers>
-    </Label>
-
+            </Border>
+                 <control:UpdatePhotoControl Grid.Column="1"/> 
         </Grid>
             <control:GeneralInfoControl/>
 
@@ -70,11 +53,13 @@
                 </Label>
 
             </StackLayout>
-           
+           <control:BodyPartsTableSkeleton x:Name="skeletonList"
+                                           IsVisible="{Binding BindingContext.isLoading, Source={x:Reference ProfilePage}}"/>
             <ListView   RowHeight="60"
                 SelectionMode="None"
                 SeparatorVisibility="None"
-                x:Name="bodyPartsListView">
+                ItemsSource="{Binding bodyParts }"
+                IsVisible="{Binding BindingContext.isLoading, Source={x:Reference ProfilePage},Converter ={StaticResource BoolToVisibilityConverter}}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

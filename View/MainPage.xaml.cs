@@ -1,12 +1,16 @@
 ﻿using Plugin.LocalNotification;
 using TrainSheet.Model.ServiceModel;
+using TrainSheet.Utilities;
+using TrainSheet.ViewModel;
 using static TrainSheet.Utilities.Utilities;
 
 namespace TrainSheet.View;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
+    private ProfileVM profileVM = ServiceHelper.GetService<ProfileVM>();
+
+    public MainPage()
 	{
 		InitializeComponent();
         BindingContext = this;
@@ -63,7 +67,7 @@ public partial class MainPage : ContentPage
     private async Task SetProfileView()
     {
         var profile = ProfileV.Content as ProfileView;
-        ProfileV.BindingContext = profile;
+        ProfileV.BindingContext = profileVM;
         await Task.Delay(500);
         if (profile != null)
         {

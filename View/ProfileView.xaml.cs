@@ -1,51 +1,27 @@
-﻿using System.Collections.ObjectModel;
-using System.Windows.Input;
-using static TrainSheet.Utilities.Utilities;
-using TrainSheet.Model.ServiceModel;
+﻿using TrainSheet.Utilities;
+using TrainSheet.ViewModel;
 
 namespace TrainSheet.View;
 
 public partial class ProfileView : ContentView
 {
-	public ObservableCollection<BodyParts> bodyParts { get; set; } = new ObservableCollection<BodyParts>();
-    public bool     isEditingMesurments { get; set; }
-    public string   editUserMesurments { get; set; }
-    public ICommand editUserMesurment { get; }
+
+    private ProfileVM profileVM = ServiceHelper.GetService<ProfileVM>();
 
     public ProfileView()
     {
         InitializeComponent();
-        isEditingMesurments = false;
-        editUserMesurments = "edit";
-        editUserMesurment = new Command(EditUserMesurment);
-        BindingContext = this;
-        SetBodyParts();
+        BindingContext = profileVM;
     }
     public async Task OnViewAppeard()
     {
-        await SetBodyParts();
+        profileVM.SetLoading(true);
+        skeletonList.SetVisibleanimation();
+        profileVM.SetUserPhoto();
+        await profileVM.SetBodyParts();
+        profileVM.SetLoading(false);
     }
-    private async Task SetBodyParts()
-	{
-        if(bodyParts.Count == 0)
-        {
-            var bodyPartsFromDB = await bodyPartsDB.GetAllAsync();
-            foreach (var bodyPart in bodyPartsFromDB)
-            {
-                bodyParts.Add(bodyPart);
-            }
-            OnPropertyChanged(nameof(bodyParts));
-            bodyPartsListView.ItemsSource = bodyParts;
-        }
-
-    }
-    private void EditUserMesurment()
-    {
-        isEditingMesurments = !isEditingMesurments;
-        OnPropertyChanged(nameof(isEditingMesurments));
-        editUserMesurments = isEditingMesurments ? "check" : "edit";
-        OnPropertyChanged(nameof(editUserMesurments));
-    }
+   
 
 
 }

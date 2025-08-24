@@ -113,6 +113,13 @@
         <Setter Property="TextColor" Value="White" />
         <Setter Property="VerticalOptions" Value="Center" />
     </Style>
+    <Style x:Key="EditPhotoLabel" TargetType="Label">
+        <Setter Property="FontFamily" Value="Material" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+    </Style>
 
     <!--Span-->
     <Style x:Key="StatUnitSpan" TargetType="Span">
@@ -168,5 +175,15 @@
         <Setter Property="StrokeShape"        Value="RoundRectangle 5" />
         <Setter Property="BackgroundColor"  Value="#1a1a1a" />
         <Setter Property="HeightRequest"  Value="40" />
+    </Style>
+    <Style x:Key="EditPhoto" TargetType="Border">
+        <Setter Property="Stroke"               Value="White" />
+        <Setter Property="Background"           Value="Black" />
+        <Setter Property="StrokeThickness"      Value="1" />
+        <Setter Property="WidthRequest"         Value="30" />
+        <Setter Property="HeightRequest"        Value="30" />
+        <Setter Property="StrokeShape"          Value="RoundRectangle 50,50,50,50" />
+        <Setter Property="VerticalOptions"      Value="EndAndExpand" />
+        <Setter Property="HorizontalOptions"    Value="EndAndExpand" />
     </Style>
 </ResourceDictionary>

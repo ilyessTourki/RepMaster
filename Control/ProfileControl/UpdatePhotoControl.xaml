@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainSheet.Control.ProfileControl.UpdatePhotoControl">
+    
+         <Border    Style="{StaticResource EditPhoto}"
+                    Margin="0,0,0,10"
+                    IsVisible="{Binding isUpdatingPhoto,Converter ={StaticResource BoolToVisibilityConverter}}">
+                     
+                <Label Text="camera_alt"
+                       Style="{StaticResource EditPhotoLabel}">
+        <Label.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding editUserImage}"/>
+        </Label.GestureRecognizers>
+    </Label>
+    </Border>
+
+    <StackLayout Orientation="Horizontal"
+                 IsVisible="{Binding isUpdatingPhoto}"
+                     VerticalOptions="EndAndExpand"
+                     HorizontalOptions="EndAndExpand"
+                     Margin="120,0,0,10">
+         <Border Style="{StaticResource EditPhoto}"
+                     Margin="0,0,5,0">
+                <Label Text="clear"
+                       Style="{StaticResource EditPhotoLabel}">
+        <Label.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding cancelEditImage}"/>
+        </Label.GestureRecognizers>
+    </Label>
+    </Border>
+         <Border Style="{StaticResource EditPhoto}">
+                <Label  Text="check"
+                        Style="{StaticResource EditPhotoLabel}">
+        <Label.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding saveUserImage}"/>
+        </Label.GestureRecognizers>
+    </Label>
+    </Border>
+
+    </StackLayout>
+</StackLayout>

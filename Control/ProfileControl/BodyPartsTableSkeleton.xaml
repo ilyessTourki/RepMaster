@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ListView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainSheet.Control.ProfileControl.BodyPartsTableSkeleton"
+             xmlns:sk="clr-namespace:Maui.Skeleton;assembly=Maui.Skeleton"
+             sk:Skeleton.IsParent="{Binding isVisible}"
+             RowHeight="60"
+             SeparatorVisibility="None"
+             SelectionMode="None"
+             ItemsSource="{Binding skeletonList}"
+             x:Name="listS">
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+            <Frame 
+                    Margin="10,2"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    HasShadow="False"
+                    CornerRadius="10"
+                    BackgroundColor="#1a1a1a"
+                    sk:Skeleton.BackgroundColor="#1a1a1a"
+                    BorderColor="Transparent"
+                    sk:Skeleton.IsBusy="{Binding Source={x:Reference listS},Path=BindingContext.isVisible}"
+                    sk:Skeleton.Animation="{sk:DefaultAnimation Fade}">
+                               
+                </Frame>
+            </ViewCell>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
