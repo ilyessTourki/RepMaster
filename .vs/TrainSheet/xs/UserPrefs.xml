@@ -1,51 +1,31 @@
-﻿<Properties StartupConfiguration="{00777D08-5931-4ABB-B53F-55C215E77C32}|Default">
+﻿<Properties StartupConfiguration="{D00E873A-C2DE-4A90-A034-3AD109D15FFA}|Default">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ilyestourki/Desktop/RepMaster/ViewModel/TimerBoxViewModel.cs" relfile="ViewModel/TimerBoxViewModel.cs" line="126" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.63FE839D-15A7-4FE7-BCF7-86A5C84A3AF4" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="Android.pixel_5_-_api_33" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MauiProgram.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.63FE839D-15A7-4FE7-BCF7-86A5C84A3AF4" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TrainSheet.csproj">
     <Files>
-      <File FileName="Popup/SeriesEditPopup.xaml" Line="4" Column="14" />
-      <File FileName="View/WatchView.xaml.cs" Line="13" Column="63" />
-      <File FileName="TrainSheet.csproj" Line="146" Column="1" />
-      <File FileName="ViewModel/TimerBoxViewModel.cs" Line="126" Column="1" NotebookId="1" />
-      <File FileName="Utilities/ServiceHelper.cs" Line="11" Column="44" NotebookId="1" />
-      <File FileName="MauiProgram.cs" Line="6" Column="22" NotebookId="1" />
+      <File FileName="ViewModel/ProfileVM.cs" />
+      <File FileName="Control/ProfileControl/GeneralInfoControl.xaml" />
+      <File FileName="TrainSheet.csproj" Line="35" Column="118" />
+      <File FileName="Utilities/ServiceHelper.cs" />
+      <File FileName="../../../../usr/local/share/dotnet/sdk/8.0.404/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets" Line="379" Column="5" />
+      <File FileName="View/ProfileView.xaml.cs" NotebookId="1" />
+      <File FileName="View/ProfileView.xaml" Line="62" Column="37" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TrainSheet" expanded="True">
-            <Node name="TrainSheet">
-              <Node name="Control" expanded="True">
-                <Node name="TimerBox.xaml" expanded="True" />
-              </Node>
-              <Node name="Popup" expanded="True" />
-              <Node name="Resources" expanded="True">
-                <Node name="Styles" expanded="True" />
-              </Node>
-              <Node name="Service" expanded="True" />
-              <Node name="Utilities" expanded="True">
-                <Node name="Design" expanded="True" />
-              </Node>
-              <Node name="View" expanded="True">
-                <Node name="DetailsPage.xaml" expanded="True" />
-                <Node name="WatchView.xaml" expanded="True" />
-              </Node>
-              <Node name="ViewModel" expanded="True" />
-              <Node name="App.xaml" expanded="True" />
-              <Node name="MauiProgram.cs" selected="True" />
-            </Node>
+            <Node name="TrainSheet" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33" />
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
 </Properties>

@@ -56,6 +56,7 @@
            <control:BodyPartsTableSkeleton x:Name="skeletonList"
                                            IsVisible="{Binding BindingContext.isLoading, Source={x:Reference ProfilePage}}"/>
             <ListView   RowHeight="60"
+                        BackgroundColor="Transparent"
                 SelectionMode="None"
                 SeparatorVisibility="None"
                 ItemsSource="{Binding bodyParts }"

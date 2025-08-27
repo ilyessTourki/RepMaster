@@ -24,13 +24,15 @@
 		<ApplicationTitle>TrainSheet</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>companyname.trainsheet</ApplicationId>
+		<ApplicationId>IlyesTourki.RepMaster</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
+		<VersionCode>120</VersionCode>
 
-		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
@@ -38,16 +40,12 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	
+
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
 	  <CreatePackage>false</CreatePackage>
-	  <CodesignKey>iPhone Developer</CodesignKey>
+	  <CodesignKey></CodesignKey>
 	  <CodesignProvision></CodesignProvision>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
-	  <CreatePackage>false</CreatePackage>
-	</PropertyGroup>
-	<PropertyGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
-		<RuntimeIdentifiers>ios-arm64</RuntimeIdentifiers>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
@@ -169,4 +167,12 @@
 	  <None Remove="Utilities\Design\" />
 	  <None Remove="Control\BodyPartsControl\" />
 	</ItemGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Release|net8.0-ios'">
+		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+		<Codesignkey>Apple Distribution: ilyess Tourki (C9H3F56DNK)</Codesignkey>
+		<CodesignProvision>PhysiqueX Distribution Profile</CodesignProvision>
+		<MtouchUseLlvm>False</MtouchUseLlvm>
+		<AotAssemblies>True</AotAssemblies>
+	</PropertyGroup>
 </Project>

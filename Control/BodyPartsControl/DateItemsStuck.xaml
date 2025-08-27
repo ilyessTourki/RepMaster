@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TrainSheet.Control.BodyPartsControl.DateItemsStuck"
-             >
+             x:Class="TrainSheet.Control.BodyPartsControl.DateItemsStuck">
     <CollectionView
     ItemsSource="{Binding WeekDays}"
     ItemsLayout="HorizontalList"
     HorizontalOptions="Center"
+    HeightRequest="70"
     SelectionMode="None">
     <CollectionView.ItemTemplate>
         <DataTemplate>
