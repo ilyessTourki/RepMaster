@@ -38,7 +38,7 @@
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="VerticalOptions" Value="Center" />
         <Setter Property="BorderColor" Value="White" />
-        <Setter Property="CornerRadius" Value="50" />
+        <Setter Property="CornerRadius" Value="{OnPlatform iOS=22, Android=50}" />
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="Padding" Value="0" />
     </Style>
