@@ -31,17 +31,17 @@
                                 SelectedTabIndexChanged="TabSwitcher_SelectedTabIndexChanged">
                 <tabs:BottomTabItem Style="{StaticResource BottomTabItems}" Label="Home">
                     <tabs:BottomTabItem.IconImageSource>
-                            <FontImageSource    FontFamily="Material" Glyph="&#xEb43;" Size="Small"  Color="{StaticResource primaryColor}"/>
+                            <FontImageSource    FontFamily="Material" Glyph="&#xEb43;" Size="Small"  Color="{StaticResource Primary}"/>
                     </tabs:BottomTabItem.IconImageSource>
                 </tabs:BottomTabItem>
                 <tabs:BottomTabItem Style="{StaticResource BottomTabItems}" Label="Watch">
                     <tabs:BottomTabItem.IconImageSource>
-                            <FontImageSource    FontFamily="Material" Glyph="&#xE425;" Size="Small"  Color="{StaticResource primaryColor}"/>
+                            <FontImageSource    FontFamily="Material" Glyph="&#xE425;" Size="Small"  Color="{StaticResource Primary}"/>
                     </tabs:BottomTabItem.IconImageSource>
                 </tabs:BottomTabItem>
                 <tabs:BottomTabItem Style="{StaticResource BottomTabItems}" Label="Profile">
                     <tabs:BottomTabItem.IconImageSource>
-                            <FontImageSource    FontFamily="Material" Glyph="&#xE7FD;" Size="Small"  Color="{StaticResource primaryColor}"/>
+                            <FontImageSource    FontFamily="Material" Glyph="&#xE7FD;" Size="Small"  Color="{StaticResource Primary}"/>
                     </tabs:BottomTabItem.IconImageSource>
                 </tabs:BottomTabItem>
             </tabs:TabHostView>

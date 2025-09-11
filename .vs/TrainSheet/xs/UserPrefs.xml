@@ -1,31 +1,41 @@
-﻿<Properties StartupConfiguration="{D00E873A-C2DE-4A90-A034-3AD109D15FFA}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.63FE839D-15A7-4FE7-BCF7-86A5C84A3AF4" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.63FE839D-15A7-4FE7-BCF7-86A5C84A3AF4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TrainSheet.csproj">
+﻿<Properties StartupConfiguration="{00777D08-5931-4ABB-B53F-55C215E77C32}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="View/MainPage.xaml">
     <Files>
-      <File FileName="ViewModel/ProfileVM.cs" />
-      <File FileName="Control/ProfileControl/GeneralInfoControl.xaml" />
-      <File FileName="TrainSheet.csproj" Line="35" Column="118" />
-      <File FileName="Utilities/ServiceHelper.cs" />
-      <File FileName="../../../../usr/local/share/dotnet/sdk/8.0.404/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.Sdk.targets" Line="379" Column="5" />
-      <File FileName="View/ProfileView.xaml.cs" NotebookId="1" />
-      <File FileName="View/ProfileView.xaml" Line="62" Column="37" NotebookId="1" />
+      <File FileName="ViewModel/ProfileVM.cs" Line="12" Column="53" />
+      <File FileName="TrainSheet.csproj" Line="32" Column="19" NotebookId="1" />
+      <File FileName="View/MainPage.xaml" Line="22" Column="62" NotebookId="1" />
+      <File FileName="Resources/Styles/Colors.xaml" Line="9" Column="26" NotebookId="1" />
+      <File FileName="Platforms/iOS/Info.plist" NotebookId="1" />
+      <File FileName="../../.nuget/packages/microsoft.maui.resizetizer/8.0.83/buildTransitive/Microsoft.Maui.Resizetizer.After.targets" Line="624" Column="9" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TrainSheet" expanded="True">
-            <Node name="TrainSheet" selected="True" />
+            <Node name="TrainSheet" selected="True">
+              <Node name="Platforms" expanded="True">
+                <Node name="Android" expanded="True" />
+                <Node name="iOS" expanded="True" />
+              </Node>
+              <Node name="Resources">
+                <Node name="Styles" expanded="True" />
+              </Node>
+              <Node name="View" expanded="True">
+                <Node name="ProfileView.xaml" expanded="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008030-000149881128802E" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
+  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008030-000149881128802E" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

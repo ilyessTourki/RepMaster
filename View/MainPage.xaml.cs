@@ -93,18 +93,21 @@ public partial class MainPage : ContentPage
         {
             var defaultBodyParts = new List<BodyParts>
             {
-                new BodyParts { Name = "Neck",           Icon = "neck",    Mesure = 58 },
-                new BodyParts { Name = "Shoulder",       Icon = "back",    Mesure = 146 },
-                new BodyParts { Name = "Chest",          Icon = "chest",   Mesure = 106 },
-                new BodyParts { Name = "Right Biceps",   Icon = "biceps",  Mesure = 42 },
-                new BodyParts { Name = "Left Biceps",    Icon = "biceps",  Mesure = 40 },
-                new BodyParts { Name = "Right Forearm",  Icon = "forearm", Mesure = 32 },
-                new BodyParts { Name = "Left Forearm",   Icon = "forearm", Mesure = 32 },
-                new BodyParts { Name = "Waist",          Icon = "waist",   Mesure = 186 },
-                new BodyParts { Name = "Left Calves",    Icon = "calves",  Mesure = 76 },
-                new BodyParts { Name = "Right Calves",   Icon = "calves",  Mesure = 76 },
-                new BodyParts { Name = "Left Thighs",    Icon = "thighs",  Mesure = 106 },
-                new BodyParts { Name = "Right Thighs",   Icon = "thighs",  Mesure = 106 },
+                new BodyParts { Name = "WEIGHT",        Icon = "balance",          Mesure = 74 },
+                new BodyParts { Name = "HEIGHT",        Icon = "straighten",    Mesure = 58 },
+                new BodyParts { Name = "BMI",           Icon = "speed",         Mesure = 26.4 },
+                new BodyParts { Name = "Neck",          Icon = "neck",          Mesure = 58 },
+                new BodyParts { Name = "Shoulder",      Icon = "back",          Mesure = 146 },
+                new BodyParts { Name = "Chest",         Icon = "chest",         Mesure = 106 },
+                new BodyParts { Name = "Right Biceps",  Icon = "biceps",        Mesure = 42 },
+                new BodyParts { Name = "Left Biceps",   Icon = "biceps",        Mesure = 40 },
+                new BodyParts { Name = "Right Forearm", Icon = "forearm",       Mesure = 32 },
+                new BodyParts { Name = "Left Forearm",  Icon = "forearm",       Mesure = 32 },
+                new BodyParts { Name = "Waist",         Icon = "waist",         Mesure = 186 },
+                new BodyParts { Name = "Left Calves",   Icon = "calves",        Mesure = 76 },
+                new BodyParts { Name = "Right Calves",  Icon = "calves",        Mesure = 76 },
+                new BodyParts { Name = "Left Thighs",   Icon = "thighs",        Mesure = 106 },
+                new BodyParts { Name = "Right Thighs",  Icon = "thighs",        Mesure = 106 },
             };
 
             foreach (var bodyPart in defaultBodyParts)

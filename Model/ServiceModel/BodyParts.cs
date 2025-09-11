@@ -3,6 +3,8 @@ using TrainSheet.Interface;
 
 namespace TrainSheet.Model.ServiceModel;
 
+[Preserve(AllMembers = true)]
+
 public class BodyParts : IPrimaryKey
 {
     [PrimaryKey, AutoIncrement]
@@ -12,5 +14,5 @@ public class BodyParts : IPrimaryKey
 
     public string Icon { get; set; }
 
-    public int Mesure { get; set; }
+    public double Mesure { get; set; }
 }

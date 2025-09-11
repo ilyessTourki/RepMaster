@@ -148,6 +148,7 @@
     <!--Editor-->
     <Style x:Key="GeneralInfoEditor" TargetType="Editor">
         <Setter Property="FontFamily"       Value="Horizon" />
+        <Setter Property="Keyboard"         Value="Numeric" />
         <Setter Property="FontSize"         Value="15" />
         <Setter Property="FontAttributes"   Value="Bold" />
         <Setter Property="TextColor"        Value="White" />

@@ -27,9 +27,9 @@
 		<ApplicationId>IlyesTourki.RepMaster</ApplicationId>
 
 		<!-- Versions -->
-		<ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
+		<ApplicationDisplayVersion>1.3</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
-		<VersionCode>121</VersionCode>
+		<VersionCode>123</VersionCode>
 
 
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.0</SupportedOSPlatformVersion>
@@ -40,12 +40,15 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
-	
+	<!--<PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
+		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+		<RuntimeIdentifier>iossimulator-x64</RuntimeIdentifier>
+	</PropertyGroup>-->
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
+	  <CodesignKey>Apple Development: tourkiilyess@gmail.com (LJ3Z33C9G6)</CodesignKey>
+	  <CodesignProvision>iOS Team Provisioning Profile: IlyesTourki.RepMaster</CodesignProvision>
 	  <CreatePackage>false</CreatePackage>
-	  <CodesignKey></CodesignKey>
-	  <CodesignProvision></CodesignProvision>
 	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
@@ -167,12 +170,26 @@
 	  <None Remove="Utilities\Design\" />
 	  <None Remove="Control\BodyPartsControl\" />
 	</ItemGroup>
-
+	
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Release|net8.0-ios'">
 		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
-		<Codesignkey>Apple Distribution: ilyess Tourki (C9H3F56DNK)</Codesignkey>
-		<CodesignProvision>PhysiqueX Distribution Profile</CodesignProvision>
+		<Codesignkey>Apple Development: tourkiilyess@gmail.com (LJ3Z33C9G6)</Codesignkey>
+		<CodesignProvision>IlyesTourki.RepMaster</CodesignProvision>
 		<MtouchUseLlvm>False</MtouchUseLlvm>
 		<AotAssemblies>True</AotAssemblies>
+	</PropertyGroup>
+	<!--<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)'=='Release|net8.0-ios'">
+		<CodesignKey>Apple Development: tourkiilyess@gmail.com (LJ3Z33C9G6)</CodesignKey>
+		<CodesignProvision>iOS Team Provisioning Profile: IlyesTourki.RepMaster</CodesignProvision>
+		 <MtouchUseLlvm>False</MtouchUseLlvm>
+		<AotAssemblies>False</AotAssemblies>
+		<MtouchLink>None</MtouchLink>
+	</PropertyGroup>-->
+	<PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-ios'">
+		<UseInterpreter>true</UseInterpreter>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 </Project>

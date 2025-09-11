@@ -10,15 +10,20 @@ namespace TrainSheet.ViewModel
 	public class ProfileVM : BindableObject
     {
         public ObservableCollection<BodyParts> bodyParts { get; set; } = new ObservableCollection<BodyParts>();
+        public ObservableCollection<BodyParts> userInfos { get; set; } = new ObservableCollection<BodyParts>();
         public bool     isEditingMesurments { get; set; }
         public bool     isUpdatingPhoto { get; set; }
         public bool     isLoading { get; set; }
+        public bool isEditingUser { get; set; }
+        public string editUserIcon { get; set; }
         public string   editUserMesurments { get; set; }
         public ImageSource userPhoto { get; set; }
         public ICommand editUserMesurment { get; }
+        public ICommand editUserInfo { get; }
         public ICommand editUserImage { get; }
         public ICommand cancelEditImage { get; }
         public ICommand saveUserImage { get; }
+        private List<BodyParts> bodyPartsFromDB = new List<BodyParts>();
         private FileResult file;
         private const string SavedFileName = "selected_photo.jpg";
         private readonly string _savedPath = Path.Combine(FileSystem.AppDataDirectory, SavedFileName);
@@ -27,10 +32,26 @@ namespace TrainSheet.ViewModel
         {
             isEditingMesurments = false;
             editUserMesurments = "edit";
+            isEditingUser = false;
+            editUserIcon = "edit";
+            editUserInfo = new Command(EditUserInfo);
             editUserMesurment   = new Command(EditUserMesurment);
             editUserImage       = new AsyncRelayCommand(EditUserImage);
             cancelEditImage     = new Command(CancelEdit);
             saveUserImage       = new AsyncRelayCommand(SaveUserImage);
+        }
+        public async Task GetBodyParts()
+        {
+            try
+            {
+                bodyPartsFromDB = await bodyPartsDB.GetAllAsync();
+
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.ToString(), "OK");
+
+            }
         }
         public void SetLoading(bool loading)
         {
@@ -45,16 +66,36 @@ namespace TrainSheet.ViewModel
                 userPhoto = "profilepic.png";
             OnPropertyChanged(nameof(userPhoto));
         }
-        public async Task SetBodyParts()
+        public void SetBodyParts()
         {
             if (bodyParts.Count == 0)
             {
-                var bodyPartsFromDB = await bodyPartsDB.GetAllAsync();
-                foreach (var bodyPart in bodyPartsFromDB)
+                var bodyPartsMesurments = bodyPartsFromDB.ToList();
+                if (bodyPartsMesurments.Any())
                 {
-                    bodyParts.Add(bodyPart);
+                    bodyPartsMesurments.RemoveRange(0, 3);
+                    foreach (var bodyPart in bodyPartsMesurments)
+                    {
+                        bodyParts.Add(bodyPart);
+                    }
+                    OnPropertyChanged(nameof(bodyParts));
                 }
-                OnPropertyChanged(nameof(bodyParts));
+            }
+        }
+        public void SetUserInfos()
+        {
+            if (userInfos.Count == 0)
+            {
+                var bodyPartsMesurments = bodyPartsFromDB.ToList();
+                if (bodyPartsMesurments.Any())
+                {
+                    bodyPartsMesurments.RemoveRange(3, bodyPartsMesurments.Count - 3);
+                    foreach (var bodyPart in bodyPartsMesurments)
+                    {
+                        userInfos.Add(bodyPart);
+                    }
+                    OnPropertyChanged(nameof(userInfos));
+                }
             }
         }
         private void EditUserMesurment()
@@ -63,6 +104,13 @@ namespace TrainSheet.ViewModel
             OnPropertyChanged(nameof(isEditingMesurments));
             editUserMesurments = isEditingMesurments ? "check" : "edit";
             OnPropertyChanged(nameof(editUserMesurments));
+        }
+        private void EditUserInfo()
+        {
+            isEditingUser = !isEditingUser;
+            OnPropertyChanged(nameof(isEditingUser));
+            editUserIcon = isEditingUser ? "check" : "edit";
+            OnPropertyChanged(nameof(editUserIcon));
         }
         private async Task EditUserImage()
         {

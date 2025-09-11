@@ -15,6 +15,37 @@
             <TapGestureRecognizer Command="{Binding editUserInfo}"/>
         </Label.GestureRecognizers>
     </Label>
+    <CollectionView
+        x:Name="userInfoCollection"
+    ItemsSource="{Binding userInfos}"  
+    Margin="20,0,20,10"
+    HeightRequest="150">                 
+
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+           <StackLayout Margin="10">
+                    <control:GeneralInfosTitle Icon="{Binding Icon}" Title="{Binding Name}"/>
+                    
+                    <Label Text="74 Kg"
+                           Style="{StaticResource GeneralInfoValue}"
+                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
+                    <StackLayout Orientation="Horizontal"
+                                 IsVisible="{Binding isEditingUser}"
+                                 HeightRequest="40">
+                        <Editor Text="{Binding Mesure}"
+                                Style="{StaticResource GeneralInfoEditor}"
+                                VerticalOptions="End"
+                                HorizontalOptions="Center"/>
+                         <Label Text=" Kg"
+                                Style="{StaticResource GeneralInfoUnit}"/>
+
+                    </StackLayout>
+                    
+
+                </StackLayout>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+</CollectionView>
             <Grid Margin="20,0,20,10">
                 <Grid.ColumnDefinitions>
                    <ColumnDefinition    Width="*"/>

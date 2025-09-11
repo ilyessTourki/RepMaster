@@ -16,9 +16,11 @@ public partial class ProfileView : ContentView
     public async Task OnViewAppeard()
     {
         profileVM.SetLoading(true);
+        await profileVM.GetBodyParts();
         skeletonList.SetVisibleanimation();
         profileVM.SetUserPhoto();
-        await profileVM.SetBodyParts();
+        profileVM.SetUserInfos();
+        profileVM.SetBodyParts();
         profileVM.SetLoading(false);
     }
    

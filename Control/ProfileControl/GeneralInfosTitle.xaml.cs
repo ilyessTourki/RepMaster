@@ -23,6 +23,5 @@ public partial class GeneralInfosTitle : StackLayout
     public GeneralInfosTitle()
 	{
 		InitializeComponent();
-        BindingContext = this;
     }
 }
