@@ -1,41 +1,54 @@
 ﻿<Properties StartupConfiguration="{00777D08-5931-4ABB-B53F-55C215E77C32}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="View/MainPage.xaml">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TrainSheet.csproj">
     <Files>
-      <File FileName="ViewModel/ProfileVM.cs" Line="12" Column="53" />
-      <File FileName="TrainSheet.csproj" Line="32" Column="19" NotebookId="1" />
-      <File FileName="View/MainPage.xaml" Line="22" Column="62" NotebookId="1" />
-      <File FileName="Resources/Styles/Colors.xaml" Line="9" Column="26" NotebookId="1" />
-      <File FileName="Platforms/iOS/Info.plist" NotebookId="1" />
-      <File FileName="../../.nuget/packages/microsoft.maui.resizetizer/8.0.83/buildTransitive/Microsoft.Maui.Resizetizer.After.targets" Line="624" Column="9" NotebookId="1" />
+      <File FileName="Control/ProfileControl/GeneralInfoControl.xaml" Line="22" Column="22" />
+      <File FileName="Control/ProfileControl/GeneralInfoControl.xaml.cs" Line="18" Column="13" />
+      <File FileName="ViewModel/ProfileVM.cs" Line="85" Column="21" />
+      <File FileName="View/MainPage.xaml.cs" Line="96" Column="72" />
+      <File FileName="TrainSheet.csproj" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="TrainSheet" expanded="True">
+          <Node name="TrainSheet">
             <Node name="TrainSheet" selected="True">
-              <Node name="Platforms" expanded="True">
-                <Node name="Android" expanded="True" />
-                <Node name="iOS" expanded="True" />
+              <Node name="Control" expanded="True">
+                <Node name="BodyPartsControl" expanded="True">
+                  <Node name="DateItemsStuck.xaml" expanded="True" />
+                </Node>
+                <Node name="ProfileControl" expanded="True">
+                  <Node name="BodyPartsTableSkeleton.xaml" expanded="True" />
+                  <Node name="GeneralInfoControl.xaml" expanded="True" />
+                  <Node name="GeneralInfosTitle.xaml" expanded="True" />
+                </Node>
               </Node>
-              <Node name="Resources">
+              <Node name="Model" expanded="True">
+                <Node name="ServiceModel" expanded="True" />
+              </Node>
+              <Node name="Resources" expanded="True">
+                <Node name="Images" expanded="True" />
                 <Node name="Styles" expanded="True" />
               </Node>
+              <Node name="Service" expanded="True" />
               <Node name="View" expanded="True">
+                <Node name="BodyPartsView.xaml" expanded="True" />
+                <Node name="MainPage.xaml" expanded="True" />
                 <Node name="ProfileView.xaml" expanded="True" />
               </Node>
+              <Node name="ViewModel" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <Xamarin.Addins.Core.Project ActiveDebugTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008030-000149881128802E" />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.pixel_5_-_api_33" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
-  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008030-000149881128802E" />
+  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="Android.pixel_5_-_api_33" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

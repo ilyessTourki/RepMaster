@@ -16,7 +16,7 @@ public partial class GeneralInfoControl : StackLayout
         var horizontalLayout = new GridItemsLayout(1, ItemsLayoutOrientation.Horizontal)
         {
             VerticalItemSpacing = 10,
-            HorizontalItemSpacing = 4
+            HorizontalItemSpacing = 4,
         };
 
         userInfoCollection.ItemsLayout = horizontalLayout;

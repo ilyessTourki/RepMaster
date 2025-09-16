@@ -93,7 +93,7 @@ public partial class MainPage : ContentPage
         {
             var defaultBodyParts = new List<BodyParts>
             {
-                new BodyParts { Name = "WEIGHT",        Icon = "balance",          Mesure = 74 },
+                new BodyParts { Name = "WEIGHT",        Icon = "balance",       Mesure = 74 },
                 new BodyParts { Name = "HEIGHT",        Icon = "straighten",    Mesure = 58 },
                 new BodyParts { Name = "BMI",           Icon = "speed",         Mesure = 26.4 },
                 new BodyParts { Name = "Neck",          Icon = "neck",          Mesure = 58 },

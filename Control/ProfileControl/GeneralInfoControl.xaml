@@ -2,7 +2,8 @@
 <StackLayout xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrainSheet.Control.ProfileControl.GeneralInfoControl"
-             xmlns:control="clr-namespace:TrainSheet.Control.ProfileControl">
+             xmlns:control="clr-namespace:TrainSheet.Control.ProfileControl"
+             x:Name="GerneralInfoStack">
    <Label Text="{Binding editUserIcon}"
             FontFamily="Material"
             FontAttributes="Bold"
@@ -18,25 +19,35 @@
     <CollectionView
         x:Name="userInfoCollection"
     ItemsSource="{Binding userInfos}"  
-    Margin="20,0,20,10"
-    HeightRequest="150">                 
+    Margin="10"
+    HeightRequest="100"
+    HorizontalOptions="FillAndExpand">                 
 
     <CollectionView.ItemTemplate>
         <DataTemplate>
-           <StackLayout Margin="10">
-                    <control:GeneralInfosTitle Icon="{Binding Icon}" Title="{Binding Name}"/>
+           <StackLayout Margin="10"
+                        HorizontalOptions="CenterAndExpand"
+                        WidthRequest="100">
+                    <control:GeneralInfosTitle />
                     
-                    <Label Text="74 Kg"
-                           Style="{StaticResource GeneralInfoValue}"
-                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
+                    <Label HorizontalOptions="Center"
+                           IsVisible="{Binding BindingContext.isEditingUser, Source={x:Reference userInfoCollection},Converter ={StaticResource BoolToVisibilityConverter}}">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding Mesure}" Style="{StaticResource GeneralInfoValue}"/>
+                                <Span Text="{Binding Name, Converter={StaticResource MeasurementUnitConverter}}"  Style="{StaticResource GeneralInfoValue}"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                        </Label>
                     <StackLayout Orientation="Horizontal"
-                                 IsVisible="{Binding isEditingUser}"
+                                 BackgroundColor="#1a1a1a"
+                                 IsVisible="{Binding BindingContext.isEditingUser, Source={x:Reference userInfoCollection}}"
                                  HeightRequest="40">
                         <Editor Text="{Binding Mesure}"
                                 Style="{StaticResource GeneralInfoEditor}"
                                 VerticalOptions="End"
                                 HorizontalOptions="Center"/>
-                         <Label Text=" Kg"
+                         <Label Text="{Binding Name, Converter={StaticResource MeasurementUnitConverter}}"
                                 Style="{StaticResource GeneralInfoUnit}"/>
 
                     </StackLayout>
@@ -46,65 +57,4 @@
         </DataTemplate>
     </CollectionView.ItemTemplate>
 </CollectionView>
-            <Grid Margin="20,0,20,10">
-                <Grid.ColumnDefinitions>
-                   <ColumnDefinition    Width="*"/>
-                    <ColumnDefinition   Width="*"/>
-                    <ColumnDefinition   Width="*"/>
-                </Grid.ColumnDefinitions>
-                <StackLayout Margin="10">
-                    <control:GeneralInfosTitle Icon="balance" Title="WEIGHT"/>
-                    
-                    <Label Text="74 Kg"
-                           Style="{StaticResource GeneralInfoValue}"
-                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
-                    <StackLayout Orientation="Horizontal"
-                                 IsVisible="{Binding isEditingUser}"
-                                 HeightRequest="40">
-                        <Editor Text="74"
-                                Style="{StaticResource GeneralInfoEditor}"
-                                VerticalOptions="End"
-                                HorizontalOptions="Center"/>
-                         <Label Text=" Kg"
-                                Style="{StaticResource GeneralInfoUnit}"/>
-
-                    </StackLayout>
-                    
-
-                </StackLayout>
-                <StackLayout Margin="10"
-                             Grid.Column="1">
-                    <control:GeneralInfosTitle Icon="straighten" Title="HEIGHT"/>
-                    <Label Text="174 cm"
-                           Style="{StaticResource GeneralInfoValue}"
-                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
-                    <StackLayout Orientation="Horizontal"
-                                 IsVisible="{Binding isEditingUser}"
-                                 HeightRequest="40">
-                        <Editor Text="174"
-                                Style="{StaticResource GeneralInfoEditor}"
-                                VerticalOptions="End"
-                                HorizontalOptions="Center"/>
-                         <Label Text=" cm"
-                                Style="{StaticResource GeneralInfoUnit}"/>
-
-                    </StackLayout>
-
-                </StackLayout>
-                <StackLayout Margin="10"
-                             Grid.Column="2">
-                    <control:GeneralInfosTitle Icon="speed" Title="BMI"/>
-                    <Label Text="26,4"
-                           Style="{StaticResource GeneralInfoValue}"
-                           IsVisible="{Binding isEditingUser,Converter ={StaticResource BoolToVisibilityConverter}}"/>
-                     <StackLayout Orientation="Horizontal"
-                                 IsVisible="{Binding isEditingUser}"
-                                 HeightRequest="40">
-                        <Editor Text="26,4"
-                                Style="{StaticResource GeneralInfoEditor}"
-                                VerticalOptions="Start"
-                                HorizontalOptions="FillAndExpand"/>
-                    </StackLayout>
-                </StackLayout>
-            </Grid>
 </StackLayout>
