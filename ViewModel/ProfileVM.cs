@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using TrainSheet.Model.ServiceModel;
@@ -34,8 +35,8 @@ namespace TrainSheet.ViewModel
             editUserMesurments = "edit";
             isEditingUser = false;
             editUserIcon = "edit";
-            editUserInfo = new Command(EditUserInfo);
-            editUserMesurment   = new Command(EditUserMesurment);
+            editUserInfo        = new AsyncRelayCommand(EditUserInfo);
+            editUserMesurment   = new AsyncRelayCommand(EditUserMesurment);
             editUserImage       = new AsyncRelayCommand(EditUserImage);
             cancelEditImage     = new Command(CancelEdit);
             saveUserImage       = new AsyncRelayCommand(SaveUserImage);
@@ -98,19 +99,42 @@ namespace TrainSheet.ViewModel
                 }
             }
         }
-        private void EditUserMesurment()
+        private async Task EditUserMesurment()
         {
+            if (isEditingMesurments)
+            {
+                await SaveUserMesurments();
+            }
             isEditingMesurments = !isEditingMesurments;
             OnPropertyChanged(nameof(isEditingMesurments));
             editUserMesurments = isEditingMesurments ? "check" : "edit";
             OnPropertyChanged(nameof(editUserMesurments));
         }
-        private void EditUserInfo()
+        
+        private async Task EditUserInfo()
         {
+            if (isEditingUser)
+            {
+                await SaveUserInfos();
+            }
             isEditingUser = !isEditingUser;
             OnPropertyChanged(nameof(isEditingUser));
             editUserIcon = isEditingUser ? "check" : "edit";
             OnPropertyChanged(nameof(editUserIcon));
+        }
+        private async Task SaveUserMesurments()
+        {
+            foreach (var bodyPart in bodyParts)
+            {
+                await bodyPartsDB.SaveAsync(bodyPart);
+            }
+        }
+        private async Task SaveUserInfos()
+        {
+            foreach (var userInfo in userInfos)
+            {
+                await bodyPartsDB.SaveAsync(userInfo);
+            }
         }
         private async Task EditUserImage()
         {
