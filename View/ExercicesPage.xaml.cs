@@ -10,7 +10,8 @@ using static TrainSheet.Utilities.Utilities;
 public partial class ExercicesPage : ContentPage
 {
 	public List<MuscleCategory> musclceExercices {get;set;} = new List<MuscleCategory>();
-	private MuscleEnum muscle;
+    private MuscleEnum muscle;
+    public string exerciceTitle { get; set; }
 	public ICommand exerciceDetail { get; }
     public ExercicesPage(MuscleEnum muscleEx)
 	{
@@ -35,30 +36,39 @@ public partial class ExercicesPage : ContentPage
 		{
 			case MuscleEnum.Pec:
                 musclceExercices = await pecCategDB.GetAllAsync();
+                exerciceTitle = "CHEST";
                 break;
             case MuscleEnum.Frontarms:
                 musclceExercices = Constants.FrontArmsExercices;
+                exerciceTitle = "ForeArms";
                 break;
             case MuscleEnum.Back:
                 musclceExercices = Constants.BackExercices;
+                exerciceTitle = "BACK";
                 break;
             case MuscleEnum.Shoulder:
                 musclceExercices = Constants.ShouldersExercices;
+                exerciceTitle = "SHOULDER";
                 break;
             case MuscleEnum.Bieceps:
                 musclceExercices = Constants.BicepsExercices;
+                exerciceTitle = "BIECEPS";
                 break;
             case MuscleEnum.Triceps:
                 musclceExercices = Constants.TricepsExercices;
+                exerciceTitle = "TRICEPS";
                 break;
             case MuscleEnum.Legs:
                 musclceExercices = Constants.LegsExercices;
+                exerciceTitle = "LEGS";
                 break;
             case MuscleEnum.Calisthenics:
                 musclceExercices = Constants.CalisthenicsExercices;
+                exerciceTitle = "CALISTHENICS";
                 break;
         }
         OnPropertyChanged(nameof(musclceExercices));
+        OnPropertyChanged(nameof(exerciceTitle));
     }
 	private async Task GoToExerciceDetail(MuscleCategory muscleCateg)
 	{

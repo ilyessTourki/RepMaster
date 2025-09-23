@@ -42,6 +42,13 @@ public partial class SeriesEditPopup
         }
 		OnPropertyChanged(nameof(selectedRepetition));
 	}
+    private void NumericEntry_Focused(object sender, FocusEventArgs e)
+    {
+        if (sender is Entry entry && entry.Text =="0") 
+        {
+            entry.Text = string.Empty;
+        }
+    }
 
     async void Confirm_Clicked(System.Object sender, System.EventArgs e)
     {

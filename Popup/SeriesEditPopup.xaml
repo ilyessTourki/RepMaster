@@ -65,7 +65,8 @@
                                                VerticalTextAlignment="Center"
                                                HorizontalTextAlignment="Center"
                                                HorizontalOptions="CenterAndExpand"
-                                               Margin="2,0"/>
+                                               Margin="2,0"
+                                              Focused="NumericEntry_Focused"/>
                                         <Label Text="reps"
                                                FontSize="11"
                                                TextColor="#808080"
@@ -98,7 +99,8 @@
                                                VerticalTextAlignment="Center"
                                                HorizontalTextAlignment="Center"
                                                HorizontalOptions="CenterAndExpand"
-                                               Margin="2,0"/>
+                                               Margin="2,0"
+                                               Focused="NumericEntry_Focused"/>
                                         <Label Text="kg"
                                                FontSize="11"
                                                TextColor="#808080"
