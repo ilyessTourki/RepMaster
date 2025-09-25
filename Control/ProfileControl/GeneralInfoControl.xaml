@@ -29,16 +29,15 @@
                         HorizontalOptions="CenterAndExpand"
                         WidthRequest="100">
                     <control:GeneralInfosTitle />
+
+                    <StackLayout Orientation="Horizontal"
+                                 HorizontalOptions="Center"
+                                 IsVisible="{Binding BindingContext.isEditingUser, Source={x:Reference userInfoCollection},Converter ={StaticResource BoolToVisibilityConverter}}">
+                        <Label Text="{Binding Mesure}" Style="{StaticResource GeneralInfoValue}"/>
+                        <Label Text="{Binding Name, Converter={StaticResource MeasurementUnitConverter}}" Style="{StaticResource GeneralInfoValue}"/>
+
+                    </StackLayout>
                     
-                    <Label HorizontalOptions="Center"
-                           IsVisible="{Binding BindingContext.isEditingUser, Source={x:Reference userInfoCollection},Converter ={StaticResource BoolToVisibilityConverter}}">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="{Binding Mesure}" Style="{StaticResource GeneralInfoValue}"/>
-                                <Span Text="{Binding Name, Converter={StaticResource MeasurementUnitConverter}}"  Style="{StaticResource GeneralInfoValue}"/>
-                            </FormattedString>
-                        </Label.FormattedText>
-                        </Label>
                     <StackLayout Orientation="Horizontal"
                                  BackgroundColor="#1a1a1a"
                                  IsVisible="{Binding BindingContext.isEditingUser, Source={x:Reference userInfoCollection}}"

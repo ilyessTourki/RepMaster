@@ -22,6 +22,7 @@ public partial class ProfileView : ContentView
         profileVM.SetUserInfos();
         profileVM.SetBodyParts();
         profileVM.SetLoading(false);
+
     }
    
 

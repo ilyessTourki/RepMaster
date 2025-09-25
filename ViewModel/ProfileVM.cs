@@ -91,12 +91,22 @@ namespace TrainSheet.ViewModel
                 if (bodyPartsMesurments.Any())
                 {
                     bodyPartsMesurments.RemoveRange(3, bodyPartsMesurments.Count - 3);
-                    foreach (var bodyPart in bodyPartsMesurments)
+                    try
                     {
-                        userInfos.Add(bodyPart);
+                        foreach (var bodyPart in bodyPartsMesurments)
+                        {
+                            userInfos.Add(bodyPart);
+                        }
                     }
+                    catch (Exception ex)
+                    {
+                        Application.Current.MainPage.DisplayAlert("Error 2", ex.ToString(), "OK");
+                    }
+
                     OnPropertyChanged(nameof(userInfos));
                 }
+
+
             }
         }
         private async Task EditUserMesurment()
