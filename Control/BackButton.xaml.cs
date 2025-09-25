@@ -9,9 +9,4 @@ public partial class BackButton : Button
 	{
 		InitializeComponent();
 	}
-
-    async void BackPreviousPage(System.Object sender, System.EventArgs e)
-    {
-        await Navigation.PopAsync();
-    }
 }

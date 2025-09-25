@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrainSheet.View.DetailsPage"
              x:Name="DetailPage"
-             NavigationPage.HasNavigationBar="False"
-             NavigationPage.HasBackButton="false"
              BackgroundColor="Black"
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              xmlns:control="clr-namespace:TrainSheet.Control">
@@ -20,7 +18,7 @@
                     <ColumnDefinition Width="0.2*"/>
                 </Grid.ColumnDefinitions>
 
-                <control:BackButton VerticalOptions="Start"/>
+                <control:BackButton VerticalOptions="Start" Clicked="BackButton_Clicked"/>
                 <Label FontFamily="Horizon"
                        TextColor="White"
                        FontSize="20"
@@ -263,4 +261,4 @@
         
   
 
-</ContentPage>
+</ContentView>

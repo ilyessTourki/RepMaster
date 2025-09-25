@@ -6,17 +6,22 @@ using CommunityToolkit.Mvvm.Input;
 using TrainSheet.Utilities;
 using TrainSheet.Model.ServiceModel;
 using static TrainSheet.Utilities.Utilities;
+using TrainSheet.ViewModel;
 
-public partial class ExercicesPage : ContentPage
+public partial class ExercicesPage : ContentView
 {
 	public List<MuscleCategory> musclceExercices {get;set;} = new List<MuscleCategory>();
     private MuscleEnum muscle;
     public string exerciceTitle { get; set; }
 	public ICommand exerciceDetail { get; }
-    public ExercicesPage(MuscleEnum muscleEx)
+    private MuscleDetailsVM muscleDetailsVM = ServiceHelper.GetService<MuscleDetailsVM>();
+    private ContentView previousView;
+
+    public ExercicesPage(MuscleEnum muscleEx, ContentView previousV)
 	{
 		InitializeComponent();
 		muscle = muscleEx;
+        previousView = previousV;
         exerciceDetail = new AsyncRelayCommand<MuscleCategory>(GoToExerciceDetail);
 		var horizontalLayout = new GridItemsLayout(1, ItemsLayoutOrientation.Vertical)
             {
@@ -26,52 +31,45 @@ public partial class ExercicesPage : ContentPage
 		MyCollectionView.ItemsLayout = horizontalLayout;
 		BindingContext = this;
 	}
-    protected async override void OnAppearing()
+    public async Task OnViewAppeard()
     {
         await SetMuscleExercices();
     }
     private async Task SetMuscleExercices()
 	{
-		switch (muscle)
-		{
-			case MuscleEnum.Pec:
-                musclceExercices = await pecCategDB.GetAllAsync();
-                exerciceTitle = "CHEST";
-                break;
-            case MuscleEnum.Frontarms:
-                musclceExercices = Constants.FrontArmsExercices;
-                exerciceTitle = "ForeArms";
-                break;
-            case MuscleEnum.Back:
-                musclceExercices = Constants.BackExercices;
-                exerciceTitle = "BACK";
-                break;
-            case MuscleEnum.Shoulder:
-                musclceExercices = Constants.ShouldersExercices;
-                exerciceTitle = "SHOULDER";
-                break;
-            case MuscleEnum.Bieceps:
-                musclceExercices = Constants.BicepsExercices;
-                exerciceTitle = "BIECEPS";
-                break;
-            case MuscleEnum.Triceps:
-                musclceExercices = Constants.TricepsExercices;
-                exerciceTitle = "TRICEPS";
-                break;
-            case MuscleEnum.Legs:
-                musclceExercices = Constants.LegsExercices;
-                exerciceTitle = "LEGS";
-                break;
-            case MuscleEnum.Calisthenics:
-                musclceExercices = Constants.CalisthenicsExercices;
-                exerciceTitle = "CALISTHENICS";
-                break;
-        }
+        musclceExercices = await exercicesDB.GetAllAsync();
+        // Map muscle enums to display titles
+        var muscleTitles = new Dictionary<MuscleEnum, string>
+        {
+            { MuscleEnum.Pec, "CHEST" },
+            { MuscleEnum.Frontarms, "ForeArms" },
+            { MuscleEnum.Back, "BACK" },
+            { MuscleEnum.Shoulder, "SHOULDER" },
+            { MuscleEnum.Bieceps, "BICEPS" },
+            { MuscleEnum.Triceps, "TRICEPS" },
+            { MuscleEnum.Legs, "LEGS" },
+            { MuscleEnum.Calisthenics, "CALISTHENICS" }
+        };
+
+        // Filter exercises by selected muscle
+        musclceExercices = musclceExercices
+            .Where(e => e.muscleType == muscle)
+            .ToList();
+
+        // Set the title using the dictionary
+        exerciceTitle = muscleTitles.ContainsKey(muscle) ? muscleTitles[muscle] : "UNKNOWN";
+
         OnPropertyChanged(nameof(musclceExercices));
         OnPropertyChanged(nameof(exerciceTitle));
     }
 	private async Task GoToExerciceDetail(MuscleCategory muscleCateg)
-	{
-		 await Navigation.PushAsync(new DetailsPage(muscleCateg));
+    {
+        var detailsPage = new DetailsPage(muscleCateg,this);
+        muscleDetailsVM.SetCurrentView(detailsPage);
 	}
+
+    void BackButton_Clicked(System.Object sender, System.EventArgs e)
+    {
+        muscleDetailsVM.SetCurrentView(previousView);
+    }
 }

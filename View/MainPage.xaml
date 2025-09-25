@@ -17,7 +17,7 @@
                             SelectedIndex="{Binding SelectedViewModelIndex, Mode=TwoWay}"
                             FlexLayout.Basis="95%"
                             FlexLayout.Grow="1">
-            <tabs:LazyView x:TypeArguments="views:BodyPartsView"    x:Name="BodyPartsV"   Animate="True"  UseActivityIndicator="True"/>
+            <tabs:LazyView x:TypeArguments="views:TrainingView"     x:Name="TrainingViewV"   Animate="True"  UseActivityIndicator="True"/>
             <tabs:LazyView x:TypeArguments="views:WatchView"        x:Name="WatchV"/>
             <tabs:LazyView x:TypeArguments="views:ProfileView"      x:Name="ProfileV"/>
         </tabs:ViewSwitcher>

@@ -6,6 +6,8 @@ using TrainSheet.Model.ServiceModel;
 using static TrainSheet.Utilities.Utilities;
 using static TrainSheet.Utilities.Constants;
 using System.Collections.ObjectModel;
+using TrainSheet.ViewModel;
+using TrainSheet.Utilities;
 
 namespace TrainSheet.View;
 
@@ -14,7 +16,7 @@ public partial class BodyPartsView : ContentView
     public List<Muscle> muscles { get; set; } = new List<Muscle>();
     public ICommand muscleExercices { get; }
     public ObservableCollection<DayItem> WeekDays { get; set; }
-
+    private MuscleDetailsVM muscleDetailsVM = ServiceHelper.GetService<MuscleDetailsVM>();
 
     public BodyPartsView()
 	{
@@ -42,30 +44,42 @@ public partial class BodyPartsView : ContentView
     }
     private async Task GoToMuscleExercices(MuscleEnum muscle)
     {
-        await Navigation.PushAsync(new ExercicesPage(muscle));
+        var exercicePage = new ExercicesPage(muscle , this);
+        muscleDetailsVM.SetCurrentView(exercicePage);
+        await exercicePage.OnViewAppeard();
     }
 	public async Task OnViewAppeard()
 	{
-        await SavePecExercices(pecCategDB);
+        await SavePecExercices();
     }
-    private async Task SavePecExercices(Service.SQLiteDataAccess<MuscleCategory> muscleCateg)
+    private async Task SavePecExercices()
     {
-        muscleCateg.InitializeAsync(SQLiteDataAccessPath);
-        var listPecExercices = await muscleCateg.GetAllAsync();
-        if (!listPecExercices.Any())
+        exercicesDB.InitializeAsync(SQLiteDataAccessPath);
+        var listExercices = await exercicesDB.GetAllAsync();
+        var allExercises = new List<MuscleCategory>();
+        allExercises.AddRange(PecExercices);
+        allExercises.AddRange(BackExercices);
+        allExercises.AddRange(FrontArmsExercices);
+        allExercises.AddRange(BicepsExercices);
+        allExercises.AddRange(LegsExercices);
+        allExercises.AddRange(ShouldersExercices);
+        allExercises.AddRange(TricepsExercices);
+        allExercises.AddRange(CalisthenicsExercices);
+
+        if (!listExercices.Any())
         {
-            foreach (var pecExo in PecExercices)
+            foreach (var exo in allExercises)
             {
-                await muscleCateg.SaveAsync(pecExo);
+                await exercicesDB.SaveAsync(exo);
             }
         }
-        else if (listPecExercices.Count != PecExercices.Count)
+        else if (listExercices.Count != allExercises.Count)
         {
             foreach (var pecExo in PecExercices)
             {
-                if (!listPecExercices.Any(b => b.name == pecExo.name))
+                if (!listExercices.Any(b => b.name == pecExo.name))
                 {
-                    await muscleCateg.SaveAsync(pecExo);
+                    await exercicesDB.SaveAsync(pecExo);
                 }
             }
         }

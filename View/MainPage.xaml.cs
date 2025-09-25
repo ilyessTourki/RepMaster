@@ -9,11 +9,13 @@ namespace TrainSheet.View;
 public partial class MainPage : ContentPage
 {
     private ProfileVM profileVM = ServiceHelper.GetService<ProfileVM>();
+    bool isViewSet;
 
     public MainPage()
 	{
 		InitializeComponent();
         BindingContext = this;
+        isViewSet = false;
     }
     protected override async void OnAppearing()
     {
@@ -35,7 +37,11 @@ public partial class MainPage : ContentPage
         switch (TabSwitcher.SelectedIndex)
         {
             case 0:
-                await SetBodyPartsView();
+                if (!isViewSet)
+                {
+                    await SetTrainView();
+                    isViewSet = true;
+                }
                 break;
             case 1:
                 await SetWatchView();
@@ -46,14 +52,14 @@ public partial class MainPage : ContentPage
         }
     }
     
-    private async Task SetBodyPartsView()
+    private async Task SetTrainView()
     {
-        var bodyParts = BodyPartsV.Content as BodyPartsView;
-        BodyPartsV.BindingContext = bodyParts;
+        var trainingViewV = TrainingViewV.Content as TrainingView;
+        TrainingViewV.BindingContext = trainingViewV;
         await Task.Delay(500);
-        if (bodyParts != null)
+        if (trainingViewV != null)
         {
-            await bodyParts.OnViewAppeard();
+            await trainingViewV.OnViewAppeard();
         }
 
     }

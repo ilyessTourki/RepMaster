@@ -22,7 +22,7 @@ namespace TrainSheet.ViewModel
         public ObservableCollection<List<Repetition>> sets { get; set; } = new ObservableCollection<List<Repetition>>();
         private int repetitionIndex = 0;
         private INavigation Navigation;
-
+        public ContentView currentView { get; set; }
 
         public MuscleDetailsVM()
 		{
@@ -31,6 +31,11 @@ namespace TrainSheet.ViewModel
             addItem         = new Command(addItemToList);
             backButton      = new AsyncRelayCommand(navigateBackward);
 
+        }
+        public void SetCurrentView(ContentView view)
+        {
+            currentView = view;
+            OnPropertyChanged(nameof(currentView));
         }
         public void SetMuscle(MuscleCategory muscleCateg,INavigation navigation)
         {
@@ -159,7 +164,7 @@ namespace TrainSheet.ViewModel
             {
                 machineTrain.lastRepetition = new List<List<Repetition>>(sets);
             }
-            await pecCategDB.SaveAsync(machineTrain);
+            await exercicesDB.SaveAsync(machineTrain);
             
         }
     }
