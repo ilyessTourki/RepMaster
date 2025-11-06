@@ -16,6 +16,7 @@ public partial class BodyPartsView : ContentView
     public List<Muscle> muscles { get; set; } = new List<Muscle>();
     public ICommand muscleExercices { get; }
     public ObservableCollection<DayItem> WeekDays { get; set; }
+    public List<MuscleCategory> listExercices { get; set; }
     private MuscleDetailsVM muscleDetailsVM = ServiceHelper.GetService<MuscleDetailsVM>();
 
     public BodyPartsView()
@@ -32,7 +33,6 @@ public partial class BodyPartsView : ContentView
             new Muscle{ name = "ABS"        ,muscleEnum= MuscleEnum.Abs,     image ="abs.png" },
             new Muscle{ name = "CALISTHENICS"        ,muscleEnum= MuscleEnum.Calisthenics,     image ="calisthenics.jpg" }};
         muscleExercices = new AsyncRelayCommand<MuscleEnum>(GoToMuscleExercices);
-        SetDaysCollection();
         BindingContext = this;
         var horizontalLayout = new GridItemsLayout(1, ItemsLayoutOrientation.Vertical)
         {
@@ -51,11 +51,12 @@ public partial class BodyPartsView : ContentView
 	public async Task OnViewAppeard()
 	{
         await SavePecExercices();
+        SetDaysCollection();
     }
     private async Task SavePecExercices()
     {
         exercicesDB.InitializeAsync(SQLiteDataAccessPath);
-        var listExercices = await exercicesDB.GetAllAsync();
+        listExercices = await exercicesDB.GetAllAsync();
         var allExercises = new List<MuscleCategory>();
         allExercises.AddRange(PecExercices);
         allExercises.AddRange(BackExercices);
@@ -73,23 +74,18 @@ public partial class BodyPartsView : ContentView
                 await exercicesDB.SaveAsync(exo);
             }
         }
-        else if (listExercices.Count != allExercises.Count)
-        {
-            foreach (var pecExo in PecExercices)
-            {
-                if (!listExercices.Any(b => b.name == pecExo.name))
-                {
-                    await exercicesDB.SaveAsync(pecExo);
-                }
-            }
-        }
     }
     private void SetDaysCollection()
     {
         var today = DateTime.Today;
         var startOfWeek = today.AddDays(-(int)today.DayOfWeek);
-
         WeekDays = new ObservableCollection<DayItem>();
+
+        // date only
+        var updatedDates = listExercices
+            .Select(e => e.lastUpdated.Date)
+            .Distinct()
+            .ToHashSet();
 
         for (int i = 0; i < 7; i++)
         {
@@ -100,8 +96,9 @@ public partial class BodyPartsView : ContentView
                 DayNumber = date.Day,
                 Date = date,
                 IsSelected = date == today,
-                HasSets = (date < today && date.Day % 2 == 0) // 👈 Example: fake rule (even days = has sets)
-            });
+                HasSets = updatedDates.Contains(date)
+            }) ;
         }
+        OnPropertyChanged(nameof(WeekDays));
     }
 }

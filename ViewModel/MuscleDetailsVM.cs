@@ -5,6 +5,7 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using Mopups.Services;
 using TrainSheet.Model;
+using TrainSheet.Model.Enum;
 using TrainSheet.Model.ServiceModel;
 using TrainSheet.Popup;
 using static TrainSheet.Utilities.Utilities;
@@ -163,9 +164,9 @@ namespace TrainSheet.ViewModel
             if(sets != null && sets.Count > 0)
             {
                 machineTrain.lastRepetition = new List<List<Repetition>>(sets);
+                machineTrain.lastUpdated = DateTime.Now;
             }
             await exercicesDB.SaveAsync(machineTrain);
-            
         }
     }
 }

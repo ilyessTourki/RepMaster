@@ -10,11 +10,12 @@ namespace TrainSheet.Model.ServiceModel;
 public class MuscleCategory : IPrimaryKey
 {
     [PrimaryKey, AutoIncrement]
-    public int ID {get;set;}
-    public MuscleEnum muscleType {get;set;}
-    public string name {get;set;}
-    public string image {get;set;}
-    public int bestWeight {get;set;}
+    public int          ID          {get;set;}
+    public MuscleEnum   muscleType  {get;set;}
+    public string       name        {get;set;}
+    public string       image       {get;set;}
+    public int          bestWeight  {get;set;}
+    public DateTime     lastUpdated { get; set; }
     [Ignore] // Prevents SQLite from treating this as a column
     public Repetition bestRepetition { get; set; }
 

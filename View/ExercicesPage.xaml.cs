@@ -54,6 +54,7 @@ public partial class ExercicesPage : ContentView
         // Filter exercises by selected muscle
         musclceExercices = musclceExercices
             .Where(e => e.muscleType == muscle)
+            .OrderByDescending(e => e.lastUpdated)
             .ToList();
 
         // Set the title using the dictionary
