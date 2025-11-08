@@ -5,6 +5,7 @@ using TrainSheet.Service;
 using CommunityToolkit.Maui;
 using Sharpnado.Tabs;
 using Plugin.LocalNotification;
+using LiveChartsCore.SkiaSharpView.Maui;
 #if ANDROID
 using Android.Content.Res;
 #endif
@@ -22,6 +23,7 @@ public static class MauiProgram
             .UseMauiCommunityToolkit()
             .UseLocalNotification()
             .UseSharpnadoTabs(loggerEnable:false)
+            .UseLiveCharts()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
