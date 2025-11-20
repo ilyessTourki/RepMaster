@@ -1,4 +1,4 @@
-﻿<Properties StartupConfiguration="{00777D08-5931-4ABB-B53F-55C215E77C32}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
+﻿<Properties StartupConfiguration="{00777D08-5931-4ABB-B53F-55C215E77C32}|Default">
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.MonoDroid LastDeploySdkVersion="34.0.145" />
@@ -48,5 +48,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.2211EFCE-36FB-4202-8E12-5189096D6F95" />
+  <MonoDevelop.Ide.ItemProperties.TrainSheet PreferredExecutionTarget="Android.pixel_5_-_api_33" />
 </Properties>

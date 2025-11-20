@@ -83,7 +83,7 @@
                 </Grid.ColumnDefinitions>
 
                 <Label    Text="{Binding Icon}"
-                                FontFamily="BodyParts"
+                                FontFamily="bodyparts"
                                 FontSize="25"
                                 BackgroundColor="Transparent"
                                 VerticalOptions="Center"

@@ -6,6 +6,7 @@ using CommunityToolkit.Maui;
 using Sharpnado.Tabs;
 using Plugin.LocalNotification;
 using LiveChartsCore.SkiaSharpView.Maui;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 #if ANDROID
 using Android.Content.Res;
 #endif
@@ -23,6 +24,7 @@ public static class MauiProgram
             .UseMauiCommunityToolkit()
             .UseLocalNotification()
             .UseSharpnadoTabs(loggerEnable:false)
+            .UseSkiaSharp()
             .UseLiveCharts()
 			.ConfigureFonts(fonts =>
 			{
@@ -31,6 +33,8 @@ public static class MauiProgram
 				fonts.AddFont("MaterialIcons-Regular.ttf", "Material");
                 fonts.AddFont("bodyparts.ttf", "BodyParts");
                 fonts.AddFont("horizon.otf", "Horizon");
+                fonts.AddFont("bodypart.ttf", "BodyParts");
+                
             }).ConfigureMauiHandlers(handlers =>
             {
                 //The handler will only be called if the target platform is iOS

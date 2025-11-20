@@ -4,7 +4,8 @@
              x:Class="TrainSheet.View.StatisticsView"
              xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
              Title="StatisticsView">
-   <lvc:CartesianChart
+    <StackLayout>
+        <lvc:CartesianChart
         LegendPosition="Right">
         <lvc:CartesianChart.Series>
             <lvc:SeriesCollection>
@@ -17,4 +18,46 @@
             </lvc:SeriesCollection>
         </lvc:CartesianChart.Series>
     </lvc:CartesianChart>
+        <Label Text="back"
+               FontFamily="bodyparts"
+               TextColor="{StaticResource Primary}"
+               FontSize="34"
+               FontAttributes="Bold"/>
+        <Label Text="chest"
+               FontFamily="bodyparts"
+                TextColor="{StaticResource Primary}"
+               FontSize="34"
+                FontAttributes="Bold"/>
+        <Label Text="tigh"
+               FontFamily="bodyparts"
+                TextColor="{StaticResource Primary}"
+               FontSize="34"
+                FontAttributes="Bold"/>
+        <Label Text="shoulder"
+               FontFamily="bodyparts"
+                TextColor="{StaticResource Primary}"
+               FontSize="34"
+                FontAttributes="Bold"/>
+        <Label Text="biceps"
+               FontFamily="bodyparts"
+                TextColor="{StaticResource Primary}"
+               FontSize="34"
+                FontAttributes="Bold"/>
+        <Label Text="legs"
+               FontFamily="bodyparts"
+                TextColor="{StaticResource Primary}"
+               FontSize="34"
+                FontAttributes="Bold"/>
+        <Label Text="waist"
+               FontFamily="bodyparts"
+                TextColor="{StaticResource Primary}"
+               FontSize="34"
+                FontAttributes="Bold"/>
+         <Label Text="forearm"
+               FontFamily="bodyparts"
+                TextColor="{StaticResource Primary}"
+               FontSize="34"
+                FontAttributes="Bold"/>
+    </StackLayout>
+   
 </ContentPage>
